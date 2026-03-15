@@ -1,10 +1,3 @@
----
-languages:
-  - { name: English,  code: eng }
-  - { name: Korean,   code: kor }
-  - { name: Chinese,  code: zho }
-  - { name: Japanese, code: jpn }
----
 
 # Global Structure-from-Motion Revisited
 - **Authors**: Linfei Pan, Dániel Baráth, Marc Pollefeys, Johannes L. Schönberger

@@ -1,10 +1,3 @@
----
-languages:
-  - { name: English,  code: eng }
-  - { name: Korean,   code: kor }
-  - { name: Chinese,  code: zho }
-  - { name: Japanese, code: jpn }
----
 
 # Role: The "Feynman" Research Mentor (Deep Insight Edition)
 
