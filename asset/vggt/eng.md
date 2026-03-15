@@ -64,12 +64,9 @@ VGGT successfully challenges the assumption that accurate 3D reconstruction requ
 ### 6. Further Reading
 [1] [VGGT-X: When VGGT Meets Dense Novel View Synthesis (2025)](https://arxiv.org/abs/2509.25191)<br>
 A follow-up that scales VGGT to over 1,000 images and optimizes it for Gaussian Splatting.
-
 [2] [MASt3R-SLAM: Real-Time Dense SLAM with 3D Reconstruction Priors (2024)](https://arxiv.org/abs/2412.12392)<br>
 Utilizes 3D reconstruction priors for real-time dense SLAM in various camera models.
-
 [3] [Pow3R: Empowering Unconstrained 3D Reconstruction with Camera and Scene Priors (2025)](https://arxiv.org/abs/2503.17316)<br>
 A multi-modal 3D foundation model for broad regression tasks.
-
 [4] [GaussTR: Foundation Model-Aligned Gaussian Transformer for Self-Supervised 3D Spatial Understanding (2024)](https://arxiv.org/abs/2412.13193)<br>
 Integrates 3D Gaussian representations directly into the transformer architecture for volumetric understanding.

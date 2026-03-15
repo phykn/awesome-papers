@@ -99,7 +99,6 @@ Generate the content for all languages listed in the `languages` list within the
 - **Format**: Use a numbered list like `[1]`, `[2]`, etc. Each entry must split the link and description into two immediate lines without any leading indentation or bullets on the description line.
   - Line 1: `[N] [Paper Title (YYYY)](URL)<br>`
   - Line 2: `1-sentence description.`
-  - Line 3: `(Empty line)`
 - If verification tools are unavailable in this run, Chapter 6 MUST be: `Not provided (offline; unverified links omitted).`
 - Every URL must be copied verbatim from `tmp/plan/{paper_slug}/links.md`.
 
@@ -184,7 +183,6 @@ Anchor claims in what the figure actually shows. Describe the qualitative compar
 - **Format rule**: Number each item as `[1]`, `[2]`, etc. Every item MUST use a forced line break (`<br>`) for the title and have no leading indentation or bullets for the description:
   - `[N] [Paper Title (YYYY)](URL)<br>`
   - `설명글 (Why read this)`
-  - `(Empty line)`
 - **Strict Validation**: All paper titles and URLs must be cross-checked against reality using your research tools (search/read_url_content) within the current task. **Crucially, if you use an arXiv link, you MUST verify that the arXiv ID (e.g., `2409.19152`) exactly matches the paper you intend to link, to avoid linking to completely unrelated papers.** If a link is not verified, it must be omitted.
 - **Copy-only rule (Required)**: Every URL in Chapter 6 MUST be copied verbatim from `tmp/plan/{paper_slug}/links.md` (the verification log). If it is not in the log, it must not appear in the exported markdown.
 - Prefer well-known papers with stable URLs (e.g., `arxiv.org`, `doi.org`).

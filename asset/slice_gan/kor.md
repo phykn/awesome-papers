@@ -53,9 +53,7 @@ SliceGAN은 재료 과학계에 강력한 도구를 제공하여, 단순한 2차
 ### 6. 추가 읽을거리
 [1] [Super-resolution of multiphase materials by combining complementary 2D and 3D image data using generative adversarial networks (2021)](https://arxiv.org/abs/2110.11281)<br>
 2D와 3D 정보를 결합하여 미세구조의 해상도를 높이는 후속 연구입니다.
-
 [2] [Micro3Diff: Multi-plane denoising diffusion-based dimensionality expansion (2023)](https://arxiv.org/abs/2308.14035)<br>
 확산 모델(Diffusion Model)을 사용한 최신 2D-to-3D 재구성 기법입니다.
-
 [3] [SliceGAN Github Issues/Discussions](https://github.com/stke9/SliceGAN)<br>
 실제 구현 팁과 후속 커뮤니티 연구 내용.

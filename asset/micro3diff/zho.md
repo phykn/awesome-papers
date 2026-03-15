@@ -52,9 +52,7 @@ Micro3Diff 为材料信息学（Materials Informatics）提供了强大的工具
 ### 6. 延伸阅读
 [1] [MicroLad: 2D-to-3D Microstructure Reconstruction and Generation via Latent Diffusion and Score Distillation (2025)](https://arxiv.org/abs/2502.10052)<br>
 一个直接的后续研究，将过程移至潜在空间，以实现更快、更受控的 3D 生成。
-
 [2] [Exascale granular microstructure reconstruction in 3D volumes of arbitrary geometries with generative learning](https://doi.org/10.1016/j.cma.2025.117764)<br>
 探索将这些生成方法扩展到大规模体积和复杂边界条件。
-
 [3] [GrainPaint: A multi-scale diffusion-based generative model for microstructure reconstruction of large-scale objects](https://doi.org/10.1016/j.actamat.2025.120815)<br>
 专注于基于修复（inpainting）的扩散，以重构大规模多晶材料。

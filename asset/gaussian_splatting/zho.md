@@ -53,15 +53,11 @@ $$ \Sigma = R S S^T R^T $$
 ### 6. 延伸阅读
 [1] [SuGaR: Surface-Aligned Gaussian Splatting (2023)](https://arxiv.org/abs/2311.16523)<br>
 一种通过将高斯对齐到场景表面来提取高质量网格的方法。
-
 [2] [4D Gaussian Splatting for Real-Time Dynamic Scene Rendering (2023)](https://arxiv.org/abs/2310.08585)<br>
 将该表示扩展到具有移动物体的动态场景。
-
 [3] [GaussianPro: 3D Gaussian Splatting with Progressive Propagation (2024)](https://arxiv.org/abs/2402.14650)<br>
 改进了密度控制机制，在复杂几何上实现更好的质量。
-
 [4] [Compact 3D Gaussian Splatting (2023)](https://arxiv.org/abs/2311.13681)<br>
 通过压缩高斯表示来解决内存瓶颈问题。
-
 [5] [Zip-NeRF: Anti-Aliased Grid-Based Neural Radiance Fields (2023)](https://arxiv.org/abs/2304.06706)<br>
 虽与本文同期发表，但代表了基于网格的 NeRF 方法的巅峰，极具对比价值。
