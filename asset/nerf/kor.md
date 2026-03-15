@@ -50,4 +50,4 @@ NeRF는 복잡한 3D 장면을 연속 함수인 신경망을 사용하여 효율
 - [Instant Neural Graphics Primitives with a Multiresolution Hash Encoding](https://nvlabs.github.io/instant-ngp/) - 해시 인코딩을 통해 학습 및 렌더링 속도를 며칠에서 몇 초 단위로 획기적으로 단축했습니다.
 - [NeRF in the Wild: Neural Radiance Fields for Unconstrained Photo Collections](https://nerf-w.github.io/) - 인터넷 상의 관광객 사진처럼 조명이 다르고 움직이는 물체가 있는 환경에서도 NeRF가 작동하도록 개선했습니다.
 - [Block-NeRF: Scalable Neural Radiance Fields for Entire City Blocks](https://waymo.com/research/block-nerf/) - 도시 전체 거리와 같은 대규모 환경을 표현할 수 있도록 NeRF를 확장했습니다.
-- [RawNeRF: Preparing for Real HDR View Synthesis with Neural Radiance Fields](https://cvgl.stanford.edu/projects/rawnerf/) - 카메라의 RAW 데이터를 직접 학습하여 고역동성 범위(HDR) 시점 합성과 노이즈 제거를 가능하게 했습니다.
+- [RawNeRF: Preparing for Real HDR View Synthesis with Neural Radiance Fields](https://bmild.github.io/rawnerf/) - 카메라의 RAW 데이터를 직접 학습하여 고역동성 범위(HDR) 시점 합성과 노이즈 제거를 가능하게 했습니다.

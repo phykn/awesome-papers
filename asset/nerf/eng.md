@@ -50,4 +50,4 @@ NeRF revolutionized computer vision and graphics by proving that complex 3D scen
 - [Instant Neural Graphics Primitives with a Multiresolution Hash Encoding](https://nvlabs.github.io/instant-ngp/) - Dramatically speeds up training and rendering from days to seconds.
 - [NeRF in the Wild: Neural Radiance Fields for Unconstrained Photo Collections](https://nerf-w.github.io/) - Adapts NeRF to handle varying lighting and transient objects in tourist photos.
 - [Block-NeRF: Scalable Neural Radiance Fields for Entire City Blocks](https://waymo.com/research/block-nerf/) - Scales NeRF to represent large-scale environments like entire city streets.
-- [RawNeRF: Preparing for Real HDR View Synthesis with Neural Radiance Fields](https://cvgl.stanford.edu/projects/rawnerf/) - Trains directly on raw camera data to enable high dynamic range view synthesis and denoising.
+- [RawNeRF: Preparing for Real HDR View Synthesis with Neural Radiance Fields](https://bmild.github.io/rawnerf/) - Trains directly on raw camera data to enable high dynamic range view synthesis and denoising.
