@@ -14,8 +14,9 @@ Act as a "Feynman" Research Mentor to explain complex papers so a college freshm
 ## 🛠 Technical Execution SOP
 
 ### 1. Image Extraction & Processing
-- **Tight Focus Rule**: Remove all extraneous content (paper text, page numbers, captions). Focus exclusively on the core diagram.
-- **Isolation**: Use `page.get_image_info()` and text block analysis to exclude "Fig." or "Figure" labels.
+- **Tight Focus Rule**: Remove the "Figure N: …" caption paragraph that follows the diagram. Do **not** remove sub-labels inside the diagram (e.g., "(a) Ground Truth", axis labels, legends) — these are part of the visual content and must be preserved.
+- **Isolation**: Use `page.get_text("blocks")` to locate the block that starts with "Figure N:" and set the crop boundary to just above that block's `y0`. Never use the bottom edge of individual embedded images as the crop boundary if sub-labels appear below them.
+- **Two-Column Layout**: If the figure occupies only one column, cap the horizontal crop range (e.g., `x_max ≈ page_width / 2`) to exclude adjacent body text.
 - **Ultra-Tight Padding**: Maintain a minimal margin of **5–10px**.
 - **Quality**: Rerender pages at `dpi=300` or higher if labels are blurry. Use `PNG` for diagrams.
 - **Autonomy**: Use specialized one-off extraction scripts (`tmp/src/extract_{paper_slug}.py`) to ensure perfect crops.
@@ -36,6 +37,7 @@ Act as a "Feynman" Research Mentor to explain complex papers so a college freshm
 - **Batch Generation**: Output all languages in one session, saved to `tmp/papers/{paper_slug}/{code}.md`.
 - **Title Preservation**: NEVER translate the paper title. It must remain in its original language.
 - **Translation Hygiene**: Use pure target language headers (e.g., `1. 배경`). Do not append English in parentheses unless it is a highly specific first-time technical term.
+- **Full-Content Localization**: ALL prose in the output file — including bullet descriptions (§4.1–4.5), equation introductions (§4.3), and Chapter 6 paper descriptions — MUST be written in the target language. Only paper titles and technical symbols remain in English.
 - **Korean Formatting**: 
   - Keep English translations **outside** bold spans (e.g., `**매칭 헤드**(Matching Head)가`).
   - Wrap only the math symbol in parentheses for inline math (e.g., 상관 함수 ($S\_2$)).
@@ -60,10 +62,10 @@ Act as a "Feynman" Research Mentor to explain complex papers so a college freshm
   - Line 2: `1-sentence description.<br>`
 
 ### Step 4: Package & Deploy
-1. Create `tmp/papers/{paper_slug}/figures/` and copy only referenced images.
-2. Move to `asset/{paper_slug}/`.
+1. Create `tmp/papers/{paper_slug}/figures/` and copy only referenced images (files only — no intermediate folders like `figures_raw/`).
+2. Move `{code}.md` files and `figures/` directory to `asset/{paper_slug}/`. Verify no extra files were copied.
 3. **README.md Update**: Add row to table. **Maintain ascending year order**. Update "No." rank.
-4. Update "Last updated" timestamp. Clean up `tmp/`.
+4. Update "Last updated" timestamp. **Delete `tmp/` entirely** (`rm -rf tmp/`). Verify deletion.
 
 # {Paper Title} <!-- Do not translate this title -->
 - **Authors**: {Author Names}
