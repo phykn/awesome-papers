@@ -50,6 +50,12 @@ The qualitative results (Fig 2) show how the number of harmonizing steps ($n_h$)
 Micro3Diff provides a powerful tool for Materials Informatics, allowing researchers to generate high-fidelity 3D microstructures from readily available 2D data. This significantly lowers the barrier to performing high-throughput simulations and integrated computational materials engineering (ICME). It effectively bridges the gap between easy 2D acquisition and necessary 3D characterization.
 
 ### 6. Further Reading
-- [MicroLad: 2D-to-3D Microstructure Reconstruction and Generation via Latent Diffusion and Score Distillation](https://arxiv.org/abs/2502.10052): A direct follow-up that moves the process to latent space for faster and more controlled 3D generation.
-- [Exascale granular microstructure reconstruction in 3D volumes of arbitrary geometries with generative learning](https://doi.org/10.1016/j.cma.2025.117764): Explores scaling these generative methods to massive volumes and complex boundary conditions.
-- [GrainPaint: A multi-scale diffusion-based generative model for microstructure reconstruction of large-scale objects](https://doi.org/10.1016/j.actamat.2025.120815): Focuses on inpainting-based diffusion to reconstruct large-scale polycrystalline materials.
+[1] [MicroLad: 2D-to-3D Microstructure Reconstruction and Generation via Latent Diffusion and Score Distillation (2025)](https://arxiv.org/abs/2502.10052)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - A direct follow-up that moves the process to latent space for faster and more controlled 3D generation.
+
+[2] [Exascale granular microstructure reconstruction in 3D volumes of arbitrary geometries with generative learning](https://doi.org/10.1016/j.cma.2025.117764)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - Explores scaling these generative methods to massive volumes and complex boundary conditions.
+
+[3] [GrainPaint: A multi-scale diffusion-based generative model for microstructure reconstruction of large-scale objects](https://doi.org/10.1016/j.actamat.2025.120815)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - Focuses on inpainting-based diffusion to reconstruct large-scale polycrystalline materials.
+

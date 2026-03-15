@@ -51,8 +51,18 @@ The results demonstrate superior reconstruction of fine, thin structures like th
 This paper effectively ended the "slow rendering" era of high-quality radiance fields. By providing a real-time, differentiable rasterization pipeline, it paved the way for applications in Virtual Reality, digital twins, and real-time cinematic rendering. 3D Gaussian Splatting has since become the new de facto standard for explicit radiance field research, spawning dozens of follow-up works focusing on compression, animation, and large-scale mapping.
 
 ### 6. Further Reading
-- [SuGaR: Surface-Aligned Gaussian Splatting](https://arxiv.org/abs/2311.16523) - A method to extract high-quality meshes from Gaussians by aligning them to the scene surface.
-- [4D Gaussian Splatting for Real-Time Dynamic Scene Rendering](https://arxiv.org/abs/2310.08585) - Extends the representation to dynamic scenes with moving objects.
-- [GaussianPro: 3D Gaussian Splatting with Progressive Propagation](https://arxiv.org/abs/2402.14650) - Improves the density control mechanism for even better quality on complex geometry.
-- [Compact 3D Gaussian Splatting](https://arxiv.org/abs/2311.13681) - Addresses the memory bottleneck by compressing the Gaussian representation.
-- [Zip-NeRF: Anti-Aliased Grid-Based Neural Radiance Fields](https://arxiv.org/abs/2304.06706) - While published around the same time, it represents the pinnacle of the grid-based NeRF approach for comparison.
+[1] [SuGaR: Surface-Aligned Gaussian Splatting (2023)](https://arxiv.org/abs/2311.16523)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - A method to extract high-quality meshes from Gaussians by aligning them to the scene surface.
+
+[2] [4D Gaussian Splatting for Real-Time Dynamic Scene Rendering (2023)](https://arxiv.org/abs/2310.08585)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - Extends the representation to dynamic scenes with moving objects.
+
+[3] [GaussianPro: 3D Gaussian Splatting with Progressive Propagation (2024)](https://arxiv.org/abs/2402.14650)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - Improves the density control mechanism for even better quality on complex geometry.
+
+[4] [Compact 3D Gaussian Splatting (2023)](https://arxiv.org/abs/2311.13681)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - Addresses the memory bottleneck by compressing the Gaussian representation.
+
+[5] [Zip-NeRF: Anti-Aliased Grid-Based Neural Radiance Fields (2023)](https://arxiv.org/abs/2304.06706)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - While published around the same time, it represents the pinnacle of the grid-based NeRF approach for comparison.
+

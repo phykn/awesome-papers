@@ -54,6 +54,12 @@ GLOMAP 达到的准确性和鲁棒性水平与目前使用最广泛的增量式 
 GLOMAP 证明了全局方法在通用用途上可以像增量方法一样可靠，从而重塑了 SfM 的研究图景。这是大规模三维制图的一次重大飞跃，因为它能够使在几分钟而不是几小时内处理数千张图像成为可能，且没有典型的重建失败风险。作为 COLMAP 生态系统的一部分开源，它有望成为计算机视觉研究人员和从事新视图合成（如 NeRF 和 Gaussian Splatting）及大规模数字孪生工作的工程师的标准工具。
 
 ### 6. 延伸阅读
-- [FastMap: Revisiting Structure from Motion through First-Order Optimization](https://arxiv.org/abs/2505.04612) - 2025 年的一项后续研究，使用一阶优化实现了比 GLOMAP 快 10 倍的速度。
-- [Gravity-Aligned Rotation Averaging with Circular Regression](https://arxiv.org/abs/2410.12763) - GLOMAP 作者 2024 年的一项工作，结合了重力先验以进一步改进旋转平均。
-- [MP-SfM: Monocular Surface Priors for Robust Structure-From-Motion](https://arxiv.org/abs/2504.20040) - 2025 年的一篇论文，探索使用单目表面先验来增强复杂场景下 SfM 的鲁棒性。
+[1] [FastMap: Revisiting Structure from Motion through First-Order Optimization (2025)](https://arxiv.org/abs/2505.04612)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 2025 年的一项后续研究，使用一阶优化实现了比 GLOMAP 快 10 倍的速度。
+
+[2] [Gravity-Aligned Rotation Averaging with Circular Regression (2024)](https://arxiv.org/abs/2410.12763)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - GLOMAP 作者 2024 年的一项工作，结合了重力先验以进一步改进旋转平均。
+
+[3] [MP-SfM: Monocular Surface Priors for Robust Structure-From-Motion (2025)](https://arxiv.org/abs/2504.20040)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 2025 年的一篇论文，探索使用单目表面先验来增强复杂场景下 SfM 的鲁棒性。
+

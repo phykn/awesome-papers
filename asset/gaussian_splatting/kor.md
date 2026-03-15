@@ -51,8 +51,17 @@ $$ \Sigma = R S S^T R^T $$
 이 논문은 고화질 래디언스 필드 분야의 '느린 렌더링' 시대를 사실상 종식시켰습니다. 실시간 미분 가능한 래스터라이제이션 파이프라인을 제공함으로써 VR, 디지털 트윈, 실시간 영화급 렌더링 등의 응용 분야를 열었습니다. 3D 가우시안 스플래팅은 이후 명시적 래디언스 필드 연구의 새로운 표준이 되었으며, 압축, 애니메이션, 대규모 매핑 등을 주제로 하는 수많은 후속 연구를 낳았습니다.
 
 ### 6. 더 읽어보기
-- [SuGaR: Surface-Aligned Gaussian Splatting](https://arxiv.org/abs/2311.16523) - 가우시안을 장면 표면에 정렬시켜 고품질 메시(Mesh)를 추출하는 방법.
-- [4D Gaussian Splatting for Real-Time Dynamic Scene Rendering](https://arxiv.org/abs/2310.08585) - 움직이는 물체가 있는 동적인 장면으로 표현을 확장.
-- [GaussianPro: 3D Gaussian Splatting with Progressive Propagation](https://arxiv.org/abs/2402.14650) - 복잡한 지형에서 더 나은 품질을 위해 밀도 제어 메커니즘을 개선.
-- [Compact 3D Gaussian Splatting](https://arxiv.org/abs/2311.13681) - 가우시안 표현을 압축하여 메모리 병목 현상을 해결.
-- [Zip-NeRF: Anti-Aliased Grid-Based Neural Radiance Fields](https://arxiv.org/abs/2304.06706) - 비슷한 시기에 발표된 격자 기반 NeRF 방식의 정점으로 비교 대상임.
+[1] [SuGaR: Surface-Aligned Gaussian Splatting (2023)](https://arxiv.org/abs/2311.16523)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 가우시안을 장면 표면에 정렬시켜 고품질 메시(Mesh)를 추출하는 방법.
+
+[2] [4D Gaussian Splatting for Real-Time Dynamic Scene Rendering (2023)](https://arxiv.org/abs/2310.08585)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 움직이는 물체가 있는 동적인 장면으로 표현을 확장.
+
+[3] [GaussianPro: 3D Gaussian Splatting with Progressive Propagation (2024)](https://arxiv.org/abs/2402.14650)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 복잡한 지형에서 더 나은 품질을 위해 밀도 제어 메커니즘을 개선.
+
+[4] [Compact 3D Gaussian Splatting (2023)](https://arxiv.org/abs/2311.13681)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 가우시안 표현을 압축하여 메모리 병목 현상을 해결.
+
+[5] [Zip-NeRF: Anti-Aliased Grid-Based Neural Radiance Fields (2023)](https://arxiv.org/abs/2304.06706)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 비슷한 시기에 발표된 격자 기반 NeRF 방식의 정점으로 비교 대상임.

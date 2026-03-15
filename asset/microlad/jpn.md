@@ -52,7 +52,15 @@ MicroLadは、既存の拡散ベース微細構造再構成手法の能力を大
 MicroLadは、微細構造特性評価と材料設計の間のループを閉じる方向への重要な進展を意味します。潜在拡散モデルをScore Distillation Samplingおよび微分可能な物理ソルバーと組み合わせることで、研究者が2D観測から現実的な3D微細構造を再構成するだけでなく、特定の材料物性を目標に微細構造を逆設計することを可能にします。この能力は、エネルギー材料（SOFC、電池）、構造複合材など、3D微細構造が性能を左右するシステムのICMEワークフローを加速するために直接活用できます。
 
 ### 6. 後続研究
-- [Multi-plane denoising diffusion-based dimensionality expansion (Micro3Diff)](https://doi.org/10.1038/s41524-024-01280-z) - 同一著者による以前のフレームワークで、2D-to-3D再構成のための多平面拡散の基礎を確立。
-- [Score Distillation Sampling (DreamFusion)](https://arxiv.org/abs/2209.14988) - 2D拡散モデルの知識を3D表現に蒸留する基礎手法。
-- [SliceGAN: GANベースの次元拡張を通じた2Dスライスからの3D構造生成](https://arxiv.org/abs/2102.07708) - 2D-to-3D微細構造生成のGANベースのベース라인。
-- [Latent Diffusion Models (Stable Diffusion)](https://arxiv.org/abs/2112.10752) - MicroLadが基づいている核心的な潜在拡散アーキテクチャ。
+[1] [Multi-plane denoising diffusion-based dimensionality expansion (Micro3Diff)](https://doi.org/10.1038/s41524-024-01280-z)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 同一著者による以前のフレームワークで、2D-to-3D再構成のための多平面拡散の基礎を確立。
+
+[2] [Score Distillation Sampling (DreamFusion) (2022)](https://arxiv.org/abs/2209.14988)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 2D拡散モデルの知識を3D表現に蒸留する基礎手法。
+
+[3] [SliceGAN: GANベースの次元拡張を通じた2Dスライスからの3D構造生成 (2021)](https://arxiv.org/abs/2102.07708)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 2D-to-3D微細構造生成のGANベースのベース라인。
+
+[4] [Latent Diffusion Models (Stable Diffusion) (2021)](https://arxiv.org/abs/2112.10752)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - MicroLadが基づいている核心的な潜在拡散アーキテクチャ。
+

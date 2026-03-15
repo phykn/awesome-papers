@@ -63,7 +63,12 @@ The qualitative trajectory results on ScanNet and ARKit demonstrate FVO's superi
 FVO paves the way for a new generation of purely learning-based SLAM systems that are fast, robust, and calibration-free. By proving that a well-designed transformer can replace classic geometric optimization blocks, it removes a major barrier to deploying high-performance VO on low-power mobile devices and robots. Its end-to-end nature simplifies the engineering stack, making it easier to integrate visual odometry into broader multi-modal intelligence systems for autonomous navigation and augmented reality.
 
 ### 6. Further Reading
+[1] [LEVIO: Lightweight Embedded Visual Inertial Odometry for Resource-Constrained Devices (2026)](https://arxiv.org/abs/2602.03294)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - A highly optimized VIO pipeline that targets ultra-low-power embedded platforms, pushing the boundaries of efficiency.
 
-- [LEVIO: Lightweight Embedded Visual Inertial Odometry for Resource-Constrained Devices](https://arxiv.org/abs/2602.03294) A highly optimized VIO pipeline that targets ultra-low-power embedded platforms, pushing the boundaries of efficiency.
-- [OpenVO: Open-World Visual Odometry with Temporal Dynamics Awareness](https://arxiv.org/abs/2602.19035) Explores visual odometry in uncalibrated, open-world settings like dashcam footage using temporal encoding.
-- [MDE-VIO: Enhancing Visual-Inertial Odometry Using Learned Depth Priors](https://arxiv.org/abs/2602.11323) Integates deep-learned depth priors into traditional VIO backends to improve robustness in low-texture environments.
+[2] [OpenVO: Open-World Visual Odometry with Temporal Dynamics Awareness (2026)](https://arxiv.org/abs/2602.19035)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - Explores visual odometry in uncalibrated, open-world settings like dashcam footage using temporal encoding.
+
+[3] [MDE-VIO: Enhancing Visual-Inertial Odometry Using Learned Depth Priors (2026)](https://arxiv.org/abs/2602.11323)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - Integates deep-learned depth priors into traditional VIO backends to improve robustness in low-texture environments.
+

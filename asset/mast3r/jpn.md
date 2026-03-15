@@ -51,6 +51,12 @@ MASt3Rは、3D回帰と特徴マッチングを統合することで、DUSt3Rや
 MASt3Rは、一般的な3D再構築と高精度な画像マッチングの間の溝を埋めました。これにより、多段パイプラインを凌駕する、カメラキャリブレーション、ポーズ推定、再構築のためのスタンドアロンなアプローチが可能になりました。Map-free データセットでの成功は、事前に構築されたマップが利用不可能な「野外 (in-the-wild)」でのビジュアルローカリゼーションの新しい道を提示しており、事実上、3D対応認識の新しい基準を打ち立てました。
 
 ### 6. 参考文献 / さらに深く知るために
-- **[MUSt3R: Multi-view Network for Stereo 3D Reconstruction](https://arxiv.org/abs/2503.01661)**: 2つ以上の視点を同時に扱い、多層メモリ機構によって拡張性を高めた後続研究です。
-- **[MASt3R-SfM: a Fully-Integrated Solution for Unconstrained Structure-from-Motion](https://arxiv.org/abs/2409.19152)**: MASt3Rの特徴を活用し、大規模で制約のない再構築を行う完全なSfMパイプラインです。
-- **[TRELLIS: Structured 3D Latents for Scalable and Versatile 3D Generation](https://arxiv.org/abs/2412.01506)**: 同様の基盤モデルによる特徴を高品質な3Dアセット生成に活用する方法を探求しています。
+[1] [MUSt3R: Multi-view Network for Stereo 3D Reconstruction (2025)](https://arxiv.org/abs/2503.01661)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 2つ以上の視点を同時に扱い、多層メモリ機構によって拡張性を高めた後続研究です。
+
+[2] [MASt3R-SfM: a Fully-Integrated Solution for Unconstrained Structure-from-Motion (2024)](https://arxiv.org/abs/2409.19152)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - MASt3Rの特徴を活用し、大規模で制約のない再構築を行う完全なSfMパイプラインです。
+
+[3] [TRELLIS: Structured 3D Latents for Scalable and Versatile 3D Generation (2024)](https://arxiv.org/abs/2412.01506)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 同様の基盤モデルによる特徴を高品質な3Dアセット生成に活用する方法を探求しています。
+

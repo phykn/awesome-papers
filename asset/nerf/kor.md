@@ -47,8 +47,18 @@ NeRF는 미세하고 고주파적인 질감과 복잡한 거울 반사(Specular 
 NeRF는 복잡한 3D 장면을 연속 함수인 신경망을 사용하여 효율적으로 저장하고 렌더링할 수 있음을 증명함으로써 컴퓨터 비전 및 그래픽스 분야를 혁신했습니다. 이는 신경 복사 필드(Neural Radiance Fields)에 대한 거대한 연구 흐름을 촉발했으며, 3D 재구성, 로보틱스, 가상 현실 분야의 발전을 이끌었습니다. NeRF의 성공은 고속 변체인 Instant-NGP나 대규모 응용인 Block-NeRF와 같은 후속 연구들에 직접적인 영감을 주었습니다.
 
 ### 6. 후속 연구
-- [Mip-NeRF: A Multiscale Representation for Anti-Aliasing Neural Radiance Fields](https://arxiv.org/abs/2103.13415) - 앨리어싱 문제를 해결하고 다양한 스케일에서 렌더링 품질을 개선했습니다.
-- [Instant Neural Graphics Primitives with a Multiresolution Hash Encoding](https://nvlabs.github.io/instant-ngp/) - 해시 인코딩을 통해 학습 및 렌더링 속도를 며칠에서 몇 초 단위로 획기적으로 단축했습니다.
-- [NeRF in the Wild: Neural Radiance Fields for Unconstrained Photo Collections](https://nerf-w.github.io/) - 인터넷 상의 관광객 사진처럼 조명이 다르고 움직이는 물체가 있는 환경에서도 NeRF가 작동하도록 개선했습니다.
-- [Block-NeRF: Scalable Neural Radiance Fields for Entire City Blocks](https://waymo.com/research/block-nerf/) - 도시 전체 거리와 같은 대규모 환경을 표현할 수 있도록 NeRF를 확장했습니다.
-- [RawNeRF: Preparing for Real HDR View Synthesis with Neural Radiance Fields](https://bmild.github.io/rawnerf/) - 카메라의 RAW 데이터를 직접 학습하여 고역동성 범위(HDR) 시점 합성과 노이즈 제거를 가능하게 했습니다.
+[1] [Mip-NeRF: A Multiscale Representation for Anti-Aliasing Neural Radiance Fields (2021)](https://arxiv.org/abs/2103.13415)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 앨리어싱 문제를 해결하고 다양한 스케일에서 렌더링 품질을 개선했습니다.
+
+[2] [Instant Neural Graphics Primitives with a Multiresolution Hash Encoding](https://nvlabs.github.io/instant-ngp/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 해시 인코딩을 통해 학습 및 렌더링 속도를 며칠에서 몇 초 단위로 획기적으로 단축했습니다.
+
+[3] [NeRF in the Wild: Neural Radiance Fields for Unconstrained Photo Collections](https://nerf-w.github.io/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 인터넷 상의 관광객 사진처럼 조명이 다르고 움직이는 물체가 있는 환경에서도 NeRF가 작동하도록 개선했습니다.
+
+[4] [Block-NeRF: Scalable Neural Radiance Fields for Entire City Blocks](https://waymo.com/research/block-nerf/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 도시 전체 거리와 같은 대규모 환경을 표현할 수 있도록 NeRF를 확장했습니다.
+
+[5] [RawNeRF: Preparing for Real HDR View Synthesis with Neural Radiance Fields](https://bmild.github.io/rawnerf/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 카메라의 RAW 데이터를 직접 학습하여 고역동성 범위(HDR) 시점 합성과 노이즈 제거를 가능하게 했습니다.
+

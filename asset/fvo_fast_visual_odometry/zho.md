@@ -63,7 +63,12 @@ FVO 在不牺牲精度的情况下，代表了 VO 效率的一次重大飞跃。
 FVO 为新一代纯学习型 SLAM 系统铺平了道路，这些系统快速、稳健且无需校准。通过证明精心设计的 Transformer 可以替代传统的几何优化块，它消除在低功耗移动设备和机器人上部署高性能 VO 的主要障碍。其端到端的特性简化了工程栈，使视觉里程计更容易集成到用于自主导航和增强现实的更广泛的多模态智能系统中。
 
 ### 6. 延伸阅读
+[1] [LEVIO: Lightweight Embedded Visual Inertial Odometry for Resource-Constrained Devices (2026)](https://arxiv.org/abs/2602.03294)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 一种针对超低功耗嵌入式平台的高度优化的 VIO 流水线，挑战了效率的极限。
 
-- [LEVIO: Lightweight Embedded Visual Inertial Odometry for Resource-Constrained Devices](https://arxiv.org/abs/2602.03294) 一种针对超低功耗嵌入式平台的高度优化的 VIO 流水线，挑战了效率的极限。
-- [OpenVO: Open-World Visual Odometry with Temporal Dynamics Awareness](https://arxiv.org/abs/2602.19035) 探索了使用时间编码在仪表盘摄像头片段等未校准的开放世界环境中的视觉里程计。
-- [MDE-VIO: Enhancing Visual-Inertial Odometry Using Learned Depth Priors](https://arxiv.org/abs/2602.11323) 将深度学习得到的深度先验集成到传统的 VIO 后端中，以提高在低纹理环境中的稳健性。
+[2] [OpenVO: Open-World Visual Odometry with Temporal Dynamics Awareness (2026)](https://arxiv.org/abs/2602.19035)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 探索了使用时间编码在仪表盘摄像头片段等未校准的开放世界环境中的视觉里程计。
+
+[3] [MDE-VIO: Enhancing Visual-Inertial Odometry Using Learned Depth Priors (2026)](https://arxiv.org/abs/2602.11323)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 将深度学习得到的深度先验集成到传统的 VIO 后端中，以提高在低纹理环境中的稳健性。
+

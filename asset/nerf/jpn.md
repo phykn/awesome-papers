@@ -46,8 +46,18 @@ NeRFは、微細で高周波な質感や複雑な鏡面反射（Specular reflect
 NeRFは、複雑な3Dシーンを連続関数であるニューラルネットワークを使用して効率的に保存およびレンダリングできることを証明することで、コンピュータビジョンおよびグラフィックス分野を革新しました。これはニューラル放射輝度場（Neural Radiance Fields）に対する巨大な研究の流れを触発し、3D再構成、ロボティクス、仮想現実分野の発展を導きました。NeRFの成功は、高速な派生形であるInstant-NGPや大規模な応用であるBlock-NeRFといった後続研究に直接的なインスピレーションを与えました。
 
 ### 6. 後続研究
-- [Mip-NeRF: A Multiscale Representation for Anti-Aliasing Neural Radiance Fields](https://arxiv.org/abs/2103.13415) - エイリアシング問題を解決し、様々なスケールでレンダリング品質を改善しました。
-- [Instant Neural Graphics Primitives with a Multiresolution Hash Encoding](https://nvlabs.github.io/instant-ngp/) - ハッシュエンコーディングを通じて学習およびレンダリング速度を数日から数秒単位に画期的に短縮しました。
-- [NeRF in the Wild: Neural Radiance Fields for Unconstrained Photo Collections](https://nerf-w.github.io/) - インターネット上の観光客の写真のように照明が異なり、動く物体がある環境でもNeRFが動作するように改善しました。
-- [Block-NeRF: Scalable Neural Radiance Fields for Entire City Blocks](https://waymo.com/research/block-nerf/) - 都市全体の通りのような大規模な環境を表現できるようにNeRFを拡張しました。
-- [RawNeRF: Preparing for Real HDR View Synthesis with Neural Radiance Fields](https://bmild.github.io/rawnerf/) - カメラのRAWデータを直接学習し、ハイダイナミックレンジ（HDR）視点合成とノイズ除去を可能にしました。
+[1] [Mip-NeRF: A Multiscale Representation for Anti-Aliasing Neural Radiance Fields (2021)](https://arxiv.org/abs/2103.13415)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - エイリアシング問題を解決し、様々なスケールでレンダリング品質を改善しました。
+
+[2] [Instant Neural Graphics Primitives with a Multiresolution Hash Encoding](https://nvlabs.github.io/instant-ngp/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - ハッシュエンコーディングを通じて学習およびレンダリング速度を数日から数秒単位に画期的に短縮しました。
+
+[3] [NeRF in the Wild: Neural Radiance Fields for Unconstrained Photo Collections](https://nerf-w.github.io/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - インターネット上の観光客の写真のように照明が異なり、動く物体がある環境でもNeRFが動作するように改善しました。
+
+[4] [Block-NeRF: Scalable Neural Radiance Fields for Entire City Blocks](https://waymo.com/research/block-nerf/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 都市全体の通りのような大規模な環境を表現できるようにNeRFを拡張しました。
+
+[5] [RawNeRF: Preparing for Real HDR View Synthesis with Neural Radiance Fields](https://bmild.github.io/rawnerf/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - カメラのRAWデータを直接学習し、ハイダイナミックレンジ（HDR）視点合成とノイズ除去を可能にしました。
+

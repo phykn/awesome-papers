@@ -51,6 +51,12 @@ The qualitative results showcase the successful reconstruction of diverse micros
 SliceGAN provides a powerful tool for the materials science community, enabling the generation of representative 3D volumes for physics-based simulations (like stress analysis or fluid flow) from simple 2D imaging. This bridges the gap between high-resolution 2D data and the necessity for 3D volumetric analysis, potentially accelerating the discovery and optimization of next-generation energy materials and composites.
 
 ### 6. Further Reading
-- [Super-resolution of multiphase materials by combining complementary 2D and 3D image data using generative adversarial networks (2021)](https://arxiv.org/abs/2110.11281) - Combining 2D and 3D data for high-resolution reconstruction.
-- [Micro3Diff: Multi-plane denoising diffusion-based dimensionality expansion (2023)](https://arxiv.org/abs/2308.14035) - Latest 2D-to-3D reconstruction using Diffusion Models.
-- [SliceGAN Github Issues/Discussions](https://github.com/stke9/SliceGAN) - For practical implementation tips and follow-up community research.
+[1] [Super-resolution of multiphase materials by combining complementary 2D and 3D image data using generative adversarial networks (2021)](https://arxiv.org/abs/2110.11281)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - Combining 2D and 3D data for high-resolution reconstruction.
+
+[2] [Micro3Diff: Multi-plane denoising diffusion-based dimensionality expansion (2023)](https://arxiv.org/abs/2308.14035)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - Latest 2D-to-3D reconstruction using Diffusion Models.
+
+[3] [SliceGAN Github Issues/Discussions](https://github.com/stke9/SliceGAN)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - For practical implementation tips and follow-up community research.
+

@@ -51,6 +51,12 @@ SliceGAN은 장거리 연결성 및 복잡한 상(phase)을 포착하는 데 있
 SliceGAN은 재료 과학계에 강력한 도구를 제공하여, 단순한 2차원 관찰만으로 응력 분석이나 유체 흐름과 같은 물리 기반 시뮬레이션을 위한 대표적인 3차원 부피를 생성할 수 있게 합니다. 이는 고해상도 2차원 데이터와 3차원 부피 분석의 필요성 사이의 간극을 메움으로써, 차세대 에너지 재료 및 복합 재료의 발견과 최적화를 가속화할 잠재력을 가지고 있습니다.
 
 ### 6. 추가 읽을거리
-- [Super-resolution of multiphase materials by combining complementary 2D and 3D image data using generative adversarial networks (2021)](https://arxiv.org/abs/2110.11281) - 2D와 3D 정보를 결합하여 미세구조의 해상도를 높이는 후속 연구입니다.
-- [Micro3Diff: Multi-plane denoising diffusion-based dimensionality expansion (2023)](https://arxiv.org/abs/2308.14035) - 확산 모델(Diffusion Model)을 사용한 최신 2D-to-3D 재구성 기법입니다.
-- [SliceGAN Github Issues/Discussions](https://github.com/stke9/SliceGAN) - 실제 구현 팁과 후속 커뮤니티 연구 내용.
+[1] [Super-resolution of multiphase materials by combining complementary 2D and 3D image data using generative adversarial networks (2021)](https://arxiv.org/abs/2110.11281)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 2D와 3D 정보를 결합하여 미세구조의 해상도를 높이는 후속 연구입니다.
+
+[2] [Micro3Diff: Multi-plane denoising diffusion-based dimensionality expansion (2023)](https://arxiv.org/abs/2308.14035)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 확산 모델(Diffusion Model)을 사용한 최신 2D-to-3D 재구성 기법입니다.
+
+[3] [SliceGAN Github Issues/Discussions](https://github.com/stke9/SliceGAN)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 실제 구현 팁과 후속 커뮤니티 연구 내용.
+

@@ -46,8 +46,18 @@
 NeRF 证明了可以使用作为连续函数的神经网络有效地存储和渲染复杂的 3D 场景，从而彻底改变了计算机视觉和图形学领域。这引发了关于神经辐射场 (Neural Radiance Fields) 的巨大研究浪潮，推动了 3D 重建、机器人和虚拟现实领域的发展。NeRF 的成功直接启发了后续研究，如高速变体 Instant-NGP 或大规模应用 Block-NeRF。
 
 ### 6. 后续研究
-- [Mip-NeRF: A Multiscale Representation for Anti-Aliasing Neural Radiance Fields](https://arxiv.org/abs/2103.13415) - 解决了混叠问题并提高了多尺度下的渲染质量。
-- [Instant Neural Graphics Primitives with a Multiresolution Hash Encoding](https://nvlabs.github.io/instant-ngp/) - 通过哈希编码将训练和渲染速度从几天缩短到几秒。
-- [NeRF in the Wild: Neural Radiance Fields for Unconstrained Photo Collections](https://nerf-w.github.io/) - 改进了 NeRF，使其能够在光照不同且存在移动物体的环境（如互联网上的游客照片）中工作。
-- [Block-NeRF: Scalable Neural Radiance Fields for Entire City Blocks](https://waymo.com/research/block-nerf/) - 扩展了 NeRF 以表示大规模环境，如整个城市街道。
-- [RawNeRF: Preparing for Real HDR View Synthesis with Neural Radiance Fields](https://bmild.github.io/rawnerf/) - 直接学习摄像机的 RAW 数据，实现了高动态范围 (HDR) 视图合成和去噪。
+[1] [Mip-NeRF: A Multiscale Representation for Anti-Aliasing Neural Radiance Fields (2021)](https://arxiv.org/abs/2103.13415)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 解决了混叠问题并提高了多尺度下的渲染质量。
+
+[2] [Instant Neural Graphics Primitives with a Multiresolution Hash Encoding](https://nvlabs.github.io/instant-ngp/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 通过哈希编码将训练和渲染速度从几天缩短到几秒。
+
+[3] [NeRF in the Wild: Neural Radiance Fields for Unconstrained Photo Collections](https://nerf-w.github.io/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 改进了 NeRF，使其能够在光照不同且存在移动物体的环境（如互联网上的游客照片）中工作。
+
+[4] [Block-NeRF: Scalable Neural Radiance Fields for Entire City Blocks](https://waymo.com/research/block-nerf/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 扩展了 NeRF 以表示大规模环境，如整个城市街道。
+
+[5] [RawNeRF: Preparing for Real HDR View Synthesis with Neural Radiance Fields](https://bmild.github.io/rawnerf/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 直接学习摄像机的 RAW 数据，实现了高动态范围 (HDR) 视图合成和去噪。
+

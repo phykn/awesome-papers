@@ -50,6 +50,12 @@ Micro3Diff는 일반적인 슬라이스별 생성 방식에 비해 우수한 3D 
 Micro3Diff는 재료 정보학(Materials Informatics) 분야에 강력한 도구를 제공하여, 연구자들이 손쉽게 구할 수 있는 2D 데이터로 고충실도 3D 미세구조를 생성할 수 있게 합니다. 이는 대규모 시뮬레이션 및 통합 계산 재료 공학(ICME)의 진입 장벽을 낮추며, 쉬운 2D 데이터 획득과 필수적인 3D 특성 분석 사이의 간극을 효과적으로 메워줍니다.
 
 ### 6. 후속 연구
-- [MicroLad: 2D-to-3D Microstructure Reconstruction and Generation via Latent Diffusion and Score Distillation](https://arxiv.org/abs/2502.10052): 3D 생성을 더 빠르고 제어 가능하게 하기 위해 프로세스를 잠재 공간(latent space)으로 옮긴 직접적인 후속 연구입니다.
-- [Exascale granular microstructure reconstruction in 3D volumes of arbitrary geometries with generative learning](https://doi.org/10.1016/j.cma.2025.117764): 이러한 생성 기법을 거대한 볼륨과 복잡한 경계 조건으로 확장하는 방안을 탐구합니다.
-- [GrainPaint: A multi-scale diffusion-based generative model for microstructure reconstruction of large-scale objects](https://doi.org/10.1016/j.actamat.2025.120815): 인페인팅 기반 확산을 활용해 대규모 다결정 재료를 재구성하는 데 집중합니다.
+[1] [MicroLad: 2D-to-3D Microstructure Reconstruction and Generation via Latent Diffusion and Score Distillation (2025)](https://arxiv.org/abs/2502.10052)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 3D 생성을 더 빠르고 제어 가능하게 하기 위해 프로세스를 잠재 공간(latent space)으로 옮긴 직접적인 후속 연구입니다.
+
+[2] [Exascale granular microstructure reconstruction in 3D volumes of arbitrary geometries with generative learning](https://doi.org/10.1016/j.cma.2025.117764)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 이러한 생성 기법을 거대한 볼륨과 복잡한 경계 조건으로 확장하는 방안을 탐구합니다.
+
+[3] [GrainPaint: A multi-scale diffusion-based generative model for microstructure reconstruction of large-scale objects](https://doi.org/10.1016/j.actamat.2025.120815)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 인페인팅 기반 확산을 활용해 대규모 다결정 재료를 재구성하는 데 집중합니다.
+

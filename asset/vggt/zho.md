@@ -62,8 +62,15 @@ VGGT 为前馈式 3D 重建设立了效率和准确性的新标准。虽然像 M
 VGGT 成功挑战了“准确的 3D 重建必须依靠迭代优化”这一假设。通过证明设计良好的 Transformer 可以仅凭简单的单次前馈学习多视图几何，它将姿态、深度、点云、轨迹等多种视觉任务整合到了一个可扩展的单一骨干网络中。这极大地简化了实时机器人、AR/VR 和自动驾驶领域的现有流水线。
 
 ### 6. 延伸阅读
+[1] [VGGT-X: When VGGT Meets Dense Novel View Synthesis (2025)](https://arxiv.org/abs/2509.25191)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 这一后续工作将 VGGT 扩展到 1,000 多张图像，并针对高斯泼溅 (Gaussian Splatting) 进行了优化。
 
-- [VGGT-X: When VGGT Meets Dense Novel View Synthesis](https://arxiv.org/abs/2509.25191) 这一后续工作将 VGGT 扩展到 1,000 多张图像，并针对高斯泼溅 (Gaussian Splatting) 进行了优化。
-- [MASt3R-SLAM: Real-Time Dense SLAM with 3D Reconstruction Priors](https://arxiv.org/abs/2412.12392) 利用 3D 重建先验在各种相机模型中实现实时稠密 SLAM。
-- [Pow3R: Empowering Unconstrained 3D Reconstruction with Camera and Scene Priors](https://arxiv.org/abs/2503.17316) 用于广泛回归任务的多模态 3D 基础模型。
-- [GaussTR: Foundation Model-Aligned Gaussian Transformer for Self-Supervised 3D Spatial Understanding](https://arxiv.org/abs/2412.13193) 将 3D 高斯表示直接集成到 Transformer 架构中，以实现体积感知。
+[2] [MASt3R-SLAM: Real-Time Dense SLAM with 3D Reconstruction Priors (2024)](https://arxiv.org/abs/2412.12392)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 利用 3D 重建先验在各种相机模型中实现实时稠密 SLAM。
+
+[3] [Pow3R: Empowering Unconstrained 3D Reconstruction with Camera and Scene Priors (2025)](https://arxiv.org/abs/2503.17316)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 用于广泛回归任务的多模态 3D 基础模型。
+
+[4] [GaussTR: Foundation Model-Aligned Gaussian Transformer for Self-Supervised 3D Spatial Understanding (2024)](https://arxiv.org/abs/2412.13193)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 将 3D 高斯表示直接集成到 Transformer 架构中，以实现体积感知。
+

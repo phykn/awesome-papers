@@ -54,6 +54,12 @@ The qualitative results demonstrate GLOMAP's capability to produce dense and acc
 GLOMAP reshapes the SfM landscape by proving that global approaches can be as reliable as incremental ones for general-purpose use. This is a major leap for large-scale 3D mapping, as it enables the processing of thousands of images in minutes rather than hours, without the typical risk of reconstruction failure. Open-sourced as part of the COLMAP ecosystem, it is poised to become a standard tool for computer vision researchers and engineers working on novel-view synthesis (like NeRF and Gaussian Splatting) and large-scale digital twins.
 
 ### 6. Further Reading
-- [FastMap: Revisiting Structure from Motion through First-Order Optimization](https://arxiv.org/abs/2505.04612) - A 2025 follow-up that uses first-order optimization to achieve up to 10x faster speeds than GLOMAP.
-- [Gravity-Aligned Rotation Averaging with Circular Regression](https://arxiv.org/abs/2410.12763) - A 2024 work by GLOMAP authors that incorporates gravity priors to further improve rotation averaging.
-- [MP-SfM: Monocular Surface Priors for Robust Structure-From-Motion](https://arxiv.org/abs/2504.20040) - A 2025 paper exploring the use of monocular surface priors to enhance SfM robustness in difficult scenes.
+[1] [FastMap: Revisiting Structure from Motion through First-Order Optimization (2025)](https://arxiv.org/abs/2505.04612)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - A 2025 follow-up that uses first-order optimization to achieve up to 10x faster speeds than GLOMAP.
+
+[2] [Gravity-Aligned Rotation Averaging with Circular Regression (2024)](https://arxiv.org/abs/2410.12763)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - A 2024 work by GLOMAP authors that incorporates gravity priors to further improve rotation averaging.
+
+[3] [MP-SfM: Monocular Surface Priors for Robust Structure-From-Motion (2025)](https://arxiv.org/abs/2504.20040)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - A 2025 paper exploring the use of monocular surface priors to enhance SfM robustness in difficult scenes.
+

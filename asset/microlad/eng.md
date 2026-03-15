@@ -57,7 +57,15 @@ For three-phase SOFC (solid oxide fuel cell) microstructures, MicroLad successfu
 MicroLad represents a significant step toward closing the loop between microstructure characterization and materials design. By combining latent diffusion models with score distillation sampling and differentiable physics solvers, it enables researchers to not only reconstruct realistic 3D microstructures from 2D observations but also to inversely design microstructures targeting specific material properties. This capability is directly relevant to accelerating ICME workflows for energy materials (SOFCs, batteries), structural composites, and other systems where 3D microstructure governs performance.
 
 ### 6. Further Reading
-- [Multi-plane denoising diffusion-based dimensionality expansion (Micro3Diff)](https://doi.org/10.1038/s41524-024-01280-z) - The predecessor framework by the same authors, establishing multi-plane denoising diffusion for 2D-to-3D reconstruction.
-- [Score Distillation Sampling (DreamFusion)](https://arxiv.org/abs/2209.14988) - The foundational technique for distilling knowledge from 2D diffusion models into 3D representations.
-- [SliceGAN: Generating 3D Structures from a 2D Slice with GAN-based Dimensionality Expansion](https://arxiv.org/abs/2102.07708) - A GAN-based baseline for 2D-to-3D microstructure generation.
-- [Latent Diffusion Models (Stable Diffusion)](https://arxiv.org/abs/2112.10752) - The core latent diffusion architecture that MicroLad builds upon.
+[1] [Multi-plane denoising diffusion-based dimensionality expansion (Micro3Diff)](https://doi.org/10.1038/s41524-024-01280-z)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - The predecessor framework by the same authors, establishing multi-plane denoising diffusion for 2D-to-3D reconstruction.
+
+[2] [Score Distillation Sampling (DreamFusion) (2022)](https://arxiv.org/abs/2209.14988)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - The foundational technique for distilling knowledge from 2D diffusion models into 3D representations.
+
+[3] [SliceGAN: Generating 3D Structures from a 2D Slice with GAN-based Dimensionality Expansion (2021)](https://arxiv.org/abs/2102.07708)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - A GAN-based baseline for 2D-to-3D microstructure generation.
+
+[4] [Latent Diffusion Models (Stable Diffusion) (2021)](https://arxiv.org/abs/2112.10752)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - The core latent diffusion architecture that MicroLad builds upon.
+

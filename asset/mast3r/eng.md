@@ -49,6 +49,12 @@ The qualitative results show MASt3R's ability to find dense and accurate corresp
 MASt3R bridges the gap between general 3D reconstruction and high-precision image matching. It enables a standalone approach for camera calibration, pose estimation, and reconstruction that outperforms multi-stage pipelines. Its success on the Map-free dataset suggests a new path for "in-the-wild" visual localization where pre-built maps are unavailable, effectively setting a new standard for 3D-aware perception.
 
 ### 6. Further Reading
-- **[MUSt3R: Multi-view Network for Stereo 3D Reconstruction](https://arxiv.org/abs/2503.01661)**: Extends the framework to handle more than two views simultaneously with a multi-layer memory mechanism.
-- **[MASt3R-SfM: a Fully-Integrated Solution for Unconstrained Structure-from-Motion](https://arxiv.org/abs/2409.19152)**: A complete SfM pipeline that leverages MASt3R features for large-scale, unconstrained reconstruction.
-- **[TRELLIS: Structured 3D Latents for Scalable and Versatile 3D Generation](https://arxiv.org/abs/2412.01506)**: Explores how similar foundation-model-driven features can be used for high-quality 3D asset generation.
+[1] [MUSt3R: Multi-view Network for Stereo 3D Reconstruction (2025)](https://arxiv.org/abs/2503.01661)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - Extends the framework to handle more than two views simultaneously with a multi-layer memory mechanism.
+
+[2] [MASt3R-SfM: a Fully-Integrated Solution for Unconstrained Structure-from-Motion (2024)](https://arxiv.org/abs/2409.19152)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - A complete SfM pipeline that leverages MASt3R features for large-scale, unconstrained reconstruction.
+
+[3] [TRELLIS: Structured 3D Latents for Scalable and Versatile 3D Generation (2024)](https://arxiv.org/abs/2412.01506)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - Explores how similar foundation-model-driven features can be used for high-quality 3D asset generation.
+

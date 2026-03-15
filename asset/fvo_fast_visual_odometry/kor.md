@@ -63,7 +63,12 @@ ScanNet 및 ARKit에서의 질적 궤적 결과는 기존 엔드투엔드 모델
 FVO는 빠르고 견고하며 별도의 교정이 필요 없는 순수 학습 기반 SLAM 시스템의 새로운 시대를 열었습니다. 잘 설계된 트랜스포머가 고전적인 기하 최적화 블럭을 대체할 수 있음을 증명함으로써, 저전력 모바일 기기나 로봇에 고성능 VO를 탑재하는 데 있어 가장 큰 장벽을 제거했습니다. 이러한 엔드투엔드 특성은 엔지니어링 스택을 단순화하여, 시각 주행 거리 측정을 자율 주행이나 증강 현실을 위한 더 넓은 다중 모드 지능형 시스템에 더 쉽게 통합할 수 있게 해줍니다.
 
 ### 6. 추가 읽을거리
+[1] [LEVIO: Lightweight Embedded Visual Inertial Odometry for Resource-Constrained Devices (2026)](https://arxiv.org/abs/2602.03294)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 초저전력 임베디드 플랫폼을 겨냥하여 효율성의 한계를 밀어붙인 고도로 최적화된 VIO 파이프라인 연구입니다.
 
-- [LEVIO: Lightweight Embedded Visual Inertial Odometry for Resource-Constrained Devices](https://arxiv.org/abs/2602.03294) 초저전력 임베디드 플랫폼을 겨냥하여 효율성의 한계를 밀어붙인 고도로 최적화된 VIO 파이프라인 연구입니다.
-- [OpenVO: Open-World Visual Odometry with Temporal Dynamics Awareness](https://arxiv.org/abs/2602.19035) 시간적 인코딩을 활용하여 대시캠 영상과 같은 교정되지 않은 개방형 환경에서의 시각 주행 거리 측정을 탐구합니다.
-- [MDE-VIO: Enhancing Visual-Inertial Odometry Using Learned Depth Priors](https://arxiv.org/abs/2602.11323) 딥러닝으로 학습된 깊이 프라이어를 전통적인 VIO 백엔드에 통합하여 저조도 및 특징이 적은 환경에서의 견고함을 개선한 연구입니다.
+[2] [OpenVO: Open-World Visual Odometry with Temporal Dynamics Awareness (2026)](https://arxiv.org/abs/2602.19035)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 시간적 인코딩을 활용하여 대시캠 영상과 같은 교정되지 않은 개방형 환경에서의 시각 주행 거리 측정을 탐구합니다.
+
+[3] [MDE-VIO: Enhancing Visual-Inertial Odometry Using Learned Depth Priors (2026)](https://arxiv.org/abs/2602.11323)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 딥러닝으로 학습된 깊이 프라이어를 전통적인 VIO 백엔드에 통합하여 저조도 및 특징이 적은 환경에서의 견고함을 개선한 연구입니다.
+

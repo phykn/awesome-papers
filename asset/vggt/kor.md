@@ -63,8 +63,15 @@ VGGT는 최적화 기반인 DUSt3R에 비해 탁월한 견고함을 보여줍니
 VGGT는 정확한 3D 복원을 위해서는 반복적인 최적화가 필수적이라는 기존의 고정관념을 성공적으로 깨뜨렸습니다. 잘 설계된 트랜스포머가 한 번의 연산만으로도 다중 시점 기하 구조를 학습할 수 있음을 입증함으로써 포즈, 깊이, 포인트 클라우드, 트래킹 등 다양한 비전 작업을 하나의 확장 가능한 백본으로 통합했습니다. 이는 실시간 로봇 공학, AR/VR, 자율 주행 분야의 기술 파이프라인을 획기적으로 단순화할 잠재력을 가집니다.
 
 ### 6. 추가 읽을거리
+[1] [VGGT-X: When VGGT Meets Dense Novel View Synthesis (2025)](https://arxiv.org/abs/2509.25191)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - VGGT를 1,000장 이상의 이미지로 확장하고 가우시안 스플래팅에 최적화한 후속 연구입니다.
 
-- [VGGT-X: When VGGT Meets Dense Novel View Synthesis](https://arxiv.org/abs/2509.25191) VGGT를 1,000장 이상의 이미지로 확장하고 가우시안 스플래팅에 최적화한 후속 연구입니다.
-- [MASt3R-SLAM: Real-Time Dense SLAM with 3D Reconstruction Priors](https://arxiv.org/abs/2412.12392) 3D 복원 프라이어를 활용하여 다양한 카메라 모델에서 실시간 밀집 SLAM을 구현한 연구입니다.
-- [Pow3R: Empowering Unconstrained 3D Reconstruction with Camera and Scene Priors](https://arxiv.org/abs/2503.17316) 광범위한 회귀 작업을 위한 멀티모달 3D 파운데이션 모델입니다.
-- [GaussTR: Foundation Model-Aligned Gaussian Transformer for Self-Supervised 3D Spatial Understanding](https://arxiv.org/abs/2412.13193) 3D 가우시안 표현을 트랜스포머 아키텍처에 직접 통합하여 입체적 이해를 도모한 프레임워크입니다.
+[2] [MASt3R-SLAM: Real-Time Dense SLAM with 3D Reconstruction Priors (2024)](https://arxiv.org/abs/2412.12392)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 3D 복원 프라이어를 활용하여 다양한 카메라 모델에서 실시간 밀집 SLAM을 구현한 연구입니다.
+
+[3] [Pow3R: Empowering Unconstrained 3D Reconstruction with Camera and Scene Priors (2025)](https://arxiv.org/abs/2503.17316)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 광범위한 회귀 작업을 위한 멀티모달 3D 파운데이션 모델입니다.
+
+[4] [GaussTR: Foundation Model-Aligned Gaussian Transformer for Self-Supervised 3D Spatial Understanding (2024)](https://arxiv.org/abs/2412.13193)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 3D 가우시안 표현을 트랜스포머 아키텍처에 직접 통합하여 입체적 이해를 도모한 프레임워크입니다.
+

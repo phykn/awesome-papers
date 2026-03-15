@@ -46,8 +46,18 @@ The qualitative comparison highlights NeRF's ability to reconstruct intricate de
 NeRF revolutionized computer vision and graphics by proving that complex 3D scenes can be efficiently stored and rendered using neural networks as continuous functions. It sparked a massive wave of research into Neural Radiance Fields, leading to advancements in 3D reconstruction, robotics, and virtual reality. The method's success directly inspired high-speed variants like Instant-NGP and large-scale applications like Block-NeRF.
 
 ### 6. Further Reading
-- [Mip-NeRF: A Multiscale Representation for Anti-Aliasing Neural Radiance Fields](https://arxiv.org/abs/2103.13415) - Fixes aliasing issues and improves rendering quality at different scales.
-- [Instant Neural Graphics Primitives with a Multiresolution Hash Encoding](https://nvlabs.github.io/instant-ngp/) - Dramatically speeds up training and rendering from days to seconds.
-- [NeRF in the Wild: Neural Radiance Fields for Unconstrained Photo Collections](https://nerf-w.github.io/) - Adapts NeRF to handle varying lighting and transient objects in tourist photos.
-- [Block-NeRF: Scalable Neural Radiance Fields for Entire City Blocks](https://waymo.com/research/block-nerf/) - Scales NeRF to represent large-scale environments like entire city streets.
-- [RawNeRF: Preparing for Real HDR View Synthesis with Neural Radiance Fields](https://bmild.github.io/rawnerf/) - Trains directly on raw camera data to enable high dynamic range view synthesis and denoising.
+[1] [Mip-NeRF: A Multiscale Representation for Anti-Aliasing Neural Radiance Fields (2021)](https://arxiv.org/abs/2103.13415)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - Fixes aliasing issues and improves rendering quality at different scales.
+
+[2] [Instant Neural Graphics Primitives with a Multiresolution Hash Encoding](https://nvlabs.github.io/instant-ngp/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - Dramatically speeds up training and rendering from days to seconds.
+
+[3] [NeRF in the Wild: Neural Radiance Fields for Unconstrained Photo Collections](https://nerf-w.github.io/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - Adapts NeRF to handle varying lighting and transient objects in tourist photos.
+
+[4] [Block-NeRF: Scalable Neural Radiance Fields for Entire City Blocks](https://waymo.com/research/block-nerf/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - Scales NeRF to represent large-scale environments like entire city streets.
+
+[5] [RawNeRF: Preparing for Real HDR View Synthesis with Neural Radiance Fields](https://bmild.github.io/rawnerf/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - Trains directly on raw camera data to enable high dynamic range view synthesis and denoising.
+

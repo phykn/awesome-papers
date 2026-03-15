@@ -54,6 +54,12 @@ GLOMAP은 가장 널리 사용되는 증분형 SfM 시스템인 COLMAP과 대등
 GLOMAP은 전역적 방식이 일반적인 용도에서도 증분형 방식만큼 신뢰할 수 있음을 입증함으로써 SfM 연구 지형을 재편했습니다. 이는 대규모 3차원 매핑 분야에서 큰 도약이며, 수천 장의 이미지를 기존처럼 몇 시간이 아닌 몇 분 만에 실패 위험 없이 처리할 수 있게 해줍니다. COLMAP 생태계의 일부로 오픈 소스화된 이 기술은 NeRF나 Gaussian Splatting과 같은 새로운 뷰 합성 기술 및 대규모 디지털 트윈을 연구하는 연구자와 엔지니어들에게 표준 도구가 될 것으로 기대됩니다.
 
 ### 6. 추가 읽을거리
-- [FastMap: Revisiting Structure from Motion through First-Order Optimization](https://arxiv.org/abs/2505.04612) - 일차 최적화(First-order optimization)를 사용하여 GLOMAP보다 최대 10배 더 빠른 속도를 구현한 2025년 후속 연구입니다.
-- [Gravity-Aligned Rotation Averaging with Circular Regression](https://arxiv.org/abs/2410.12763) - GLOMAP 저자들이 참여한 2024년 연구로, 중력 방향 정렬을 통해 회전 평균화의 정확도를 더욱 높였습니다.
-- [MP-SfM: Monocular Surface Priors for Robust Structure-From-Motion](https://arxiv.org/abs/2504.20040) - 단안 표면 사전 정보(Monocular surface priors)를 활용하여 어려운 장면에서의 SfM 견고함을 향상시킨 2025년 논문입니다.
+[1] [FastMap: Revisiting Structure from Motion through First-Order Optimization (2025)](https://arxiv.org/abs/2505.04612)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 일차 최적화(First-order optimization)를 사용하여 GLOMAP보다 최대 10배 더 빠른 속도를 구현한 2025년 후속 연구입니다.
+
+[2] [Gravity-Aligned Rotation Averaging with Circular Regression (2024)](https://arxiv.org/abs/2410.12763)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - GLOMAP 저자들이 참여한 2024년 연구로, 중력 방향 정렬을 통해 회전 평균화의 정확도를 더욱 높였습니다.
+
+[3] [MP-SfM: Monocular Surface Priors for Robust Structure-From-Motion (2025)](https://arxiv.org/abs/2504.20040)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - 단안 표면 사전 정보(Monocular surface priors)를 활용하여 어려운 장면에서의 SfM 견고함을 향상시킨 2025년 논문입니다.
+
