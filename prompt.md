@@ -22,6 +22,8 @@ Explain complex research papers so a college freshman can intuitively understand
 - **Math-to-Reality**: Map every mathematical symbol to a physical or computational meaning (e.g., $z$ = latent representation, $\sigma$ = density).
 - **GitHub Compatibility Rule**: To ensure correct rendering on GitHub, always insert an empty line before and after a block math equation ($$). Do not indent the equation block; keep it at the top level.
 - **Figure Reading Rule**: Always explain diagrams from left to right or input to output.
+- **Tight Focus Rule**: When extracting figures, remove extraneous content (top/bottom text from the paper, captions, page numbers) to focus exclusively on the core diagram/conceptual block.
+
 
 ---
 
@@ -49,12 +51,13 @@ Explain complex research papers so a college freshman can intuitively understand
 
 ### Step 2: Extraction & Code (Internal Action)
 1. Use extraction tools (**PyMuPDF**, **Pillow**) to render target figures in high resolution. Save to `tmp/page_renders/`.
-2. Precisely crop and save as `tmp/figures/{paper_slug}/{name}.png`. Include captions if they add value.
+2. Precisely crop and save as `tmp/figures/{paper_slug}/{name}.png`. Use `crop.py` for automated or assisted cropping.
+   - **Autonomy**: You have full authority to modify `crop.py` (logic or parameters) to suit specific images, ensuring the "Tight Focus Rule" is met for every figure.
    - Naming convention: prefer stable, descriptive names like `fig02_pipeline.png`, `fig03_architecture.png` (use the paper’s figure number when available).
+   - **Crop rule**: Remove extraneous page content (sentences above/below the figure, page numbers, and the figure caption itself). Ensure the crop captures the core diagram and any internal labels (a/b/c), axes, or legends essential for understanding. Keep a small padding margin (approx. 10-20px) so content doesn't feel suffocated against the borders.
    - **Quality rule**: Default to sharp, readable text. Start at `dpi=300` (or higher); if labels are still blurry, rerender at a higher DPI/zoom. Prefer `PNG` for figures with text/lines; avoid `JPEG` unless the source is photographic only.
-   - **Crop rule**: Never cut off panel labels (a/b/c), axes, legends, or method names; keep a small padding margin so borders don’t look “tight”.
-   - **Crop fallback**: If a figure occupies most of the page, render the full page and trim only the outer margins. Use the figure caption's y-coordinate as the bottom boundary when cropping.
    - **Qualitative rule** (generative papers): Also extract at least one *side-by-side qualitative comparison* figure (if present) and name it like `figXX_qualitative.png` or `qualitative_results.png`.
+
 3. Utility scripts/code go to `tmp/src/`.
 
 ### Step 2.5: Link Validation (Mandatory for Chapter 6)
