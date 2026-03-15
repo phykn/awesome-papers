@@ -27,13 +27,13 @@ The "Aha!" insight of this paper is to replace discrete scene storage (like voxe
 - (1) This figure depicts the MLP structure where 3D location and 2D viewing direction are processed separately. (2) The density $\sigma$ is predicted using only the location to ensure geometric consistency across views, while color $\mathbf{c}$ is view-dependent.
 
 #### 4.3 Core Equation
-- **Equation**: $C(\mathbf{r}) = \int_{t_n}^{t_f} T(t) \sigma(\mathbf{r}(t)) \mathbf{c}(\mathbf{r}(t), \mathbf{d}) dt$, where $T(t) = \exp\left(-\int_{t_n}^t \sigma(\mathbf{r}(s)) ds\right)$
+- **Equation**: $C(\mathbf{r}) = \int\_{t\_n}^{t\_f} T(t) \sigma(\mathbf{r}(t)) \mathbf{c}(\mathbf{r}(t), \mathbf{d}) dt$, where $T(t) = \exp\left(-\int\_{t\_n}^t \sigma(\mathbf{r}(s)) ds\right)$
 - The formula calculates the expected color of a camera ray by integrating the density and color of all points along the ray from the near to the far plane. $T(t)$ acts as a "transmittance" factor, representing the probability that light can travel from the point to the camera without hitting any other particles.
 - **Variables**:
   - $C(\mathbf{r})$ = The final RGB color predicted for ray $\mathbf{r}$ (Eq 2 / Sec 4).
   - $\sigma(\mathbf{x})$ = The volume density at point $\mathbf{x}$, representing the differential probability of a ray hitting a particle (Eq 1 / Sec 3).
   - $\mathbf{c}(\mathbf{x}, \mathbf{d})$ = The view-dependent RGB color at point $\mathbf{x}$ as seen from direction $\mathbf{d}$ (Eq 1 / Sec 3).
-  - $T(t)$ = Accumulated transmittance along the ray from $t_n$ to $t$ (Eq 3 / Sec 4).
+  - $T(t)$ = Accumulated transmittance along the ray from $t\_n$ to $t$ (Eq 3 / Sec 4).
 
 #### 4.4 Comparison: Others vs This Paper
 NeRF significantly outperforms prior methods like SRN and NV in capturing fine, high-frequency textures and complex specular reflections. While SRN fails to maintain sharpness and NV is limited by voxel resolution, NeRF utilizes positional encoding and hierarchical sampling to achieve state-of-the-art results (Sec 6 / Table 1). The use of continuous MLP-based representations eliminates discretization artifacts common in multi-plane images. However, NeRF requires extensive optimization time for each new scene, often taking 1–2 days on a single GPU (Sec 6). The method’s core differentiator is the combination of coordinate-based neural representations with classical volume rendering.

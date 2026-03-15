@@ -36,7 +36,7 @@ $$ \mathcal{L}_{\text{match}} = - \sum_{(i,j) \in \hat{\mathcal{M}}} \left( \log
 
 - **Variables**:
   - $(i,j) \in \hat{\mathcal{M}}$: A ground-truth corresponding pair of pixels between images 1 and 2.
-  - $s_{\tau}(i,j) = \exp \left[ -\tau D_i^{1\top} D_j^2 \right]$ (Eq 11): The similarity score between local descriptors $D_i^1$ and $D_j^2$.
+  - $s\_{\tau}(i,j) = \exp \left[ -\tau D\_i^{1\top} D\_j^2 \right]$ (Eq 11): The similarity score between local descriptors $D\_i^1$ and $D\_j^2$.
   - $\tau$: A temperature hyper-parameter that controls the "sharpness" of the matching distribution.
   - $\mathcal{P}^1, \mathcal{P}^2$: The sets of all considered pixels in image 1 and image 2, respectively.
 

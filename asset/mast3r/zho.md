@@ -36,7 +36,7 @@ $$ \mathcal{L}_{\text{match}} = - \sum_{(i,j) \in \hat{\mathcal{M}}} \left( \log
 
 - **变量解释**:
   - $(i,j) \in \hat{\mathcal{M}}$: 图像1和图像2之间真实对应的像素对（Ground-truth）。
-  - $s_{\tau}(i,j) = \exp \left[ -\tau D_i^{1\top} D_j^2 \right]$ (式 11): 局部描述符 $D_i^1$ 与 $D_j^2$ 之间的相似度得分。
+  - $s\_{\tau}(i,j) = \exp \left[ -\tau D\_i^{1\top} D\_j^2 \right]$ (式 11): 局部描述符 $D\_i^1$ 与 $D\_j^2$ 之间的相似度得分。
   - $\tau$: 温度超参数，控制匹配分布的“尖锐度”。
   - $\mathcal{P}^1, \mathcal{P}^2$: 图像1和图像2中分别考虑的所有像素集合。
 

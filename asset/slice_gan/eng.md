@@ -36,7 +36,7 @@ $$L_D = \mathbb{E}[D(G(z)_s)] - \mathbb{E}[D(r)] + \lambda \mathbb{E}[(\|\nabla_
 
 - This formula measures the "distance" between the distribution of fake slices and real images.
 - **Variables**: 
-    - $G(z)_s$ = 2D slice of the generated 3D volume (Page 3).
+    - $G(z)\_s$ = 2D slice of the generated 3D volume (Page 3).
     - $r$ = Real 2D training image (Page 3).
     - $\lambda$ = Gradient penalty coefficient (used to stabilize training).
 
