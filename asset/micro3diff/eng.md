@@ -48,4 +48,4 @@ The qualitative results show the successful reconstruction of diverse microstruc
 Micro3Diff provides a powerful tool for Materials Informatics, allowing researchers to generate high-fidelity 3D microstructures from readily available 2D data. This significantly lowers the barrier to performing high-throughput simulations and integrated computational materials engineering (ICME). It effectively bridges the gap between easy 2D acquisition and necessary 3D characterization.
 
 ### 6. Further Reading
-- [MicroLad: Latent Diffusion-Based 2D-to-3D Microstructure Reconstruction with Inverse Design](https://github.com/KangHyunL/microlad) - Follow-up work that introduces latent space diffusion and score distillation for property-guided inverse design.
+Not provided (offline; unverified links omitted).

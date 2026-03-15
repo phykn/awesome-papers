@@ -2,7 +2,7 @@
 
 - **Authors**: Kang-Hyun Lee, Gun Jin Yun
 - **Venue/Date**: Preprint (2025)
-- **URL**: [https://arxiv.org/abs/2505.00000](https://github.com/KangHyunL/microlad)
+- **URL**: Not specified in the paper.
 - **GitHub**: [https://github.com/KangHyunL/microlad](https://github.com/KangHyunL/microlad)
 
 ---

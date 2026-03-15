@@ -31,9 +31,9 @@
 
 $$\hat{x}_{t-1, i} = \text{MultiPlaneDenoise}(x_{t, i}, \epsilon_\theta, \text{planes} \in \{XY, YZ, ZX\})$$
 
-- 이 과정은 3D 볼륨 $x$를 반복적으로 정제하며, 각 평면에서의 노이즈 제거 추정치가 최종 복셀 값에 기여하도록 합니다. 이는 일반적으로 확산 역 과정에서 가중 평균이나 특정 샘플링 단계로 구현됩니다.
+- 이 과정은 3D 볼륨 ($x$)를 반복적으로 정제하며, 각 평면에서의 노이즈 제거 추정치가 최종 복셀 값에 기여하도록 합니다. 이는 일반적으로 확산 역 과정에서 가중 평균이나 특정 샘플링 단계로 구현됩니다.
 - **변수**:
-  - $x_t$ = 시간 단계 $t$에서의 노이즈가 섞인 3D 볼륨 (섹션 4.1).
+  - ($x_t$ = 시간 단계 $t$)에서의 노이즈가 섞인 3D 볼륨 (섹션 4.1).
   - $\epsilon_\theta$ = 사전 학습된 2D 노이즈 제거 신경망(U-Net) (섹션 4.2).
   - $t$ = 완전한 노이즈에서 데이터까지 이르는 확산 시간 단계 (섹션 4.1).
 
@@ -48,4 +48,4 @@ Micro3Diff는 일반적인 슬라이스별 생성 방식에 비해 우수한 3D 
 Micro3Diff는 재료 정보학(Materials Informatics) 분야에 강력한 도구를 제공하여, 연구자들이 손쉽게 구할 수 있는 2D 데이터로 고충실도 3D 미세구조를 생성할 수 있게 합니다. 이는 대규모 시뮬레이션 및 통합 계산 재료 공학(ICME)의 진입 장벽을 낮추며, 쉬운 2D 데이터 획득과 필수적인 3D 특성 분석 사이의 간극을 효과적으로 메워줍니다.
 
 ### 6. 후속 연구
-- [MicroLad: Latent Diffusion-Based 2D-to-3D Microstructure Reconstruction with Inverse Design](https://github.com/KangHyunL/microlad) - 잠재 공간 확산과 점수 증류(SDS)를 도입하여 물성 유도 역설계를 가능하게 한 2025년 후속 연구입니다.
+Not provided (offline; unverified links omitted).

@@ -48,4 +48,4 @@ $$\hat{x}_{t-1, i} = \text{MultiPlaneDenoise}(x_{t, i}, \epsilon_\theta, \text{p
 Micro3Diff 为材料信息学 (Materials Informatics) 领域提供了强大的工具，使研究人员能够利用易于获取的 2D 数据生成高保真 3D 微观结构。这降低了大尺度模拟和集成计算材料工程 (ICME) 的进入门槛，有效地填补了易获取 2D 数据与必要的 3D 性能分析之间的鸿沟。
 
 ### 6. 后续研究
-- [MicroLad: Latent Diffusion-Based 2D-to-3D Microstructure Reconstruction with Inverse Design](https://github.com/KangHyunL/microlad) - 2025年的后续研究，引入了潜在空间扩散和分数蒸馏 (SDS)，实现了以物性为导向的逆向设计。
+Not provided (offline; unverified links omitted).

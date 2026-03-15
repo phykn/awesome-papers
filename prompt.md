@@ -178,9 +178,11 @@ Anchor claims in what the figure actually shows. Describe the qualitative compar
 ## Constraints
 - **Evidence-first**: Never invent details. If a claim is missing but essential, write `Not specified in the paper.`
 - **Writing hygiene**: Define each key term once, reuse the same notation, and avoid redundancy. **Do not append English translations in parentheses for common or simple terms (e.g., just write "배경" instead of "배경 (Background)"). Use English in parentheses ONLY when introducing a highly specific technical term for the first time.**
-- **마크다운 렌더링 안정화 규칙**:
-  - 영어 번역어와 한국어 조사가 결합된 단어에 볼드체(bold)를 적용할 때는 영어 번역어를 볼드 태그 바깥에 두십시오 (예: `**매칭 헤드**(Matching Head)가`). 굴절어 특성상 닫는 볼드 태그 바로 뒤에 글자가 붙으면 마크다운 파서가 볼드체를 제대로 인식하지 못할 수 있습니다.
-  - 괄호로 감싸인 인라인 수식은 한글 문맥에서 사용될 때 여는 괄호 앞과 닫는 괄호 뒤에 공백을 하나씩 두어 마크다운 구분자(`$`)가 정상적으로 파싱되도록 하십시오 (예: `상관 함수 ($S_2$) 오차율`).
-  - 복잡한 수식(중첩된 첨자, `\exp` 등)은 마크다운 파서와의 충돌을 피하기 위해 중괄호(`{}`)를 사용한 명시적 그룹화를 선호하십시오 (예: `$\exp(-\tau (D_i^1)^\top D_j^2)$`).
-  - **수식 기호 내 위첨자(`^`)나 아래첨자(`_`) 사용 시 반드시 인자를 명시하십시오.** 인자 없이 `^`나 `_`만 두는 경우(예: `M^`) 수식 렌더링이 완전히 깨질 수 있습니다. 논문의 별표($^*$)와 같은 표기는 반드시 `$M^*$`와 같이 정확히 기입하십시오.
+- **Markdown rendering stability rules (GitHub)**:
+  - When bolding Korean text that is immediately followed by a particle/suffix, keep any English translation **outside** the bold span (e.g., `**매칭 헤드**(Matching Head)가`). Some Markdown parsers can mis-handle bold if non-space characters cling to the closing `**`.
+  - For inline math in Korean prose, prefer wrapping it in parentheses and keeping spaces around the parentheses so the `$` delimiters parse reliably (e.g., `상관 함수 ($S_2$) 오차율`).
+  - Do not attach Korean particles/suffixes directly to inline math. If you write `... $L$과 ...`, GitHub math detection may become unstable; instead write `... ($L$)과 ...` (recommended), or at minimum insert a space: `... $L$ 과 ...`.
+  - For complex expressions (nested subscripts/superscripts, `\exp`, etc.), prefer explicit grouping with braces `{}` to avoid Markdown/parser conflicts (e.g., `$\exp(-\tau (D_i^1)^\top D_j^2)$`).
+  - **Always provide an argument for superscripts (`^`) and subscripts (`_`).** Leaving a bare `^`/`_` (e.g., `M^`) can break math rendering. Use `$M^*$` (or `$M^{*}$`) for “star” notation.
+  - For loss/variable notation, use valid LaTeX forms (e.g., `$\mathcal{L}_M$` for a subscripted loss, `$\hat{x}_{\text{slice}}$` for a subscript with `\text{}`, and `$M^*$` or `$M^{*}$` for target markers).
 - **Figures**: Prefer fewer, sharper images. If a requested figure is unavailable, name a substitute; if none exists, use a "Pseudo-Figure" bullet flow.
