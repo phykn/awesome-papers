@@ -53,4 +53,3 @@ MicroLadは、微細構造特性評価と材料設計の間のループを閉じ
 - [Score Distillation Sampling (DreamFusion)](https://arxiv.org/abs/2209.14988) - 2D拡散モデルの知識を3D表現に蒸留する基礎手法。
 - [SliceGAN: GANベースの次元拡張を通じた2Dスライスからの3D構造生成](https://arxiv.org/abs/1903.12564) - 2D-to-3D微細構造生成のGANベースのベースライン。
 - [Latent Diffusion Models (Stable Diffusion)](https://arxiv.org/abs/2112.10752) - MicroLadが基づいている核心的な潜在拡散アーキテクチャ。
-- [Differentiable Physics Simulation for Materials Design](https://doi.org/10.1016/j.cma.2023.116000) - 材料構造の勾配ベース最適化を可能にする物理情報ベースのアプローチ。

@@ -45,6 +45,4 @@ Micro3Diff는 일반적인 슬라이스별 생성 방식에 비해 우수한 3D 
 Micro3Diff는 재료 정보학(Materials Informatics) 분야에 강력한 도구를 제공하여, 연구자들이 손쉽게 구할 수 있는 2D 데이터로 고충실도 3D 미세구조를 생성할 수 있게 합니다. 이는 대규모 시뮬레이션 및 통합 계산 재료 공학(ICME)의 진입 장벽을 낮추며, 쉬운 2D 데이터 획득과 필수적인 3D 특성 분석 사이의 간극을 효과적으로 메워줍니다.
 
 ### 6. 후속 연구 (After This Paper)
-- [Diffusion Models in Materials Science: A Review](https://doi.org/10.1038/s41524-023-01000-0) - 생성형 AI가 재료 발견 분야를 어떻게 변화시키고 있는지에 대한 개요.
-- [3D Microstructure Generation Using Latent Diffusion](https://arxiv.org/abs/2301.00001) - 더 빠른 재구성을 위한 잠재 공간 모델 탐색.
-- [Physics-Informed Generative Models for Materials](https://doi.org/10.1016/j.actamat.2023.118000) - 보존 법칙과 같은 물리적 제약 조건을 확산 모델에 통합한 후속 연구.
+- [MicroLad: Latent Diffusion-Based 2D-to-3D Microstructure Reconstruction with Inverse Design](https://github.com/KangHyunL/microlad) - 잠재 공간 확산과 점수 증류(SDS)를 도입하여 물성 유도 역설계를 가능하게 한 2025년 후속 연구입니다.

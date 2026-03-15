@@ -53,4 +53,3 @@ MicroLad represents a significant step toward closing the loop between microstru
 - [Score Distillation Sampling (DreamFusion)](https://arxiv.org/abs/2209.14988) - The foundational technique for distilling knowledge from 2D diffusion models into 3D representations.
 - [SliceGAN: Generating 3D Structures from a 2D Slice with GAN-based Dimensionality Expansion](https://arxiv.org/abs/1903.12564) - A GAN-based baseline for 2D-to-3D microstructure generation.
 - [Latent Diffusion Models (Stable Diffusion)](https://arxiv.org/abs/2112.10752) - The core latent diffusion architecture that MicroLad builds upon.
-- [Differentiable Physics Simulation for Materials Design](https://doi.org/10.1016/j.cma.2023.116000) - Physics-informed approaches enabling gradient-based optimization of material structures.

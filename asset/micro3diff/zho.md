@@ -45,6 +45,4 @@
 Micro3Diff 为材料信息学 (Materials Informatics) 领域提供了强大的工具，使研究人员能够利用易于获取的 2D 数据生成高保真 3D 微观结构。这降低了大尺度模拟和集成计算材料工程 (ICME) 的进入门槛，有效地填补了易获取 2D 数据与必要的 3D 性能分析之间的鸿沟。
 
 ### 6. 后续研究 (After This Paper)
-- [Diffusion Models in Materials Science: A Review](https://doi.org/10.1038/s41524-023-01000-0) - 关于生成式 AI 如何改变材料发现领域的综述。
-- [3D Microstructure Generation Using Latent Diffusion](https://arxiv.org/abs/2301.00001) - 探索用于更快重建的潜在空间模型。
-- [Physics-Informed Generative Models for Materials](https://doi.org/10.1016/j.actamat.2023.118000) - 将物理约束（如守恒定律）整合到扩散模型中的后续研究。
+- [MicroLad: Latent Diffusion-Based 2D-to-3D Microstructure Reconstruction with Inverse Design](https://github.com/KangHyunL/microlad) - 2025年的后续研究，引入了潜在空间扩散和分数蒸馏 (SDS)，实现了以物性为导向的逆向设计。

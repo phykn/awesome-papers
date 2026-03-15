@@ -45,6 +45,4 @@ The qualitative results show the successful reconstruction of diverse microstruc
 Micro3Diff provides a powerful tool for Materials Informatics, allowing researchers to generate high-fidelity 3D microstructures from readily available 2D data. This significantly lowers the barrier to performing high-throughput simulations and integrated computational materials engineering (ICME). It effectively bridges the gap between easy 2D acquisition and necessary 3D characterization.
 
 ### 6. Further Reading (After This Paper)
-- [Diffusion Models in Materials Science: A Review](https://doi.org/10.1038/s41524-023-01000-0) - A broader look at how generative AI is reshaping material discovery.
-- [3D Microstructure Generation Using Latent Diffusion](https://arxiv.org/abs/2301.00001) - Exploration of latent-space models for even faster reconstruction.
-- [Physics-Informed Generative Models for Materials](https://doi.org/10.1016/j.actamat.2023.118000) - Follow-up work on incorporating physical constraints (like conservation laws) into diffusion models.
+- [MicroLad: Latent Diffusion-Based 2D-to-3D Microstructure Reconstruction with Inverse Design](https://github.com/KangHyunL/microlad) - Follow-up work that introduces latent space diffusion and score distillation for property-guided inverse design.
