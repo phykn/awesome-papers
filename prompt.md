@@ -29,8 +29,9 @@ Explain complex research papers so a college freshman can intuitively understand
 
 ## Workflow
 
-### Step 0: Environment Setup
+### Step 0: Environment Setup & PDF Retrieval
 - **Directory Check**: Ensure `tmp/plan/`, `tmp/figures/`, `tmp/page_renders/`, `tmp/papers/`, and `tmp/src/` exist. Create them if they do not.
+- **PDF Retrieval (URL-to-File)**: If the user provides a URL (e.g., arXiv link) instead of a local PDF, you must download the PDF to a local path (e.g., `tmp/input.pdf`) before proceeding. Use your research tools (search, read_url_content) to find the direct PDF link if necessary.
 
 ### Step 1: Strategic Planning (Output to `tmp/plan/{paper_slug}/plan.md`)
 **Note: This step must always be written in English.**
@@ -50,7 +51,7 @@ Explain complex research papers so a college freshman can intuitively understand
 
 
 ### Step 2: Extraction & Code (Internal Action)
-1. Use extraction tools (**PyMuPDF**, **Pillow**) to render target figures in high resolution. Save to `tmp/page_renders/`.
+1. Use extraction tools (**PyMuPDF**, **Pillow**) on the local PDF (downloaded if necessary) to render target figures in high resolution. Save to `tmp/page_renders/`.
 2. Precisely crop and save as `tmp/figures/{paper_slug}/{name}.png`.
    - **Autonomy**: You have full authority to design custom logic or **specialized one-off extraction scripts** (e.g., `tmp/src/extract_{paper_slug}.py`) to ensure the "Tight Focus Rule" is met perfectly. **If a page has multiple figures, identify the bounding box of the target Image object specifically.**
    - **Naming convention**: prefer stable, descriptive names like `fig02_pipeline.png`, `fig03_architecture.png` (use the paper's figure number when available).
@@ -79,11 +80,8 @@ Explain complex research papers so a college freshman can intuitively understand
 ### Step 3: Synthesis (Write the Exportable Markdown)
 **Note: Use the metadata from Step 1. Use the Step 1 plan as your blueprint. Ensure all section headers are translated purely into the target language without appending the original English in parentheses (e.g., use `1. 배경` instead of `1. 배경 (Background)`), while preserving the numbering structure (1–6, 4.1–4.5). Use relative path `figures/{name}.png`. Replace all placeholders (e.g., `{Paper Title}`) with real content; do not leave placeholder markers in the final output. **CRITICAL rule: NEVER translate the paper title. The paper title must ALWAYS remain in its original language (e.g., English) across all language outputs.****
 
-**Sequential Generation Rule (CRITICAL)**: 
-Due to output token limits, do NOT generate all languages in a single response. 
-1. Generate the content for the first language in the `languages` list (e.g., `eng.md`).
-2. STOP and wait for the user to confirm or provide feedback before proceeding to the next language.
-3. Repeat this process until all listed languages are exported.
+**Batch Generation Rule**:
+Generate the content for all languages listed in the `languages` list within the current session. Ensure each language file is written to its respective `{code}.md` location. If the total output length is expected to exceed limits, you may split the generation into logically grouped tool calls (e.g., one call per file), but do not stop for user confirmation between languages unless a specific issue arises.
  
 **Link hygiene (Required)**:
 - Never invent placeholder IDs or URLs (e.g., `2505.00000`). If a Paper URL/GitHub URL is unknown, write `Not specified in the paper.`

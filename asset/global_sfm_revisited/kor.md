@@ -1,0 +1,66 @@
+---
+languages:
+  - { name: English,  code: eng }
+  - { name: Korean,   code: kor }
+  - { name: Chinese,  code: zho }
+  - { name: Japanese, code: jpn }
+---
+
+# Global Structure-from-Motion Revisited
+- **Authors**: Linfei Pan, Dániel Baráth, Marc Pollefeys, Johannes L. Schönberger
+- **Venue/Date**: arXiv 2024
+- **URL**: [https://arxiv.org/abs/2407.20219](https://arxiv.org/abs/2407.20219)
+- **GitHub**: [https://github.com/colmap/glomap](https://github.com/colmap/glomap)
+
+---
+
+### 1. 배경
+SfM(Structure-from-Motion)은 여러 장의 이미지로부터 3차원 구조와 카메라의 포즈를 복원하는 과정입니다. 기존 방식은 정확하지만 반복적인 최적화(Bundle Adjustment)로 인해 속도가 느린 **증분형(Incremental) SfM**과, 속도는 빠르지만 실패 확률이 높은 **전역적(Global) SfM**으로 나뉩니다. 전역적 SfM의 가장 큰 약점은 상대적인 방향 데이터로부터 카메라 위치를 추정하는 "평행 이동 평균화(Translation Averaging)" 단계에 있습니다. 이 단계는 수학적으로 불완전한 문제(Ill-posed)인 경우가 많고, 카메라 내편수(Intrinsics)의 오차에 매우 민감하며, 직선 운동과 같은 특정 상황에서 복원을 실패하는 경우가 잦습니다.
+
+### 2. 직관
+복잡한 레고 모델을 조립한다고 상상해 봅시다. 증분형 SfM은 조각을 하나씩 추가할 때마다 전체 정렬을 확인하는 것과 같습니다. 매우 정확하지만 시간이 너무 오래 걸립니다. 반면 기존의 전역적 SfM은 작은 부분들을 따로 만든 다음, 각 부분이 가리키는 방향만 보고 한꺼번에 합치려는 시도와 같습니다. 만약 한 부분의 방향이 살짝만 틀어져도 전체 모델이 어긋나게 됩니다. **GLOMAP**의 직관은 조각(카메라)과 그 조각들이 고정될 지점(3차원 포인트)을 한꺼번에 배치하는 것입니다. 카메라 위치를 잡을 때 3차원 포인트를 닻(Anchor)처럼 활용함으로써, 마치 뼈대가 몸을 지탱하듯 시스템 전체를 훨씬 더 안정적이고 정확하게 고정할 수 있습니다.
+
+### 3. 돌파구
+GLOMAP의 핵심 돌파구는 **공동 전역 포지셔닝**(Joint Global Positioning) 단계의 도입입니다. 기존 전역적 SfM의 표준 순서인 "회전 평균화 $\rightarrow$ 평행 이동 평균화 $\rightarrow$ 삼각 측량"을 따르는 대신, GLOMAP은 **카메라와 포인트의 위치를 동시에 추정**합니다. 문제가 많은 상대적 평행 이동 제약 조건을 버리고 카메라 광선과 3차원 포인트를 함께 최적화함으로써, 카메라 내편수 정보를 모르거나 불량한 운동 패턴이 있는 상황에서도 기존 전역적 방식보다 훨씬 견고하게 작동하며 증분형 SfM에 근접하는 정확도를 달성했습니다.
+
+### 4. 기술적 메커니즘
+
+#### 4.1 파이프라인
+![Pipeline Figure](figures/fig02_pipeline.png)
+- 파이프라인은 특징점 매칭과 기하학적 검증으로 시작하며, 회전 평균화를 통해 카메라의 방향을 먼저 찾습니다. 핵심 혁신은 **전역 포지셔닝**(Global Positioning) 단계에서 발생하며, 여기서 카메라 위치와 3차원 포인트 위치를 공동으로 해결한 뒤 최종 정밀화 과정을 거칩니다.
+- (1) 엔드투엔드 GLOMAP 시스템 아키텍처 개요. (2) 전역 포지셔닝 모듈(3.2절)은 기존 파이프라인과 차별화되는 핵심 요소입니다.
+
+#### 4.2 아키텍처 / 핵심 설계
+![Architecture Figure](figures/fig03_architecture.png)
+- 이 그림은 무작위 초기 상태에서 구조화된 3차원 구성으로 전환되는 과정을 보여줍니다. 관측된 카메라 광선($v_{ik}$)과 계산된 카메라-포인트 사이의 벡터 간 각도 차이를 최소화함으로써 시스템은 전역적으로 일관된 기하학적 구조로 수렴합니다.
+- (1) 전역 포지셔닝 최적화 과정 시각화. (2) 상대적 평행 이동 대신 광선 기반 제약 조건을 사용하여 더 견고한 수렴을 가능하게 합니다.
+
+#### 4.3 핵심 방정식
+- **선정 기준**: 방정식 (3)은 GLOMAP의 결정적 특징인 카메라와 포인트의 공동 추정을 가능하게 하는 일차적인 최적화 목표 함수입니다.
+- **방정식**:
+  
+  $$\underset{\mathbf{X}, \mathbf{c}, \mathbf{d}}{\arg\min} \sum_{i,k} \rho (\|\mathbf{v}_{ik} - d_{ik}(\mathbf{X}_k - \mathbf{c}_i)\|^2), \text{ subject to } d_{ik} \ge 0$$
+  
+- 이 식은 관측된 방향 광선과 카메라와 포인트를 연결하는 벡터 사이의 거리를 가중치 있게 최소화하는 것을 나타냅니다.
+- **변수**: 
+  - $\mathbf{X}_k$: $k$번째 특징점 트랙의 3차원 위치 (3.2절).
+  - $\mathbf{c}_i$: $i$번째 카메라의 3차원 위치 (3.2절).
+  - $\mathbf{v}_{ik}$: 관측 $(i, k)$에 대해 전역적으로 회전된 카메라 광선 (방정식 3).
+  - $d_{ik}$: 포인트까지의 알 수 없는 거리를 보정하는 개별 관측 스케일 인자 (방정식 3).
+  - $\rho$: 이상치 매칭의 영향을 완화하기 위해 사용된 Huber 로버스티파이어 (3.2절).
+
+#### 4.4 비교: 기존 방식 vs 본 논문
+GLOMAP은 가장 널리 사용되는 증분형 SfM 시스템인 COLMAP과 대등하거나 더 우수한 정확도 및 견고함을 달성하면서도, 속도는 수십 배 더 빠릅니다. 알 수 없는 내편수를 가진 인터넷 사진 모음이나 연속 데이터에서 종종 실패하는 기존 전역적 SfM(예: Theia)과 달리, GLOMAP은 불안정한 평행 이동 평균화 단계를 피함으로써 이러한 시나리오를 안정적으로 처리합니다. 특히 IMC 2023 데이터셋에서 다른 전역적 베이스라인보다 훨씬 높은 AUC 점수를 기록했으며, COLMAP보다 약 8배 빠른 속도를 보여주었습니다 (4.2절 / 표 5). 이 논문의 차별점은 증분형 방식의 복원 품질을 희생하지 않으면서 전역적 방식의 확장성을 유지했다는 데 있습니다.
+
+#### 4.5 정성적 결과
+![Qualitative Results](figures/fig01_teaser.png)
+
+정성적 결과는 GLOMAP이 인터넷 사진부터 구조화된 연속 촬영 데이터까지 다양한 데이터셋에서 조밀하고 정확한 3차원 복원물을 생성할 수 있음을 보여줍니다. LaMAR 데이터셋에서의 비교 결과, 기존 전역적 방식인 Theia가 일관된 모델 생성에 실패하는 복잡한 장면에서도 GLOMAP은 성공적으로 복원해냈으며, 심지어 증분형 방식인 COLMAP보다 더 높은 완결성을 보여주기도 했습니다 (그림 1b). 시각적 증거를 통해 GLOMAP이 특히 대규모 환경에서 아티팩트가 적고 더 완전한 기하학적 구조를 생성함을 확인할 수 있습니다. 이러한 견고함은 노이즈와 스케일 불일치를 더 잘 처리하는 공동 최적화 전략 덕분입니다.
+
+### 5. 영향력
+GLOMAP은 전역적 방식이 일반적인 용도에서도 증분형 방식만큼 신뢰할 수 있음을 입증함으로써 SfM 연구 지형을 재편했습니다. 이는 대규모 3차원 매핑 분야에서 큰 도약이며, 수천 장의 이미지를 기존처럼 몇 시간이 아닌 몇 분 만에 실패 위험 없이 처리할 수 있게 해줍니다. COLMAP 생태계의 일부로 오픈 소스화된 이 기술은 NeRF나 Gaussian Splatting과 같은 새로운 뷰 합성 기술 및 대규모 디지털 트윈을 연구하는 연구자와 엔지니어들에게 표준 도구가 될 것으로 기대됩니다.
+
+### 6. 추가 읽을거리
+- [FastMap: Revisiting Structure from Motion through First-Order Optimization](https://arxiv.org/abs/2505.04612) - 일차 최적화(First-order optimization)를 사용하여 GLOMAP보다 최대 10배 더 빠른 속도를 구현한 2025년 후속 연구입니다.
+- [Gravity-Aligned Rotation Averaging with Circular Regression](https://arxiv.org/abs/2410.12763) - GLOMAP 저자들이 참여한 2024년 연구로, 중력 방향 정렬을 통해 회전 평균화의 정확도를 더욱 높였습니다.
+- [MP-SfM: Monocular Surface Priors for Robust Structure-From-Motion](https://arxiv.org/abs/2504.20040) - 단안 표면 사전 정보(Monocular surface priors)를 활용하여 어려운 장면에서의 SfM 견고함을 향상시킨 2025년 논문입니다.
