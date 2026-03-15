@@ -156,7 +156,7 @@ Anchor claims in what the figure actually shows. Describe the qualitative compar
 ### 6. Further Reading (After This Paper)
 - Add 3–6 links to follow-up or more advanced papers **published after** this paper that a reader can use to go deeper (e.g., quality improvements, speedups, dynamic scenes, in-the-wild data, better sampling, compression).
 - Format as a short markdown list. Each item must include a clickable link and a 1-sentence “why read this”.
-- **Strict Validation**: All paper titles and URLs must be cross-checked against reality using your research tools (search/read_url) within the current task. If a link is not verified, it must be omitted.
+- **Strict Validation**: All paper titles and URLs must be cross-checked against reality using your research tools (search/read_url) within the current task. **Crucially, if you use an arXiv link, you MUST verify that the arXiv ID (e.g., `2409.19152`) exactly matches the paper you intend to link, to avoid linking to completely unrelated papers.** If a link is not verified, it must be omitted.
 - Prefer well-known papers with stable URLs (e.g., `arxiv.org`, `doi.org`).
 
 ---
