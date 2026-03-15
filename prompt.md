@@ -88,7 +88,7 @@ Explain complex research papers so a college freshman can intuitively understand
 
 ### Step 5: Deploy
 1. **Copy to `asset/`**: Move `tmp/papers/{paper_slug}/` into `asset/{paper_slug}/`.
-2. **Update `README.md`**: Add a new row to the paper reviews table with the next number, title, category, year, and links to each language version (e.g., `[📄 View](./asset/{paper_slug}/{code}.md)`).
+2. **Update README.md**: Add a new row to the paper reviews table with the title, category, year, and links to each language version (e.g., `[📄 View](./asset/{paper_slug}/{code}.md)`). **CRITICAL: Always maintain the table sorted by Year in ascending order, and ensure the "No." column reflects the new sorted rank.**
 3. **Update date**: Set the "Last updated" timestamp at the bottom of `README.md` to the current date.
 4. **Clean up**: Delete the entire `tmp/` directory.
 
