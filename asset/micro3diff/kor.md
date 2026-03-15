@@ -27,7 +27,8 @@
 - (1) 이 도식은 차원 간 노이즈 레벨을 관리하는 "조화로운 샘플링(Harmonized Sampling)" 알고리즘을 나타냅니다. (2) 이는 2D 잠재 공간에서 3D 구조로 이동할 때 발생할 수 있는 매핑 오류를 해결하여, 역 확산 과정이 안정적인 궤적을 유지하도록 보장합니다.
 
 #### 4.3 핵심 공식 (Core Equation)
-- **공식**: $\hat{x}_{t-1, i} = \text{MultiPlaneDenoise}(x_{t, i}, \epsilon_\theta, \text{ planes} \in \{XY, YZ, ZX\})$
+- **공식**: 
+  $$\hat{x}_{t-1, i} = \text{MultiPlaneDenoise}(x_{t, i}, \epsilon_\theta, \text{planes} \in \{XY, YZ, ZX\})$$
 - 이 과정은 3D 볼륨 $x$를 반복적으로 정제하며, 각 평면에서의 노이즈 제거 추정치가 최종 복셀 값에 기여하도록 합니다. 이는 일반적으로 확산 역 과정에서 가중 평균이나 특정 샘플링 단계로 구현됩니다.
 - **변수**:
   - $x_t$ = 시간 단계 $t$에서의 노이즈가 섞인 3D 볼륨 (섹션 4.1).
