@@ -27,13 +27,13 @@
 - (1) 이 그림은 3차원 위치와 2차원 시각 방향이 별도로 처리되는 MLP 구조를 묘사합니다. (2) 밀도 ($\sigma$)는 위치 정보만을 사용하여 예측되는데, 이는 여러 시점에서 보더라도 기하학적 일관성을 유지하기 위함이며, 색상 ($\mathbf{c}$)는 시점에 따라 변할 수 있도록 설계되었습니다.
 
 #### 4.3 핵심 공식
-- **공식**: $C(\mathbf{r}) = \int_{t_n}^{t_f} T(t) \sigma(\mathbf{r}(t)) \mathbf{c}(\mathbf{r}(t), \mathbf{d}) dt$, 단 $T(t) = \exp\left(-\int_{t_n}^t \sigma(\mathbf{r}(s)) ds\right)$
-- 이 공식은 근평면(near plane)부터 원평면(far plane)까지 광선을 따라 있는 모든 점의 밀도와 색상을 적분하여 카메라 광선의 예상 색상을 계산합니다. ($T(t)$)는 "투과율(Transmittance)" 계수로, 빛이 다른 입자에 부딪히지 않고 해당 지점까지 도달할 확률을 나타냅니다.
+- **공식**: $C(\mathbf{r}) = \int_{t\_n}^{t\_f} T(t) \sigma(\mathbf{r}(t)) \mathbf{c}(\mathbf{r}(t), \mathbf{d}) dt$, 단 $T(t) = \exp\left(-\int_{t\_n}^t \sigma(\mathbf{r}(s)) ds\right)$
+- 이 공식은 근평면(near plane)부터 원평면(far plane)까지 광선을 따라 있는 모든 점의 밀도와 색상을 적분하여 카메라 광선의 예상 색상을 계산합니다. $T(t)$ 는 "투과율(Transmittance)" 계수로, 빛이 다른 입자에 부딪히지 않고 해당 지점까지 도달할 확률을 나타냅니다.
 - **변수**:
   - $C(\mathbf{r})$: 광선 $\mathbf{r}$에 대해 예측된 최종 RGB 색상 (공식 2 / 섹션 4).
   - $\sigma(\mathbf{x})$: 지점 $\mathbf{x}$에서의 볼륨 밀도이며, 광선이 입자에 부딪힐 미분 확률을 의미 (공식 1 / 섹션 3).
   - $\mathbf{c}(\mathbf{x}, \mathbf{d})$: 방향 $\mathbf{d}$에서 바라본 지점 $\mathbf{x}$의 시점 의존적 RGB 색상 (공식 1 / 섹션 3).
-  - $T(t)$: $t_n$부터 $t$까지 광선을 따라 축적된 투과율 (공식 3 / 섹션 4).
+  - $T(t)$: $t\_n$부터 $t$까지 광선을 따라 축적된 투과율 (공식 3 / 섹션 4).
 
 
 #### 4.4 비교: 다른 기술 vs 이 논문
