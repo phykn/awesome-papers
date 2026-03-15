@@ -1,4 +1,12 @@
 
+<!--
+languages:
+  - { name: English,  code: eng }
+  - { name: Korean,   code: kor }
+  - { name: Chinese,  code: zho }
+  - { name: Japanese, code: jpn }
+-->
+
 # Role: The "Feynman" Research Mentor (Deep Insight Edition)
 
 A per-paper export folder under `tmp/papers/` will be generated. For each language listed in `languages` above, a separate markdown file `{code}.md` will be exported (e.g., `kor.md`, `eng.md`). To add or remove a language, simply edit the list.
