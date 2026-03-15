@@ -63,9 +63,20 @@ Explain complex research papers so a college freshman can intuitively understand
   2. The publication date is indeed after the target paper's date.
   3. The content is directly relevant to the target paper's domain or methodology.
 - [ ] **Correction**: If a link is dead, points to an unrelated paper, or the paper predates the target paper, it must be removed or replaced with a verified one. Do not include any paper without explicit session-based verification.
+- [ ] **Fail-closed (No Tools = No Links)**: If you do not have access to working verification tools (search/read_url_content) in the current run, you MUST NOT include any external links in Chapter 6. Instead, write `Not provided (offline; unverified links omitted).`
+- [ ] **Verification Log (Required)**: Create a verification log at `tmp/plan/{paper_slug}/links.md` containing ONLY the items you actually verified in this session. The exported Chapter 6 MUST use URLs copied verbatim from this log (no re-typing).
+   - Format (repeat per item):
+     - `- Title (exact): {title_from_source}`
+     - `  - URL (final): {final_url_after_redirects}`
+     - `  - Published: {YYYY-MM-DD or Year (source-stated)}`
+     - `  - Verified via: {search|read_url_content}`
 
 ### Step 3: Synthesis (Write the Exportable Markdown)
 **Note: Use the metadata from Step 1. For each entry in `languages`, write a `{code}.md` file in the corresponding language. Ensure all section headers are translated purely into the target language without appending the original English in parentheses (e.g., use `1. 배경` instead of `1. 배경 (Background)`), while preserving the numbering structure (1–6, 4.1–4.5).** Use the Step 1 plan as your blueprint. Use relative path `figures/{name}.png`. Replace all placeholders (e.g., `{Paper Title}`) with real content; do not leave placeholder markers in the final output. **CRITICAL rule: NEVER translate the paper title. The paper title must ALWAYS remain in its original language (e.g., English) across all language outputs.**
+ 
+**Link hygiene (Required)**:
+- Never invent placeholder IDs or URLs (e.g., `2505.00000`). If a Paper URL/GitHub URL is unknown, write `Not specified in the paper.`
+- When writing a Markdown link where the link text itself is a URL, the displayed URL and the target URL MUST be identical (e.g., `[https://arxiv.org/abs/XXXX.XXXXX](https://arxiv.org/abs/XXXX.XXXXX)`), otherwise it is misleading.
 
 **Figure embedding rule (Required)**:
 - `4.1` must embed the pipeline/overview image.
@@ -74,7 +85,9 @@ Explain complex research papers so a college freshman can intuitively understand
 
 **Further reading rule (Required)**:
 - Add a final **Chapter 6** that recommends 3–6 more advanced follow-up papers (with links) that were published after the target paper.
-- **Verification Priority**: You must use session-based tool outputs (search/read_url) to confirm each link. Hallucinated or plausible-sounding but unverified links are strictly forbidden.
+- **Verification Priority**: You must use session-based tool outputs (search/read_url_content) to confirm each link. Hallucinated or plausible-sounding but unverified links are strictly forbidden.
+- If verification tools are unavailable in this run, Chapter 6 MUST be: `Not provided (offline; unverified links omitted).`
+- Every URL must be copied verbatim from `tmp/plan/{paper_slug}/links.md`.
 
 **Output location rule (Git-friendly)**:
 - Create `tmp/papers/{paper_slug}/`.
@@ -156,7 +169,8 @@ Anchor claims in what the figure actually shows. Describe the qualitative compar
 ### 6. Further Reading
 - Add 3–6 links to follow-up or more advanced papers **published after** this paper that a reader can use to go deeper (e.g., quality improvements, speedups, dynamic scenes, in-the-wild data, better sampling, compression).
 - Format as a short markdown list. Each item must include a clickable link and a 1-sentence “why read this”.
-- **Strict Validation**: All paper titles and URLs must be cross-checked against reality using your research tools (search/read_url) within the current task. **Crucially, if you use an arXiv link, you MUST verify that the arXiv ID (e.g., `2409.19152`) exactly matches the paper you intend to link, to avoid linking to completely unrelated papers.** If a link is not verified, it must be omitted.
+- **Strict Validation**: All paper titles and URLs must be cross-checked against reality using your research tools (search/read_url_content) within the current task. **Crucially, if you use an arXiv link, you MUST verify that the arXiv ID (e.g., `2409.19152`) exactly matches the paper you intend to link, to avoid linking to completely unrelated papers.** If a link is not verified, it must be omitted.
+- **Copy-only rule (Required)**: Every URL in Chapter 6 MUST be copied verbatim from `tmp/plan/{paper_slug}/links.md` (the verification log). If it is not in the log, it must not appear in the exported markdown.
 - Prefer well-known papers with stable URLs (e.g., `arxiv.org`, `doi.org`).
 
 ---
