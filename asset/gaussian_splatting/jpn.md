@@ -1,11 +1,3 @@
----
-title: 3D Gaussian Splatting for Real-Time Radiance Field Rendering
-authors: Bernhard Kerbl, Georgios Kopanas, Thomas Leimkühler, George Drettakis
-venue: SIGGRAPH 2023
-url: https://arxiv.org/abs/2308.04079
-github: https://github.com/graphdeco-inria/gaussian-splatting
----
-
 # 3D Gaussian Splatting for Real-Time Radiance Field Rendering
 
 - **著者**: Bernhard Kerbl, Georgios Kopanas, Thomas Leimkühler, George Drettakis
