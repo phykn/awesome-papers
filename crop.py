@@ -27,57 +27,75 @@ def smart_crop(img_path):
         return clusters
 
     # Initial vertical clusters
-    v_clusters = get_clusters(binary, 1, gap=40)
+    v_clusters = get_clusters(binary, 1, gap=15) # Tighter gap to separate lines
     if not v_clusters: return
     
-    # Filter text-like clusters at edges
-    diagram_clusters = []
+    # Calculate density for each cluster
+    cluster_stats = []
     for s, e in v_clusters:
         height = e - s
         ink_count = np.sum(binary[s:e, :])
         density = ink_count / (height * w)
-        
-        # Heuristic: Diagrams are either tall or very dense.
-        # Text is short and sparse.
-        is_text = (height < 80) and (density < 0.1)
-        
-        # Also, check if it's a "header" or "footer"
-        is_edge = (s < h * 0.1) or (e > h * 0.9)
-        
-        if is_text and is_edge:
-            continue
-        diagram_clusters.append((s, e))
+        cluster_stats.append({'range': (s, e), 'height': height, 'density': density, 'ink': ink_count})
+
+    # The diagram is almost always the cluster with the most total ink
+    main_idx = np.argmax([c['ink'] for c in cluster_stats])
+    main_s, main_e = cluster_stats[main_idx]['range']
     
-    if not diagram_clusters:
-        # Fallback to the largest cluster
-        diagram_clusters = [max(v_clusters, key=lambda x: np.sum(binary[x[0]:x[1], :]))]
-
-    ymin = min(c[0] for c in diagram_clusters)
-    ymax = max(c[1] for c in diagram_clusters)
+    # We want to keep clusters that are "part" of the diagram 
+    # and remove those that are "separate" (captions, page text).
+    # Rule: Keep clusters that have high ink and are near the main cluster.
+    # Discard clusters at edges if they are separated by a large gap or are sparse.
     
-    # Horizontal analysis within the ymin:ymax
-    h_clusters = get_clusters(binary[ymin:ymax, :], 0, gap=40)
-    diagram_h_clusters = []
-    for s, e in h_clusters:
-        width = e - s
-        ink_count = np.sum(binary[ymin:ymax, s:e])
-        density = ink_count / ((ymax-ymin) * width)
-        
-        # Sidebars are narrow or sparse at the edges
-        is_sidebar = (width < w * 0.15) and (density < 0.1)
-        is_edge = (s < w * 0.15) or (e > w * 0.85)
-        
-        if is_sidebar and is_edge:
-            continue
-        diagram_h_clusters.append((s, e))
-        
-    if not diagram_h_clusters:
-        diagram_h_clusters = [max(h_clusters, key=lambda x: np.sum(binary[ymin:ymax, x[0]:x[1]]))]
+    final_v_clusters = [cluster_stats[main_idx]['range']]
+    
+    # Search upwards from main
+    for i in range(main_idx - 1, -1, -1):
+        s, e = cluster_stats[i]['range']
+        gap = v_clusters[i+1][0] - e
+        # If gap is small (e.g. labels), or cluster is very dense, keep it.
+        # If gap is large (standard line spacing of text), stop.
+        if gap < 40 or cluster_stats[i]['density'] > 0.3:
+            final_v_clusters.append((s, e))
+        else:
+            break
+            
+    # Search downwards from main
+    for i in range(main_idx + 1, len(v_clusters)):
+        s, e = cluster_stats[i]['range']
+        gap = s - v_clusters[i-1][1]
+        if gap < 40 or cluster_stats[i]['density'] > 0.3:
+            final_v_clusters.append((s, e))
+        else:
+            break
 
-    xmin = min(c[0] for c in diagram_h_clusters)
-    xmax = max(c[1] for c in diagram_h_clusters)
+    ymin = min(c[0] for c in final_v_clusters)
+    ymax = max(c[1] for c in final_v_clusters)
+    
+    # Horizontal analysis within the new ymin:ymax
+    h_clusters = get_clusters(binary[ymin:ymax, :], 0, gap=20)
+    if not h_clusters: return
 
-    pad = 15
+    # Similarly, find main horizontal cluster
+    h_ink = [np.sum(binary[ymin:ymax, s:e]) for s, e in h_clusters]
+    main_h_idx = np.argmax(h_ink)
+    
+    final_h_clusters = [h_clusters[main_h_idx]]
+    
+    # Expand horizontally if gaps are small
+    for i in range(main_h_idx - 1, -1, -1):
+        if h_clusters[i+1][0] - h_clusters[i][1] < 50:
+            final_h_clusters.append(h_clusters[i])
+        else: break
+    for i in range(main_h_idx + 1, len(h_clusters)):
+        if h_clusters[i][0] - h_clusters[i-1][1] < 50:
+            final_h_clusters.append(h_clusters[i])
+        else: break
+
+    xmin = min(c[0] for c in final_h_clusters)
+    xmax = max(c[1] for c in final_h_clusters)
+
+    pad = 10
     final_crop = (
         max(0, xmin - pad),
         max(0, ymin - pad),

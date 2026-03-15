@@ -51,14 +51,15 @@ Explain complex research papers so a college freshman can intuitively understand
 
 ### Step 2: Extraction & Code (Internal Action)
 1. Use extraction tools (**PyMuPDF**, **Pillow**) to render target figures in high resolution. Save to `tmp/page_renders/`.
-2. Precisely crop and save as `tmp/figures/{paper_slug}/{name}.png`. Use `crop.py` for automated or assisted cropping.
-   - **Autonomy**: You have full authority to modify `crop.py` (logic or parameters) to suit specific images, ensuring the "Tight Focus Rule" is met for every figure.
-   - Naming convention: prefer stable, descriptive names like `fig02_pipeline.png`, `fig03_architecture.png` (use the paper’s figure number when available).
-   - **Crop rule**: Remove extraneous page content (sentences above/below the figure, page numbers, and the figure caption itself). Ensure the crop captures the core diagram and any internal labels (a/b/c), axes, or legends essential for understanding. Keep a small padding margin (approx. 10-20px) so content doesn't feel suffocated against the borders.
+2. Precisely crop and save as `tmp/figures/{paper_slug}/{name}.png`.
+   - **Tooling**: While a general `crop.py` can be used, do NOT feel obligated to force all images through a single script. For papers with complex layouts or specific requirements, you are encouraged to create specialized, one-off extraction scripts (e.g., `tmp/src/extract_{paper_slug}.py`) to ensure the "Tight Focus Rule" is met perfectly.
+   - **Autonomy**: You have full authority to design custom logic or parameters per-image.
+   - **Naming convention**: prefer stable, descriptive names like `fig02_pipeline.png`, `fig03_architecture.png` (use the paper’s figure number when available).
+   - **Crop rule**: Remove extraneous page content (sentences above/below the figure, page numbers, and the figure caption itself). Ensure the crop captures the core diagram and any internal labels (a/b/c), axes, or legends essential for understanding. Keep a small padding margin (approx. 10px) so content doesn't feel suffocated against the borders.
    - **Quality rule**: Default to sharp, readable text. Start at `dpi=300` (or higher); if labels are still blurry, rerender at a higher DPI/zoom. Prefer `PNG` for figures with text/lines; avoid `JPEG` unless the source is photographic only.
    - **Qualitative rule** (generative papers): Also extract at least one *side-by-side qualitative comparison* figure (if present) and name it like `figXX_qualitative.png` or `qualitative_results.png`.
 
-3. Utility scripts/code go to `tmp/src/`.
+3. Specialized utility scripts or custom processing code for a specific paper should be stored in `tmp/src/`.
 
 ### Step 2.5: Link Validation (Mandatory for Chapter 6)
 - [ ] **Search & Verify**: For every paper recommended in Chapter 6, you MUST perform a web search or use `read_url_content` to verify:
@@ -75,7 +76,13 @@ Explain complex research papers so a college freshman can intuitively understand
      - `  - Verified via: {search|read_url_content}`
 
 ### Step 3: Synthesis (Write the Exportable Markdown)
-**Note: Use the metadata from Step 1. For each entry in `languages`, write a `{code}.md` file in the corresponding language. Ensure all section headers are translated purely into the target language without appending the original English in parentheses (e.g., use `1. 배경` instead of `1. 배경 (Background)`), while preserving the numbering structure (1–6, 4.1–4.5).** Use the Step 1 plan as your blueprint. Use relative path `figures/{name}.png`. Replace all placeholders (e.g., `{Paper Title}`) with real content; do not leave placeholder markers in the final output. **CRITICAL rule: NEVER translate the paper title. The paper title must ALWAYS remain in its original language (e.g., English) across all language outputs.**
+**Note: Use the metadata from Step 1. Use the Step 1 plan as your blueprint. Ensure all section headers are translated purely into the target language without appending the original English in parentheses (e.g., use `1. 배경` instead of `1. 배경 (Background)`), while preserving the numbering structure (1–6, 4.1–4.5). Use relative path `figures/{name}.png`. Replace all placeholders (e.g., `{Paper Title}`) with real content; do not leave placeholder markers in the final output. **CRITICAL rule: NEVER translate the paper title. The paper title must ALWAYS remain in its original language (e.g., English) across all language outputs.****
+
+**Sequential Generation Rule (CRITICAL)**: 
+Due to output token limits, do NOT generate all languages in a single response. 
+1. Generate the content for the first language in the `languages` list (e.g., `eng.md`).
+2. STOP and wait for the user to confirm or provide feedback before proceeding to the next language.
+3. Repeat this process until all listed languages are exported.
  
 **Link hygiene (Required)**:
 - Never invent placeholder IDs or URLs (e.g., `2505.00000`). If a Paper URL/GitHub URL is unknown, write `Not specified in the paper.`
@@ -147,12 +154,6 @@ Explain complex research papers so a college freshman can intuitively understand
   
 - Explain the formula as a logical flow of events (physical or computational).
 - **Variables**: Detailed bullet points: `Symbol` = meaning, plus *where it appears* (equation number / section / figure) on first introduction.
-- **Math Rendering Stability Rules (GitHub)**:
-  - **Inline Math**: For inline math within prose, always escape underscores (`\_`) and asterisks (`\*` or use `\ast`) to prevent GitHub's Markdown parser from interpreting them as italics (e.g., use `$\mathcal{L}\_M$` instead of `$\mathcal{L}_M$`).
-  - **Norms and absolute values**: Use `\Vert` instead of `\|` for double bars (norms) and `\vert` or `|` for single bars to avoid potential pipe-based table parsing conflicts.
-  - **Superscripts and Subscripts**: Always provide an argument for superscripts (`^`) and subscripts (`_`). For "target" or "star" notation, use `$M^{\ast}$` or `$M^{\star}$`. Never leave a bare `^` or `_`.
-  - **Grouping**: Use braces `{}` for complex subscripts/superscripts (e.g., `$\hat{x}\_{\text{slice}}$`) to ensure clear parsing.
-  - **Spacing**: Insert an empty line before and after block math (`$$`). For inline math, ensure there is structural separation (like parentheses or spaces) between the math and surrounding characters/particles (e.g., `함수 ($S\_2$)는`).
 
 #### 4.4 Comparison: Others vs This Paper (Evidence-Based)
 Write the “paper brag” explicitly, but keep it fair and grounded in the paper’s evidence.
@@ -186,12 +187,12 @@ Anchor claims in what the figure actually shows. Describe the qualitative compar
 ## Constraints
 - **Evidence-first**: Never invent details. If a claim is missing but essential, write `Not specified in the paper.`
 - **Writing hygiene**: Define each key term once, reuse the same notation, and avoid redundancy. **Do not append English translations in parentheses for common or simple terms (e.g., just write "배경" instead of "배경 (Background)"). Use English in parentheses ONLY when introducing a highly specific technical term for the first time.**
-- **Markdown rendering stability rules (GitHub)**:
-  - When bolding Korean text that is immediately followed by a particle/suffix, keep any English translation **outside** the bold span (e.g., `**매칭 헤드**(Matching Head)가`). Some Markdown parsers can mis-handle bold if non-space characters cling to the closing `**`.
-  - For inline math in Korean prose, wrap only the math symbol or expression itself in parentheses to ensure reliable parsing (e.g., 상관 함수 ($S\_2$) 오차율). **Do not** wrap the entire definition, explanation, or sentence within these parentheses.
-  - In variable lists, use a colon or dash to separate the symbol from its definition (e.g., `- $x$: explanation`) and do not wrap the entire line in parentheses.
-  - **Always escape underscores (`\_`) and asterisks (`\*` or `\ast`)** within all inline math formulas to prevent them from being interpreted as Markdown italic/bold markers.
-  - **Always provide an argument for superscripts (`^`) and subscripts (`_`).** Leaving a bare `^`/`_` (e.g., `M^`) can break math rendering. Use `$M^{\ast}$` (or `$M^{\star}$`) for “star” notation.
-  - **For double-bar norms**, use `\Vert` instead of `\|` to avoid conflicts with Markdown table syntax.
-  - **For loss/variable notation**, use valid LaTeX forms with escaped underscores (e.g., `$\mathcal{L}\_M$` for a subscripted loss, `$\hat{x}\_{\text{slice}}$` for a subscript with `\text{}`, and `$M^{\ast}$` for target markers).
+- **Markdown Rendering & Math Stability (GitHub Compatibility)**:
+  - **Inline Math**: Always escape underscores (`\_`) and asterisks (`\*` or use `\ast`) within all inline math formulas to prevent them from being interpreted as Markdown italic/bold markers (e.g., `$\mathcal{L}\_M$`).
+  - **Superscripts/Subscripts**: Always provide an argument for superscripts (`^`) and subscripts (`_`). For "target" or "star" notation, use `$M^{\ast}$` or `$M^{\star}$`. Never leave a bare `^` or `_`. Use braces `{}` for complex subscripts/superscripts (e.g., `$\hat{x}\_{\text{slice}}$`).
+  - **Norms & Absolute Values**: Use `\Vert` instead of `\|` for double bars (norms) and `\vert` or `|` for single bars to avoid potential pipe-based table parsing conflicts.
+  - **Korean Formatting**: 
+    - **Bold particle/suffix**: When bolding Korean text followed by a particle, keep any English translation **outside** the bold span (e.g., `**매칭 헤드**(Matching Head)가`).
+    - **Inline math wrap**: Wrap only the math symbol or expression itself in parentheses to ensure reliable parsing (e.g., 상관 함수 ($S\_2$) 오차율).
+  - **Spacing**: Always insert an empty line before and after block math equations (`$$`). For inline math, ensure there is structural separation (like parentheses or spaces) between the math and surrounding characters (e.g., `- $x$: explanation`).
 - **Figures**: Prefer fewer, sharper images. If a requested figure is unavailable, name a substitute; if none exists, use a "Pseudo-Figure" bullet flow.
