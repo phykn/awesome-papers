@@ -77,6 +77,12 @@ Explain complex research papers so a college freshman can intuitively understand
 - Copy **only the figure files referenced** by the exported markdown files into `tmp/papers/{paper_slug}/figures/`.
 - The exported markdown must only reference images as `figures/{filename}.png` so the folder is portable.
 
+### Step 5: Deploy
+1. **Copy to `asset/`**: Move `tmp/papers/{paper_slug}/` into `asset/{paper_slug}/`.
+2. **Update `README.md`**: Add a new row to the paper reviews table with the next number, title, category, year, and links to each language version (e.g., `[📄 View](./asset/{paper_slug}/{code}.md)`).
+3. **Update date**: Set the "Last updated" timestamp at the bottom of `README.md` to the current date.
+4. **Clean up**: Delete the entire `tmp/` directory.
+
 ---
 
 # {Paper Title}
