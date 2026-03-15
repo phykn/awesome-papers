@@ -164,5 +164,7 @@ Anchor claims in what the figure actually shows. Describe the qualitative compar
 ## Constraints
 - **Evidence-first**: Never invent details. If a claim is missing but essential, write `Not specified in the paper.`
 - **Writing hygiene**: Define each key term once, reuse the same notation, and avoid redundancy. **Do not append English translations in parentheses for common or simple terms (e.g., just write "배경" instead of "배경 (Background)"). Use English in parentheses ONLY when introducing a highly specific technical term for the first time.**
-- **Markdown robust formatting**: When applying bold to a term with an English translation followed by a CJK postposition (조사), place the English translation OUTSIDE the bold tags (e.g., `**매칭 헤드**(Matching Head)가`). Due to CommonMark rules, placing punctuation right before a closing bold tag followed by a letter (e.g., `**매칭 헤드(Matching Head)**가`) breaks the bold rendering.
+- **Markdown robust formatting**:
+  - When applying bold to a term with an English translation followed by a CJK postposition (조사), place the English translation OUTSIDE the bold tags (e.g., `**매칭 헤드**(Matching Head)가`). Due to CommonMark rules, placing punctuation right before a closing bold tag followed by a letter (e.g., `**매칭 헤드(Matching Head)**가`) breaks the bold rendering.
+  - For inline math wrapped in parentheses, always ensure there is a space before the opening parenthesis and after the closing parenthesis if surrounded by CJK characters (e.g., `상관 함수 ($S_2$) 오차율` instead of `상관 함수($S_2$)오차율`), otherwise the `$` delimiter might not parse correctly.
 - **Figures**: Prefer fewer, sharper images. If a requested figure is unavailable, name a substitute; if none exists, use a "Pseudo-Figure" bullet flow.
