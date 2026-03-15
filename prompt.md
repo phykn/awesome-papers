@@ -65,7 +65,7 @@ Explain complex research papers so a college freshman can intuitively understand
 - [ ] **Correction**: If a link is dead, points to an unrelated paper, or the paper predates the target paper, it must be removed or replaced with a verified one. Do not include any paper without explicit session-based verification.
 
 ### Step 3: Synthesis (Write the Exportable Markdown)
-**Note: Use the metadata from Step 1. For each entry in `languages`, write a `{code}.md` file in the corresponding language. Ensure all section headers are translated appropriately while preserving the numbering structure (1–6, 4.1–4.5).** Use the Step 1 plan as your blueprint. Use relative path `figures/{name}.png`. Replace all placeholders (e.g., `{Paper Title}`) with real content; do not leave placeholder markers in the final output.
+**Note: Use the metadata from Step 1. For each entry in `languages`, write a `{code}.md` file in the corresponding language. Ensure all section headers are translated purely into the target language without appending the original English in parentheses (e.g., use `1. 배경` instead of `1. 배경 (Background)`), while preserving the numbering structure (1–6, 4.1–4.5).** Use the Step 1 plan as your blueprint. Use relative path `figures/{name}.png`. Replace all placeholders (e.g., `{Paper Title}`) with real content; do not leave placeholder markers in the final output.
 
 **Figure embedding rule (Required)**:
 - `4.1` must embed the pipeline/overview image.
@@ -141,7 +141,7 @@ Write the “paper brag” explicitly, but keep it fair and grounded in the pape
 
 Cover only what you can support, in this order: (1) the main comparative claim, (2) a concrete limitation of the strongest baseline(s), (3) the paper’s differentiator, (4) the mechanism (cause → effect), (5) the strongest 1–2 evidence pointers `(Sec X / Fig Y / Table Z)`, and (6) one trade-off if stated (otherwise `Not specified in the paper.`).
 
-#### 4.5 Qualitative Results (When Applicable: Image/Video/Audio Generation)
+#### 4.5 Qualitative Results (When Applicable)
 If available, include at least one embedded qualitative comparison figure:
 ![Qualitative Results](figures/{qualitative_image}.png)
 
@@ -153,7 +153,7 @@ Anchor claims in what the figure actually shows. Describe the qualitative compar
 ### 5. Impact
 - A summary of how this method reshaped the research landscape and its practical implications for future engineering.
 
-### 6. Further Reading (After This Paper)
+### 6. Further Reading
 - Add 3–6 links to follow-up or more advanced papers **published after** this paper that a reader can use to go deeper (e.g., quality improvements, speedups, dynamic scenes, in-the-wild data, better sampling, compression).
 - Format as a short markdown list. Each item must include a clickable link and a 1-sentence “why read this”.
 - **Strict Validation**: All paper titles and URLs must be cross-checked against reality using your research tools (search/read_url) within the current task. **Crucially, if you use an arXiv link, you MUST verify that the arXiv ID (e.g., `2409.19152`) exactly matches the paper you intend to link, to avoid linking to completely unrelated papers.** If a link is not verified, it must be omitted.
@@ -163,5 +163,5 @@ Anchor claims in what the figure actually shows. Describe the qualitative compar
 
 ## Constraints
 - **Evidence-first**: Never invent details. If a claim is missing but essential, write `Not specified in the paper.`
-- **Writing hygiene**: Define each key term once, reuse the same notation, and avoid redundancy.
+- **Writing hygiene**: Define each key term once, reuse the same notation, and avoid redundancy. **Do not append English translations in parentheses for common or simple terms (e.g., just write "배경" instead of "배경 (Background)"). Use English in parentheses ONLY when introducing a highly specific technical term for the first time.**
 - **Figures**: Prefer fewer, sharper images. If a requested figure is unavailable, name a substitute; if none exists, use a "Pseudo-Figure" bullet flow.

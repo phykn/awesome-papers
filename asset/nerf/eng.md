@@ -35,7 +35,7 @@ The "Aha!" insight of this paper is to replace discrete scene storage (like voxe
   - $\mathbf{c}(\mathbf{x}, \mathbf{d})$ = The view-dependent RGB color at point $\mathbf{x}$ as seen from direction $\mathbf{d}$ (Eq 1 / Sec 3).
   - $T(t)$ = Accumulated transmittance along the ray from $t_n$ to $t$ (Eq 3 / Sec 4).
 
-#### 4.4 Comparison: Others vs This Paper (Evidence-Based)
+#### 4.4 Comparison: Others vs This Paper
 NeRF significantly outperforms prior methods like SRN and NV in capturing fine, high-frequency textures and complex specular reflections. While SRN fails to maintain sharpness and NV is limited by voxel resolution, NeRF utilizes positional encoding and hierarchical sampling to achieve state-of-the-art results (Sec 6 / Table 1). The use of continuous MLP-based representations eliminates discretization artifacts common in multi-plane images. However, NeRF requires extensive optimization time for each new scene, often taking 1–2 days on a single GPU (Sec 6). The method’s core differentiator is the combination of coordinate-based neural representations with classical volume rendering.
 
 #### 4.5 Qualitative Results
@@ -45,7 +45,7 @@ The qualitative comparison highlights NeRF's ability to reconstruct intricate de
 ### 5. Impact
 NeRF revolutionized computer vision and graphics by proving that complex 3D scenes can be efficiently stored and rendered using neural networks as continuous functions. It sparked a massive wave of research into Neural Radiance Fields, leading to advancements in 3D reconstruction, robotics, and virtual reality. The method's success directly inspired high-speed variants like Instant-NGP and large-scale applications like Block-NeRF.
 
-### 6. Further Reading (After This Paper)
+### 6. Further Reading
 - [Mip-NeRF: A Multiscale Representation for Anti-Aliasing Neural Radiance Fields](https://arxiv.org/abs/2103.13415) - Fixes aliasing issues and improves rendering quality at different scales.
 - [Instant Neural Graphics Primitives with a Multiresolution Hash Encoding](https://nvlabs.github.io/instant-ngp/) - Dramatically speeds up training and rendering from days to seconds.
 - [NeRF in the Wild: Neural Radiance Fields for Unconstrained Photo Collections](https://nerf-w.github.io/) - Adapts NeRF to handle varying lighting and transient objects in tourist photos.

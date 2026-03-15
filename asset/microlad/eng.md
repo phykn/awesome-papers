@@ -35,7 +35,7 @@ The decisive insight of MicroLad is combining **latent diffusion-based 2D-to-3D 
   - $M^*$, $P^*$ = User-specified target microstructural descriptors and effective material properties (Sec 3.4 / Eq 42–43).
   - $H$ = Differentiable physics solver (FEM) for computing effective diffusivity (Sec 3.4 / Eq 43).
 
-#### 4.4 Comparison: Others vs This Paper (Evidence-Based)
+#### 4.4 Comparison: Others vs This Paper
 MicroLad significantly extends the capabilities of prior diffusion-based microstructure reconstruction methods. While MPDD (Micro3Diff) could reconstruct 3D volumes statistically equivalent to 2D training data, it could not generate microstructures with controlled target properties. SliceGAN, a GAN-based approach, suffers from mode collapse and lacks property-guided generation. MicroLad operates in latent space (4×16×16 vs full-resolution pixel space), reducing computational cost while maintaining fidelity. The two-point correlation function ($S_2$) error rates for reconstructed binary and three-phase microstructures are consistently below 5% (Sec 4.1 / Fig 3–4). Crucially, MicroLad demonstrates successful inverse-controlled generation for volume fraction, surface area, and relative diffusivity targets (Sec 4.2 / Fig 5–7). The trade-off is the requirement for a differentiable physics solver for property-guided generation, which limits applicability to properties that can be efficiently differentiated (Sec 3.4).
 
 #### 4.5 Qualitative Results
@@ -48,7 +48,7 @@ For three-phase SOFC (solid oxide fuel cell) microstructures, MicroLad successfu
 ### 5. Impact
 MicroLad represents a significant step toward closing the loop between microstructure characterization and materials design. By combining latent diffusion models with score distillation sampling and differentiable physics solvers, it enables researchers to not only reconstruct realistic 3D microstructures from 2D observations but also to inversely design microstructures targeting specific material properties. This capability is directly relevant to accelerating ICME workflows for energy materials (SOFCs, batteries), structural composites, and other systems where 3D microstructure governs performance.
 
-### 6. Further Reading (After This Paper)
+### 6. Further Reading
 - [Multi-plane denoising diffusion-based dimensionality expansion (Micro3Diff)](https://doi.org/10.1038/s41524-024-01280-z) - The predecessor framework by the same authors, establishing multi-plane denoising diffusion for 2D-to-3D reconstruction.
 - [Score Distillation Sampling (DreamFusion)](https://arxiv.org/abs/2209.14988) - The foundational technique for distilling knowledge from 2D diffusion models into 3D representations.
 - [SliceGAN: Generating 3D Structures from a 2D Slice with GAN-based Dimensionality Expansion](https://arxiv.org/abs/2102.07708) - A GAN-based baseline for 2D-to-3D microstructure generation.

@@ -37,7 +37,7 @@ $$\hat{x}_{t-1, i} = \text{MultiPlaneDenoise}(x_{t, i}, \epsilon_\theta, \text{p
   - $\epsilon_\theta$ = The pre-trained 2D denoising neural network (U-Net) (Sec 4.2).
   - $t$ = Diffusion time step, ranging from noise to pure data (Sec 4.1).
 
-#### 4.4 Comparison: Others vs This Paper (Evidence-Based)
+#### 4.4 Comparison: Others vs This Paper
 Micro3Diff demonstrates superior 3D connectivity and morphological accuracy compared to standard slice-by-slice generation. While conventional 2D methods lack out-of-plane consistency, Micro3Diff ensures that two-point correlation functions ($S_2$) and lineal path functions ($L_2$) are statistically equivalent across all directions (Sec 3 / Fig 4). The harmonized sampling process significantly reduces the error rates in capturing complex features like polycrystalline grain boundaries compared to naive multi-plane approaches (Fig 5). A notable trade-off is the increased computational time per 3D volume due to the triple-plane denoising loop (Sec 3.1).
 
 #### 4.5 Qualitative Results
@@ -47,5 +47,5 @@ The qualitative results show the successful reconstruction of diverse microstruc
 ### 5. Impact
 Micro3Diff provides a powerful tool for Materials Informatics, allowing researchers to generate high-fidelity 3D microstructures from readily available 2D data. This significantly lowers the barrier to performing high-throughput simulations and integrated computational materials engineering (ICME). It effectively bridges the gap between easy 2D acquisition and necessary 3D characterization.
 
-### 6. Further Reading (After This Paper)
+### 6. Further Reading
 - [MicroLad: Latent Diffusion-Based 2D-to-3D Microstructure Reconstruction with Inverse Design](https://github.com/KangHyunL/microlad) - Follow-up work that introduces latent space diffusion and score distillation for property-guided inverse design.

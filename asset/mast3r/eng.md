@@ -40,7 +40,7 @@ $$ \mathcal{L}_{\text{match}} = - \sum_{(i,j) \in \hat{\mathcal{M}}} \left( \log
   - $\tau$: A temperature hyper-parameter that controls the "sharpness" of the matching distribution.
   - $\mathcal{P}^1, \mathcal{P}^2$: The sets of all considered pixels in image 1 and image 2, respectively.
 
-#### 4.4 Comparison: Others vs This Paper (Evidence-Based)
+#### 4.4 Comparison: Others vs This Paper
 MASt3R represents a significant leap over DUSt3R and 2D-only matchers like LoFTR by unifying 3D regression and feature matching. While DUSt3R provides robustness but low precision, and LoFTR provides precision but struggles with extreme viewpoint changes, MASt3R excels in both. It achieves a 30% absolute improvement in VCRE AUC on the challenging Map-free localization dataset (Sec 4.2 / Table 2). The differentiator is the explicit matching head grounded in 3D geometry. One trade-off is that high-resolution images still require a coarse-to-fine or windowing strategy due to ViT memory limits (Sec 3.4).
 
 #### 4.5 Qualitative Results
@@ -50,7 +50,7 @@ The qualitative results show MASt3R's ability to find dense and accurate corresp
 ### 5. Impact
 MASt3R bridges the gap between general 3D reconstruction and high-precision image matching. It enables a standalone approach for camera calibration, pose estimation, and reconstruction that outperforms multi-stage pipelines. Its success on the Map-free dataset suggests a new path for "in-the-wild" visual localization where pre-built maps are unavailable, effectively setting a new standard for 3D-aware perception.
 
-### 6. Further Reading (After This Paper)
+### 6. Further Reading
 - **[MUSt3R: Multi-view Network for Stereo 3D Reconstruction](https://arxiv.org/abs/2503.01661)**: Extends the framework to handle more than two views simultaneously with a multi-layer memory mechanism.
 - **[MASt3R-SfM: a Fully-Integrated Solution for Unconstrained Structure-from-Motion](https://arxiv.org/abs/2409.19152)**: A complete SfM pipeline that leverages MASt3R features for large-scale, unconstrained reconstruction.
 - **[TRELLIS: Structured 3D Latents for Scalable and Versatile 3D Generation](https://arxiv.org/abs/2412.01506)**: Explores how similar foundation-model-driven features can be used for high-quality 3D asset generation.

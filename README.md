@@ -1,4 +1,4 @@
-# Awesome Papers 🚀
+# Awesome Papers
 *Last updated: 2026-03-15*
 
 This project is dedicated to reviewing the latest research papers and providing structured insights. Each review focuses on dissecting core architectures and pipelines to make complex concepts more accessible, with multilingual support.

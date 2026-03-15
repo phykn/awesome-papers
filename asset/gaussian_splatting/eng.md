@@ -45,7 +45,7 @@ The "Aha!" insight is substituting the expensive volumetric ray-marching of NeRF
   - $R$ = Rotation matrix derived from an optimized unit quaternion $q$.
   - $S$ = Scaling matrix derived from an optimized 3D vector $s$.
 
-#### 4.4 Comparison: Others vs This Paper (Evidence-Based)
+#### 4.4 Comparison: Others vs This Paper
 3D Gaussian Splatting represents a paradigm shift from implicit neural volumes to explicit point-based splatting. The strongest baseline, Mip-NeRF360, provides excellent image quality but requires several minutes to render a single frame. In contrast, this paper achieves equal or better quality (Sec 7.1) while rendering in real-time. By moving away from MVS-based geometry and opting for anisotropic Gaussians, the method avoids the artifacts common in point-based rendering (Fig 11) and the training overhead of dense grids. The main trade-off is the memory requirement for storing millions of Gaussians, which can reach several gigabytes for complex scenes (Sec 7.5).
 
 #### 4.5 Qualitative Results
@@ -55,7 +55,7 @@ The results demonstrate superior reconstruction of fine, thin structures like th
 ### 5. Impact
 This paper effectively ended the "slow rendering" era of high-quality radiance fields. By providing a real-time, differentiable rasterization pipeline, it paved the way for applications in Virtual Reality, digital twins, and real-time cinematic rendering. 3D Gaussian Splatting has since become the new de facto standard for explicit radiance field research, spawning dozens of follow-up works focusing on compression, animation, and large-scale mapping.
 
-### 6. Further Reading (After This Paper)
+### 6. Further Reading
 - [SuGaR: Surface-Aligned Gaussian Splatting](https://arxiv.org/abs/2311.16523) - A method to extract high-quality meshes from Gaussians by aligning them to the scene surface.
 - [4D Gaussian Splatting for Real-Time Dynamic Scene Rendering](https://arxiv.org/abs/2310.08585) - Extends the representation to dynamic scenes with moving objects.
 - [GaussianPro: 3D Gaussian Splatting with Progressive Propagation](https://arxiv.org/abs/2402.14650) - Improves the density control mechanism for even better quality on complex geometry.

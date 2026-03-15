@@ -40,7 +40,7 @@ $$L_D = \mathbb{E}[D(G(z)_s)] - \mathbb{E}[D(r)] + \lambda \mathbb{E}[(\|\nabla_
     - $r$ = Real 2D training image (Page 3).
     - $\lambda$ = Gradient penalty coefficient (used to stabilize training).
 
-#### 4.4 Comparison: Others vs This Paper (Evidence-Based)
+#### 4.4 Comparison: Others vs This Paper
 SliceGAN significantly outperforms traditional stochastic and correlation-based reconstruction methods in capturing long-range connectivity and complex phases. Unlike standard 3D GANs that require volumetric training data, this approach works with widely available 2D micrographs. The paper demonstrates that once trained, SliceGAN can generate $10^8$ voxel volumes in seconds, representing a $10^5$ acceleration compared to conventional physical simulations. The method is shown to be robust across varied materials including polycrystalline grains, ceramic fibers, and battery electrodes (Sec 5.2 / Fig 3).
 
 #### 4.5 Qualitative Results
@@ -50,7 +50,7 @@ The qualitative results showcase the successful reconstruction of diverse micros
 ### 5. Impact
 SliceGAN provides a powerful tool for the materials science community, enabling the generation of representative 3D volumes for physics-based simulations (like stress analysis or fluid flow) from simple 2D imaging. This bridges the gap between high-resolution 2D data and the necessity for 3D volumetric analysis, potentially accelerating the discovery and optimization of next-generation energy materials and composites.
 
-### 6. Further Reading (After This Paper)
+### 6. Further Reading
 - [Super-resolution of multiphase materials by combining complementary 2D and 3D image data using generative adversarial networks (2021)](https://arxiv.org/abs/2110.11281) - Combining 2D and 3D data for high-resolution reconstruction.
 - [Micro3Diff: Multi-plane denoising diffusion-based dimensionality expansion (2023)](https://arxiv.org/abs/2308.14035) - Latest 2D-to-3D reconstruction using Diffusion Models.
 - [SliceGAN Github Issues/Discussions](https://github.com/stke9/SliceGAN) - For practical implementation tips and follow-up community research.
