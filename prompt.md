@@ -185,8 +185,8 @@ Anchor claims in what the figure actually shows. Describe the qualitative compar
 - **Writing hygiene**: Define each key term once, reuse the same notation, and avoid redundancy. **Do not append English translations in parentheses for common or simple terms (e.g., just write "배경" instead of "배경 (Background)"). Use English in parentheses ONLY when introducing a highly specific technical term for the first time.**
 - **Markdown rendering stability rules (GitHub)**:
   - When bolding Korean text that is immediately followed by a particle/suffix, keep any English translation **outside** the bold span (e.g., `**매칭 헤드**(Matching Head)가`). Some Markdown parsers can mis-handle bold if non-space characters cling to the closing `**`.
-  - For inline math in Korean prose, prefer wrapping it in parentheses and keeping spaces around the parentheses so the `$` delimiters parse reliably (e.g., `상관 함수 ($S_2$) 오차율`).
-  - Do not attach Korean particles/suffixes directly to inline math. If you write `... $L$과 ...`, GitHub math detection may become unstable; instead write `... ($L$)과 ...` (recommended), or at minimum insert a space: `... $L$ 과 ...`.
+  - For inline math in Korean prose, wrap only the math symbol or expression itself in parentheses to ensure reliable parsing (e.g., 상관 함수 ($S\_2$) 오차율). **Do not** wrap the entire definition, explanation, or sentence within these parentheses.
+  - In variable lists, use a colon or dash to separate the symbol from its definition (e.g., `- $x$: explanation`) and do not wrap the entire line in parentheses.
   - **Always escape underscores (`\_`) and asterisks (`\*` or `\ast`)** within all inline math formulas to prevent them from being interpreted as Markdown italic/bold markers.
   - **Always provide an argument for superscripts (`^`) and subscripts (`_`).** Leaving a bare `^`/`_` (e.g., `M^`) can break math rendering. Use `$M^{\ast}$` (or `$M^{\star}$`) for “star” notation.
   - **For double-bar norms**, use `\Vert` instead of `\|` to avoid conflicts with Markdown table syntax.
