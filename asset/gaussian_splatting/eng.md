@@ -52,17 +52,16 @@ This paper effectively ended the "slow rendering" era of high-quality radiance f
 
 ### 6. Further Reading
 [1] [SuGaR: Surface-Aligned Gaussian Splatting (2023)](https://arxiv.org/abs/2311.16523)<br>
-&nbsp;&nbsp;&nbsp;&nbsp; - A method to extract high-quality meshes from Gaussians by aligning them to the scene surface.
+A method to extract high-quality meshes from Gaussians by aligning them to the scene surface.
 
 [2] [4D Gaussian Splatting for Real-Time Dynamic Scene Rendering (2023)](https://arxiv.org/abs/2310.08585)<br>
-&nbsp;&nbsp;&nbsp;&nbsp; - Extends the representation to dynamic scenes with moving objects.
+Extends the representation to dynamic scenes with moving objects.
 
 [3] [GaussianPro: 3D Gaussian Splatting with Progressive Propagation (2024)](https://arxiv.org/abs/2402.14650)<br>
-&nbsp;&nbsp;&nbsp;&nbsp; - Improves the density control mechanism for even better quality on complex geometry.
+Improves the density control mechanism for even better quality on complex geometry.
 
 [4] [Compact 3D Gaussian Splatting (2023)](https://arxiv.org/abs/2311.13681)<br>
-&nbsp;&nbsp;&nbsp;&nbsp; - Addresses the memory bottleneck by compressing the Gaussian representation.
+Addresses the memory bottleneck by compressing the Gaussian representation.
 
 [5] [Zip-NeRF: Anti-Aliased Grid-Based Neural Radiance Fields (2023)](https://arxiv.org/abs/2304.06706)<br>
-&nbsp;&nbsp;&nbsp;&nbsp; - While published around the same time, it represents the pinnacle of the grid-based NeRF approach for comparison.
-
+While published around the same time, it represents the pinnacle of the grid-based NeRF approach for comparison.

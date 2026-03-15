@@ -64,11 +64,10 @@ FVO paves the way for a new generation of purely learning-based SLAM systems tha
 
 ### 6. Further Reading
 [1] [LEVIO: Lightweight Embedded Visual Inertial Odometry for Resource-Constrained Devices (2026)](https://arxiv.org/abs/2602.03294)<br>
-&nbsp;&nbsp;&nbsp;&nbsp; - A highly optimized VIO pipeline that targets ultra-low-power embedded platforms, pushing the boundaries of efficiency.
+A highly optimized VIO pipeline that targets ultra-low-power embedded platforms, pushing the boundaries of efficiency.
 
 [2] [OpenVO: Open-World Visual Odometry with Temporal Dynamics Awareness (2026)](https://arxiv.org/abs/2602.19035)<br>
-&nbsp;&nbsp;&nbsp;&nbsp; - Explores visual odometry in uncalibrated, open-world settings like dashcam footage using temporal encoding.
+Explores visual odometry in uncalibrated, open-world settings like dashcam footage using temporal encoding.
 
 [3] [MDE-VIO: Enhancing Visual-Inertial Odometry Using Learned Depth Priors (2026)](https://arxiv.org/abs/2602.11323)<br>
-&nbsp;&nbsp;&nbsp;&nbsp; - Integates deep-learned depth priors into traditional VIO backends to improve robustness in low-texture environments.
-
+Integates deep-learned depth priors into traditional VIO backends to improve robustness in low-texture environments.

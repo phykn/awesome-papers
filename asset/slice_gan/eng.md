@@ -52,11 +52,10 @@ SliceGAN provides a powerful tool for the materials science community, enabling 
 
 ### 6. Further Reading
 [1] [Super-resolution of multiphase materials by combining complementary 2D and 3D image data using generative adversarial networks (2021)](https://arxiv.org/abs/2110.11281)<br>
-&nbsp;&nbsp;&nbsp;&nbsp; - Combining 2D and 3D data for high-resolution reconstruction.
+Combining 2D and 3D data for high-resolution reconstruction.
 
 [2] [Micro3Diff: Multi-plane denoising diffusion-based dimensionality expansion (2023)](https://arxiv.org/abs/2308.14035)<br>
-&nbsp;&nbsp;&nbsp;&nbsp; - Latest 2D-to-3D reconstruction using Diffusion Models.
+Latest 2D-to-3D reconstruction using Diffusion Models.
 
 [3] [SliceGAN Github Issues/Discussions](https://github.com/stke9/SliceGAN)<br>
-&nbsp;&nbsp;&nbsp;&nbsp; - For practical implementation tips and follow-up community research.
-
+For practical implementation tips and follow-up community research.

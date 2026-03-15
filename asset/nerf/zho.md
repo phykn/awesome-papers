@@ -47,17 +47,16 @@ NeRF 证明了可以使用作为连续函数的神经网络有效地存储和渲
 
 ### 6. 后续研究
 [1] [Mip-NeRF: A Multiscale Representation for Anti-Aliasing Neural Radiance Fields (2021)](https://arxiv.org/abs/2103.13415)<br>
-&nbsp;&nbsp;&nbsp;&nbsp; - 解决了混叠问题并提高了多尺度下的渲染质量。
+解决了混叠问题并提高了多尺度下的渲染质量。
 
 [2] [Instant Neural Graphics Primitives with a Multiresolution Hash Encoding](https://nvlabs.github.io/instant-ngp/)<br>
-&nbsp;&nbsp;&nbsp;&nbsp; - 通过哈希编码将训练和渲染速度从几天缩短到几秒。
+通过哈希编码将训练和渲染速度从几天缩短到几秒。
 
 [3] [NeRF in the Wild: Neural Radiance Fields for Unconstrained Photo Collections](https://nerf-w.github.io/)<br>
-&nbsp;&nbsp;&nbsp;&nbsp; - 改进了 NeRF，使其能够在光照不同且存在移动物体的环境（如互联网上的游客照片）中工作。
+改进了 NeRF，使其能够在光照不同且存在移动物体的环境（如互联网上的游客照片）中工作。
 
 [4] [Block-NeRF: Scalable Neural Radiance Fields for Entire City Blocks](https://waymo.com/research/block-nerf/)<br>
-&nbsp;&nbsp;&nbsp;&nbsp; - 扩展了 NeRF 以表示大规模环境，如整个城市街道。
+扩展了 NeRF 以表示大规模环境，如整个城市街道。
 
 [5] [RawNeRF: Preparing for Real HDR View Synthesis with Neural Radiance Fields](https://bmild.github.io/rawnerf/)<br>
-&nbsp;&nbsp;&nbsp;&nbsp; - 直接学习摄像机的 RAW 数据，实现了高动态范围 (HDR) 视图合成和去噪。
-
+直接学习摄像机的 RAW 数据，实现了高动态范围 (HDR) 视图合成和去噪。

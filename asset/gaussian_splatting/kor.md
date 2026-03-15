@@ -52,16 +52,16 @@ $$ \Sigma = R S S^T R^T $$
 
 ### 6. 더 읽어보기
 [1] [SuGaR: Surface-Aligned Gaussian Splatting (2023)](https://arxiv.org/abs/2311.16523)<br>
-&nbsp;&nbsp;&nbsp;&nbsp; - 가우시안을 장면 표면에 정렬시켜 고품질 메시(Mesh)를 추출하는 방법.
+가우시안을 장면 표면에 정렬시켜 고품질 메시(Mesh)를 추출하는 방법.
 
 [2] [4D Gaussian Splatting for Real-Time Dynamic Scene Rendering (2023)](https://arxiv.org/abs/2310.08585)<br>
-&nbsp;&nbsp;&nbsp;&nbsp; - 움직이는 물체가 있는 동적인 장면으로 표현을 확장.
+움직이는 물체가 있는 동적인 장면으로 표현을 확장.
 
 [3] [GaussianPro: 3D Gaussian Splatting with Progressive Propagation (2024)](https://arxiv.org/abs/2402.14650)<br>
-&nbsp;&nbsp;&nbsp;&nbsp; - 복잡한 지형에서 더 나은 품질을 위해 밀도 제어 메커니즘을 개선.
+복잡한 지형에서 더 나은 품질을 위해 밀도 제어 메커니즘을 개선.
 
 [4] [Compact 3D Gaussian Splatting (2023)](https://arxiv.org/abs/2311.13681)<br>
-&nbsp;&nbsp;&nbsp;&nbsp; - 가우시안 표현을 압축하여 메모리 병목 현상을 해결.
+가우시안 표현을 압축하여 메모리 병목 현상을 해결.
 
 [5] [Zip-NeRF: Anti-Aliased Grid-Based Neural Radiance Fields (2023)](https://arxiv.org/abs/2304.06706)<br>
-&nbsp;&nbsp;&nbsp;&nbsp; - 비슷한 시기에 발표된 격자 기반 NeRF 방식의 정점으로 비교 대상임.
+비슷한 시기에 발표된 격자 기반 NeRF 방식의 정점으로 비교 대상임.

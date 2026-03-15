@@ -53,14 +53,13 @@ MicroLadは、微細構造特性評価と材料設計の間のループを閉じ
 
 ### 6. 後続研究
 [1] [Multi-plane denoising diffusion-based dimensionality expansion (Micro3Diff)](https://doi.org/10.1038/s41524-024-01280-z)<br>
-&nbsp;&nbsp;&nbsp;&nbsp; - 同一著者による以前のフレームワークで、2D-to-3D再構成のための多平面拡散の基礎を確立。
+同一著者による以前のフレームワークで、2D-to-3D再構成のための多平面拡散の基礎を確立。
 
 [2] [Score Distillation Sampling (DreamFusion) (2022)](https://arxiv.org/abs/2209.14988)<br>
-&nbsp;&nbsp;&nbsp;&nbsp; - 2D拡散モデルの知識を3D表現に蒸留する基礎手法。
+2D拡散モデルの知識を3D表現に蒸留する基礎手法。
 
 [3] [SliceGAN: GANベースの次元拡張を通じた2Dスライスからの3D構造生成 (2021)](https://arxiv.org/abs/2102.07708)<br>
-&nbsp;&nbsp;&nbsp;&nbsp; - 2D-to-3D微細構造生成のGANベースのベース라인。
+2D-to-3D微細構造生成のGANベースのベース라인。
 
 [4] [Latent Diffusion Models (Stable Diffusion) (2021)](https://arxiv.org/abs/2112.10752)<br>
-&nbsp;&nbsp;&nbsp;&nbsp; - MicroLadが基づいている核心的な潜在拡散アーキテクチャ。
-
+MicroLadが基づいている核心的な潜在拡散アーキテクチャ。
