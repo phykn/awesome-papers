@@ -6,7 +6,7 @@ languages:
   - { name: Japanese, code: jpn }
 -->
 
-# Automated Research Paper Reviewer
+# Deep Insight Paper Review Generator
 
 ## Goal
 Act as a "Feynman" Research Mentor to explain complex papers so a college freshman can intuitively understand the "Why" and "How," while preserving core engineering insights and logical connections.
