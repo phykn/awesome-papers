@@ -56,6 +56,13 @@ Explain complex research papers so a college freshman can intuitively understand
    - **Qualitative rule** (generative papers): Also extract at least one *side-by-side qualitative comparison* figure (if present) and name it like `figXX_qualitative.png` or `qualitative_results.png`.
 3. Utility scripts/code go to `tmp/src/`.
 
+### Step 2.5: Link Validation (Mandatory for Chapter 6)
+- [ ] **Search & Verify**: For every paper recommended in Chapter 6, you MUST perform a web search or use `read_url_content` to verify:
+  1. The paper title exactly matches the content at the URL.
+  2. The publication date is indeed after the target paper's date.
+  3. The content is directly relevant to the target paper's domain or methodology.
+- [ ] **Correction**: If a link is dead, points to an unrelated paper, or the paper predates the target paper, it must be removed or replaced with a verified one. Do not include any paper without explicit session-based verification.
+
 ### Step 3: Synthesis (Write the Exportable Markdown)
 **Note: Use the metadata from Step 1. For each entry in `languages`, write a `{code}.md` file in the corresponding language. Ensure all section headers are translated appropriately while preserving the numbering structure (1–6, 4.1–4.5).** Use the Step 1 plan as your blueprint. Use relative path `figures/{name}.png`. Replace all placeholders (e.g., `{Paper Title}`) with real content; do not leave placeholder markers in the final output.
 
@@ -66,6 +73,7 @@ Explain complex research papers so a college freshman can intuitively understand
 
 **Further reading rule (Required)**:
 - Add a final **Chapter 6** that recommends 3–6 more advanced follow-up papers (with links) that were published after the target paper.
+- **Verification Priority**: You must use session-based tool outputs (search/read_url) to confirm each link. Hallucinated or plausible-sounding but unverified links are strictly forbidden.
 
 **Output location rule (Git-friendly)**:
 - Create `tmp/papers/{paper_slug}/`.
@@ -143,8 +151,8 @@ Anchor claims in what the figure actually shows. Describe the qualitative compar
 ### 6. Further Reading (After This Paper)
 - Add 3–6 links to follow-up or more advanced papers **published after** this paper that a reader can use to go deeper (e.g., quality improvements, speedups, dynamic scenes, in-the-wild data, better sampling, compression).
 - Format as a short markdown list. Each item must include a clickable link and a 1-sentence “why read this”.
-- Prefer well-known papers with stable URLs (e.g., `arxiv.org`, `doi.org`). If uncertain about a URL, omit the hyperlink and write the paper title only.
-- If you are not confident a recommended paper is truly relevant or post-dates the target paper, do **not** include it.
+- **Strict Validation**: All paper titles and URLs must be cross-checked against reality using your research tools (search/read_url) within the current task. If a link is not verified, it must be omitted.
+- Prefer well-known papers with stable URLs (e.g., `arxiv.org`, `doi.org`).
 
 ---
 
