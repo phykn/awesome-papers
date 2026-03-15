@@ -96,9 +96,9 @@ Generate the content for all languages listed in the `languages` list within the
 **Further reading rule (Required)**:
 - Add a final **Chapter 6** that recommends 3–6 more advanced follow-up papers (with links) that were published after the target paper.
 - **Verification Priority**: You must use session-based tool outputs (search/read_url_content) to confirm each link. Hallucinated or plausible-sounding but unverified links are strictly forbidden.
-- **Format**: Use a numbered list like `[1]`, `[2]`, etc. Each entry must split the link and description into two immediate lines without any leading indentation or bullets on the description line.
+- **Format**: Use a numbered list like `[1]`, `[2]`, etc. Each entry must split the link and description into two lines using forced line breaks (`<br>`) to ensure they stay separated in all Markdown renderers.
   - Line 1: `[N] [Paper Title (YYYY)](URL)<br>`
-  - Line 2: `1-sentence description.`
+  - Line 2: `1-sentence description.<br>`
 - If verification tools are unavailable in this run, Chapter 6 MUST be: `Not provided (offline; unverified links omitted).`
 - Every URL must be copied verbatim from `tmp/plan/{paper_slug}/links.md`.
 
@@ -180,9 +180,9 @@ Anchor claims in what the figure actually shows. Describe the qualitative compar
 
 ### 6. Further Reading
 - Add 3–6 links to follow-up or more advanced papers **published after** this paper that a reader can use to go deeper (e.g., quality improvements, speedups, dynamic scenes, in-the-wild data, better sampling, compression).
-- **Format rule**: Number each item as `[1]`, `[2]`, etc. Every item MUST use a forced line break (`<br>`) for the title and have no leading indentation or bullets for the description:
+- **Format rule**: Number each item as `[1]`, `[2]`, etc. Every line (both title and description) MUST end with a forced line break (`<br>`) to ensure consistent multi-line rendering:
   - `[N] [Paper Title (YYYY)](URL)<br>`
-  - `설명글 (Why read this)`
+  - `설명글 (Why read this)<br>`
 - **Strict Validation**: All paper titles and URLs must be cross-checked against reality using your research tools (search/read_url_content) within the current task. **Crucially, if you use an arXiv link, you MUST verify that the arXiv ID (e.g., `2409.19152`) exactly matches the paper you intend to link, to avoid linking to completely unrelated papers.** If a link is not verified, it must be omitted.
 - **Copy-only rule (Required)**: Every URL in Chapter 6 MUST be copied verbatim from `tmp/plan/{paper_slug}/links.md` (the verification log). If it is not in the log, it must not appear in the exported markdown.
 - Prefer well-known papers with stable URLs (e.g., `arxiv.org`, `doi.org`).

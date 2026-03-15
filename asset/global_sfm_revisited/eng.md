@@ -55,8 +55,8 @@ GLOMAP reshapes the SfM landscape by proving that global approaches can be as re
 
 ### 6. Further Reading
 [1] [FastMap: Revisiting Structure from Motion through First-Order Optimization (2025)](https://arxiv.org/abs/2505.04612)<br>
-A 2025 follow-up that uses first-order optimization to achieve up to 10x faster speeds than GLOMAP.
+A 2025 follow-up that uses first-order optimization to achieve up to 10x faster speeds than GLOMAP.<br>
 [2] [Gravity-Aligned Rotation Averaging with Circular Regression (2024)](https://arxiv.org/abs/2410.12763)<br>
-A 2024 work by GLOMAP authors that incorporates gravity priors to further improve rotation averaging.
+A 2024 work by GLOMAP authors that incorporates gravity priors to further improve rotation averaging.<br>
 [3] [MP-SfM: Monocular Surface Priors for Robust Structure-From-Motion (2025)](https://arxiv.org/abs/2504.20040)<br>
-A 2025 paper exploring the use of monocular surface priors to enhance SfM robustness in difficult scenes.
+A 2025 paper exploring the use of monocular surface priors to enhance SfM robustness in difficult scenes.<br>

@@ -58,10 +58,10 @@ MicroLad represents a significant step toward closing the loop between microstru
 
 ### 6. Further Reading
 [1] [Multi-plane denoising diffusion-based dimensionality expansion (Micro3Diff)](https://doi.org/10.1038/s41524-024-01280-z)<br>
-The predecessor framework by the same authors, establishing multi-plane denoising diffusion for 2D-to-3D reconstruction.
+The predecessor framework by the same authors, establishing multi-plane denoising diffusion for 2D-to-3D reconstruction.<br>
 [2] [Score Distillation Sampling (DreamFusion) (2022)](https://arxiv.org/abs/2209.14988)<br>
-The foundational technique for distilling knowledge from 2D diffusion models into 3D representations.
+The foundational technique for distilling knowledge from 2D diffusion models into 3D representations.<br>
 [3] [SliceGAN: Generating 3D Structures from a 2D Slice with GAN-based Dimensionality Expansion (2021)](https://arxiv.org/abs/2102.07708)<br>
-A GAN-based baseline for 2D-to-3D microstructure generation.
+A GAN-based baseline for 2D-to-3D microstructure generation.<br>
 [4] [Latent Diffusion Models (Stable Diffusion) (2021)](https://arxiv.org/abs/2112.10752)<br>
-The core latent diffusion architecture that MicroLad builds upon.
+The core latent diffusion architecture that MicroLad builds upon.<br>

@@ -52,8 +52,8 @@ MASt3R는 범용 3D 복원과 고정밀 이미지 매칭 사이의 간극을 메
 
 ### 6. 추가 읽기
 [1] [MUSt3R: Multi-view Network for Stereo 3D Reconstruction (2025)](https://arxiv.org/abs/2503.01661)<br>
-두 개 이상의 시점을 동시에 처리하고 다층 메모리 구조를 통해 확장성을 높인 후속 연구입니다.
+두 개 이상의 시점을 동시에 처리하고 다층 메모리 구조를 통해 확장성을 높인 후속 연구입니다.<br>
 [2] [MASt3R-SfM: a Fully-Integrated Solution for Unconstrained Structure-from-Motion (2024)](https://arxiv.org/abs/2409.19152)<br>
-MASt3R의 특징점을 활용하여 대규모 이미지 집합의 3D 구조를 정밀하게 복원하는 전체 SfM 파이프라인 연구입니다.
+MASt3R의 특징점을 활용하여 대규모 이미지 집합의 3D 구조를 정밀하게 복원하는 전체 SfM 파이프라인 연구입니다.<br>
 [3] [TRELLIS: Structured 3D Latents for Scalable and Versatile 3D Generation (2024)](https://arxiv.org/abs/2412.01506)<br>
-기초 모델 기반의 특징점을 활용하여 고품질 3D 자산을 생성하는 기술에 대해 탐구합니다.
+기초 모델 기반의 특징점을 활용하여 고품질 3D 자산을 생성하는 기술에 대해 탐구합니다.<br>

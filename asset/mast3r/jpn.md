@@ -52,8 +52,8 @@ MASt3Rは、一般的な3D再構築と高精度な画像マッチングの間の
 
 ### 6. 参考文献 / さらに深く知るために
 [1] [MUSt3R: Multi-view Network for Stereo 3D Reconstruction (2025)](https://arxiv.org/abs/2503.01661)<br>
-2つ以上の視点を同時に扱い、多層メモリ機構によって拡張性を高めた後続研究です。
+2つ以上の視点を同時に扱い、多層メモリ機構によって拡張性を高めた後続研究です。<br>
 [2] [MASt3R-SfM: a Fully-Integrated Solution for Unconstrained Structure-from-Motion (2024)](https://arxiv.org/abs/2409.19152)<br>
-MASt3Rの特徴を活用し、大規模で制約のない再構築を行う完全なSfMパイプラインです。
+MASt3Rの特徴を活用し、大規模で制約のない再構築を行う完全なSfMパイプラインです。<br>
 [3] [TRELLIS: Structured 3D Latents for Scalable and Versatile 3D Generation (2024)](https://arxiv.org/abs/2412.01506)<br>
-同様の基盤モデルによる特徴を高品質な3Dアセット生成に活用する方法を探求しています。
+同様の基盤モデルによる特徴を高品質な3Dアセット生成に活用する方法を探求しています。<br>

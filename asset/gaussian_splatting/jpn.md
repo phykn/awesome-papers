@@ -52,12 +52,12 @@ $$ \Sigma = R S S^T R^T $$
 
 ### 6. さらに読む
 [1] [SuGaR: Surface-Aligned Gaussian Splatting (2023)](https://arxiv.org/abs/2311.16523)<br>
-ガウスをシーン表面に整列させて高品質なメッシュを抽出する手法。
+ガウスをシーン表面に整列させて高品質なメッシュを抽出する手法。<br>
 [2] [4D Gaussian Splatting for Real-Time Dynamic Scene Rendering (2023)](https://arxiv.org/abs/2310.08585)<br>
-動的なオブジェクトを含むシーンへと表現を拡張した手法。
+動的なオブジェクトを含むシーンへと表現を拡張した手法。<br>
 [3] [GaussianPro: 3D Gaussian Splatting with Progressive Propagation (2024)](https://arxiv.org/abs/2402.14650)<br>
-複雑な形状に対してより良い品質を得るための密度制御メカニズムの改善。
+複雑な形状に対してより良い品質を得るための密度制御メカニズムの改善。<br>
 [4] [Compact 3D Gaussian Splatting (2023)](https://arxiv.org/abs/2311.13681)<br>
-メモリのボトルネックを解消するためのガウス表現の圧縮。
+メモリのボトルネックを解消するためのガウス表現の圧縮。<br>
 [5] [Zip-NeRF: Anti-Aliased Grid-Based Neural Radiance Fields (2023)](https://arxiv.org/abs/2304.06706)<br>
-並行して発表された手法だが、グリッドベース NeRF の頂点として比較対象として重要。
+並行して発表された手法だが、グリッドベース NeRF の頂点として比較対象として重要。<br>

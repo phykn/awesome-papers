@@ -51,8 +51,8 @@ Micro3Diff는 재료 정보학(Materials Informatics) 분야에 강력한 도구
 
 ### 6. 후속 연구
 [1] [MicroLad: 2D-to-3D Microstructure Reconstruction and Generation via Latent Diffusion and Score Distillation (2025)](https://arxiv.org/abs/2502.10052)<br>
-3D 생성을 더 빠르고 제어 가능하게 하기 위해 프로세스를 잠재 공간(latent space)으로 옮긴 직접적인 후속 연구입니다.
+3D 생성을 더 빠르고 제어 가능하게 하기 위해 프로세스를 잠재 공간(latent space)으로 옮긴 직접적인 후속 연구입니다.<br>
 [2] [Exascale granular microstructure reconstruction in 3D volumes of arbitrary geometries with generative learning](https://doi.org/10.1016/j.cma.2025.117764)<br>
-이러한 생성 기법을 거대한 볼륨과 복잡한 경계 조건으로 확장하는 방안을 탐구합니다.
+이러한 생성 기법을 거대한 볼륨과 복잡한 경계 조건으로 확장하는 방안을 탐구합니다.<br>
 [3] [GrainPaint: A multi-scale diffusion-based generative model for microstructure reconstruction of large-scale objects](https://doi.org/10.1016/j.actamat.2025.120815)<br>
-인페인팅 기반 확산을 활용해 대규모 다결정 재료를 재구성하는 데 집중합니다.
+인페인팅 기반 확산을 활용해 대규모 다결정 재료를 재구성하는 데 집중합니다.<br>
