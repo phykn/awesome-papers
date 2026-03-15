@@ -144,7 +144,12 @@ Explain complex research papers so a college freshman can intuitively understand
   
 - Explain the formula as a logical flow of events (physical or computational).
 - **Variables**: Detailed bullet points: `Symbol` = meaning, plus *where it appears* (equation number / section / figure) on first introduction.
-- **Rendering Tip**: Avoid using multiple underscores (`_`) within a single math line if possible, or wrap them carefully to prevent Markdown parsers from interpreting them as italics. For GitHub, the blank lines before/after `$$` are mandatory.
+- **Math Rendering Stability Rules (GitHub)**:
+  - **Inline Math**: For inline math within prose, always escape underscores (`\_`) and asterisks (`\*` or use `\ast`) to prevent GitHub's Markdown parser from interpreting them as italics (e.g., use `$\mathcal{L}\_M$` instead of `$\mathcal{L}_M$`).
+  - **Norms and absolute values**: Use `\Vert` instead of `\|` for double bars (norms) and `\vert` or `|` for single bars to avoid potential pipe-based table parsing conflicts.
+  - **Superscripts and Subscripts**: Always provide an argument for superscripts (`^`) and subscripts (`_`). For "target" or "star" notation, use `$M^{\ast}$` or `$M^{\star}$`. Never leave a bare `^` or `_`.
+  - **Grouping**: Use braces `{}` for complex subscripts/superscripts (e.g., `$\hat{x}\_{\text{slice}}$`) to ensure clear parsing.
+  - **Spacing**: Insert an empty line before and after block math (`$$`). For inline math, ensure there is structural separation (like parentheses or spaces) between the math and surrounding characters/particles (e.g., `함수 ($S\_2$)는`).
 
 #### 4.4 Comparison: Others vs This Paper (Evidence-Based)
 Write the “paper brag” explicitly, but keep it fair and grounded in the paper’s evidence.
@@ -182,7 +187,8 @@ Anchor claims in what the figure actually shows. Describe the qualitative compar
   - When bolding Korean text that is immediately followed by a particle/suffix, keep any English translation **outside** the bold span (e.g., `**매칭 헤드**(Matching Head)가`). Some Markdown parsers can mis-handle bold if non-space characters cling to the closing `**`.
   - For inline math in Korean prose, prefer wrapping it in parentheses and keeping spaces around the parentheses so the `$` delimiters parse reliably (e.g., `상관 함수 ($S_2$) 오차율`).
   - Do not attach Korean particles/suffixes directly to inline math. If you write `... $L$과 ...`, GitHub math detection may become unstable; instead write `... ($L$)과 ...` (recommended), or at minimum insert a space: `... $L$ 과 ...`.
-  - For complex expressions (nested subscripts/superscripts, `\exp`, etc.), prefer explicit grouping with braces `{}` to avoid Markdown/parser conflicts (e.g., `$\exp(-\tau (D_i^1)^\top D_j^2)$`).
-  - **Always provide an argument for superscripts (`^`) and subscripts (`_`).** Leaving a bare `^`/`_` (e.g., `M^`) can break math rendering. Use `$M^*$` (or `$M^{*}$`) for “star” notation.
-  - For loss/variable notation, use valid LaTeX forms (e.g., `$\mathcal{L}_M$` for a subscripted loss, `$\hat{x}_{\text{slice}}$` for a subscript with `\text{}`, and `$M^*$` or `$M^{*}$` for target markers).
+  - **Always escape underscores (`\_`) and asterisks (`\*` or `\ast`)** within all inline math formulas to prevent them from being interpreted as Markdown italic/bold markers.
+  - **Always provide an argument for superscripts (`^`) and subscripts (`_`).** Leaving a bare `^`/`_` (e.g., `M^`) can break math rendering. Use `$M^{\ast}$` (or `$M^{\star}$`) for “star” notation.
+  - **For double-bar norms**, use `\Vert` instead of `\|` to avoid conflicts with Markdown table syntax.
+  - **For loss/variable notation**, use valid LaTeX forms with escaped underscores (e.g., `$\mathcal{L}\_M$` for a subscripted loss, `$\hat{x}\_{\text{slice}}$` for a subscript with `\text{}`, and `$M^{\ast}$` for target markers).
 - **Figures**: Prefer fewer, sharper images. If a requested figure is unavailable, name a substitute; if none exists, use a "Pseudo-Figure" bullet flow.
