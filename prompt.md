@@ -52,10 +52,11 @@ Explain complex research papers so a college freshman can intuitively understand
 ### Step 2: Extraction & Code (Internal Action)
 1. Use extraction tools (**PyMuPDF**, **Pillow**) to render target figures in high resolution. Save to `tmp/page_renders/`.
 2. Precisely crop and save as `tmp/figures/{paper_slug}/{name}.png`.
-   - **Tooling**: While a general `crop.py` can be used, do NOT feel obligated to force all images through a single script. For papers with complex layouts or specific requirements, you are encouraged to create specialized, one-off extraction scripts (e.g., `tmp/src/extract_{paper_slug}.py`) to ensure the "Tight Focus Rule" is met perfectly.
-   - **Autonomy**: You have full authority to design custom logic or parameters per-image.
-   - **Naming convention**: prefer stable, descriptive names like `fig02_pipeline.png`, `fig03_architecture.png` (use the paper’s figure number when available).
-   - **Crop rule**: Remove extraneous page content (sentences above/below the figure, page numbers, and the figure caption itself). Ensure the crop captures the core diagram and any internal labels (a/b/c), axes, or legends essential for understanding. Keep a small padding margin (approx. 10px) so content doesn't feel suffocated against the borders.
+   - **Autonomy**: You have full authority to design custom logic or **specialized one-off extraction scripts** (e.g., `tmp/src/extract_{paper_slug}.py`) to ensure the "Tight Focus Rule" is met perfectly. **If a page has multiple figures, identify the bounding box of the target Image object specifically.**
+   - **Naming convention**: prefer stable, descriptive names like `fig02_pipeline.png`, `fig03_architecture.png` (use the paper's figure number when available).
+   - **Crop rule (Precision focus)**: Remove all extraneous content including sentences and **specifically the figure caption itself**.
+     - **Isolation**: Use `page.get_image_info()` and `page.get_text("blocks")` to identify and exclude text blocks like "Fig." or "Figure". 
+     - **Ultra-Tight Padding**: Keep a minimal margin of **5–10px**.
    - **Quality rule**: Default to sharp, readable text. Start at `dpi=300` (or higher); if labels are still blurry, rerender at a higher DPI/zoom. Prefer `PNG` for figures with text/lines; avoid `JPEG` unless the source is photographic only.
    - **Qualitative rule** (generative papers): Also extract at least one *side-by-side qualitative comparison* figure (if present) and name it like `figXX_qualitative.png` or `qualitative_results.png`.
 

@@ -20,35 +20,36 @@ The "Aha!" insight of Micro3Diff is performing **dimensionality expansion during
 
 #### 4.1 Pipeline
 ![Pipeline Figure](figures/fig13_pipeline.png)
-- (1) This figure illustrates the "multi-plane denoising" process donde noisy 3D voxels are sliced into three orthogonal planes (XY, YZ, ZX). (2) Each slice is processed by the 2D DGM, and the resulting updates are aggregated back into the 3D volume to maintain spatial connectivity.
+- (1) This schematic shows how the noisy 3D volume is decomposed into three orthogonal planes (YZ, XZ, XY). (2) These slices are iteratively denoised using a pre-trained 2D Diffusion Model, ensuring that the 3D connectivity is implicitly enforced by overlapping information at the junctions.
 
-#### 4.2 Architecture
-![Algorithm Figure](figures/fig16_algorithm.png)
-- (1) This diagram shows the "Harmonized Sampling" algorithm which manages the noise levels across dimensions. (2) It addresses the potential mapping errors when moving from 2D latent spaces to 3D structures, ensuring the reverse diffusion stays on a stable trajectory.
+#### 4.2 Architecture / Core Design
+![Architecture Figure](figures/fig16_algorithm.png)
+- (1) This figure depicts the **Harmonized Sampling** loop, which addresses the "disharmony" caused by periodically switching denoising planes. (2) Each time step involves a cycle of denoising and subsequent "renoising" (adding a small amount of Gaussian noise back) to force the 3D volume to settle onto a more physically consistent trajectory.
 
 #### 4.3 Core Equation
 - **Equation**:
 
-$$ \hat{x}\_{t-1, i} = \text{MultiPlaneDenoise}(x\_{t, i}, \epsilon\_\theta, \text{planes} \in \{XY, YZ, ZX\}) $$
+$$ x_{t-1} = \mathcal{G}\left( \bigcup_{p \in \{XY, YZ, ZX\}} \epsilon_\theta(\text{Slice}_p(x_t), \sigma_t) \right) $$
 
-- The process iteratively refines the 3D volume $x$ by ensuring that the denoised estimate from each plane contributes to the final voxel value. This is typically implemented as a weighted average or a specific sampling step in the diffusion reverse process.
+- The core logic is the multi-plane denoising where the 3D volume $x$ at step $t$ is updated by aggregating (function $\mathcal{G}$) information from the 2D denoising network $\epsilon_\theta$ applied to slices in all three orthogonal directions. To ensure stability, a renoising step $p(x'_t | x_{t-1}) = \mathcal{N}(x'_t; \sqrt{1-\beta_t} x_{t-1}, \beta_t I)$ is applied multiple times ($n_h$ harmonizing steps) during the reverse diffusion.
 
 - **Variables**:
-  - $x\_t$: The 3D noisy volume at time step $t$ (Sec 4.1).
-  - $\epsilon\_\theta$: The pre-trained 2D denoising neural network (U-Net) (Sec 4.2).
-  - $t$: Diffusion time step, ranging from noise to pure data (Sec 4.1).
+  - $x_t$: The 3D microstructure voxels at diffusion time step $t$ (Sec 4.1).
+  - $\epsilon_\theta$: The pre-trained 2D Denoising Generative Model (U-Net) shared across all planes (Sec 4.2).
+  - $n_h$: The number of harmonizing (resampling) steps used to bridge the gap between orthogonal denoising planes (Fig 16).
 
 
 #### 4.4 Comparison: Others vs This Paper
-Micro3Diff demonstrates superior 3D connectivity and morphological accuracy compared to standard slice-by-slice generation. While conventional 2D methods lack out-of-plane consistency, Micro3Diff ensures that two-point correlation functions ($S\_2$) and lineal path functions ($L\_2$) are statistically equivalent across all directions (Sec 3 / Fig 4).
- The harmonized sampling process significantly reduces the error rates in capturing complex features like polycrystalline grain boundaries compared to naive multi-plane approaches (Fig 5). A notable trade-off is the increased computational time per 3D volume due to the triple-plane denoising loop (Sec 3.1).
+Micro3Diff demonstrates superior 3D connectivity and morphological accuracy compared to standard slice-by-slice generation. While conventional 2D methods lack out-of-plane consistency, Micro3Diff ensures that two-point correlation functions ($S\_2$) and lineal path functions ($L\_2$) are statistically equivalent across all directions (Sec 3 / Fig 4). The harmonized sampling process significantly reduces the error rates in capturing complex features like polycrystalline grain boundaries compared to naive multi-plane approaches (Fig 5). A notable trade-off is the increased computational time per 3D volume due to the triple-plane denoising loop (Sec 3.1).
 
 #### 4.5 Qualitative Results
 ![Qualitative Results](figures/fig02_qualitative.png)
-The qualitative results show the successful reconstruction of diverse microstructures, including spherical inclusions, polycrystalline grains (case II), and complex porous structures like NMC cathodes. In "case II" (polycrystalline), the generated 3D samples display realistic grain connectivity and triple-junction geometry that matches the visual character of the original 2D training set (Fig 7). For porous media like the carbonate dataset, Micro3Diff captures the intricate network morphology and tortuosity that are critical for battery performance analysis (Fig 11).
+The qualitative results (Fig 2) show how the number of harmonizing steps ($n_h$) directly impacts the physical realism of reconstructed spherical inclusions. With $n_h=0$, the structure exhibits significant artifacts and poor connectivity between slices, whereas $n_h=10$ results in smooth, spherical boundaries that perfectly match the training distribution. The framework also successfully reconstructs complex multi-phase systems, such as polycrystalline grains (Fig 7) and NMC battery cathodes (Fig 9), maintaining realistic triple-junction geometries and tortuosity without ever seeing a true 3D training sample.
 
 ### 5. Impact
 Micro3Diff provides a powerful tool for Materials Informatics, allowing researchers to generate high-fidelity 3D microstructures from readily available 2D data. This significantly lowers the barrier to performing high-throughput simulations and integrated computational materials engineering (ICME). It effectively bridges the gap between easy 2D acquisition and necessary 3D characterization.
 
 ### 6. Further Reading
-Not provided (offline; unverified links omitted).
+- [MicroLad: 2D-to-3D Microstructure Reconstruction and Generation via Latent Diffusion and Score Distillation](https://arxiv.org/abs/2502.10052): A direct follow-up that moves the process to latent space for faster and more controlled 3D generation.
+- [Exascale granular microstructure reconstruction in 3D volumes of arbitrary geometries with generative learning](https://doi.org/10.1016/j.cma.2025.117764): Explores scaling these generative methods to massive volumes and complex boundary conditions.
+- [GrainPaint: A multi-scale diffusion-based generative model for microstructure reconstruction of large-scale objects](https://doi.org/10.1016/j.actamat.2025.120815): Focuses on inpainting-based diffusion to reconstruct large-scale polycrystalline materials.

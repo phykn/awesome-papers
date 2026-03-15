@@ -18,37 +18,38 @@
 
 ### 4. 技术机制
 
-#### 4.1 流水线
+#### 4.1 工作流
 ![Pipeline Figure](figures/fig13_pipeline.png)
-- (1) 该图展示了带有噪声的 3D 体素被分割到三个正交平面（XY, YZ, ZX）进行“多平面去噪”的过程。(2) 每个截面由 2D 扩散模型处理，更新后的结果重新整合回 3D 体积中以保持空间连通性。
+- (1) 该示意图展示了含噪声的 3D 体积如何被分解为三个正交平面（YZ、XZ、XY）。(2) 这些切片使用预训练的 2D 扩散模型进行迭代去噪，通过交界处的信息重叠隐式强制实现 3D 连通性。
 
-#### 4.2 架构 (Architecture)
-![Algorithm Figure](figures/fig16_algorithm.png)
-- (1) 该图展示了管理跨维度噪声水平的“调和采样 (Harmonized Sampling)”算法。(2) 它解决了从 2D 潜在空间移动到 3D 结构时可能发生的映射错误，确保逆扩散过程维持稳定的轨迹。
+#### 4.2 架构 / 核心设计
+![Architecture Figure](figures/fig16_algorithm.png)
+- (1) 该图描绘了**协调采样**（Harmonized Sampling）循环，旨在解决因定期切换去噪平面而导致的“不协调”问题。(2) 每个时间步包含去噪和随后的“再加噪”（重新添加少量高斯噪声）循环，以迫使 3D 体积稳定在更符合物理一致性的轨迹上。
 
 #### 4.3 核心公式
 - **公式**:
 
-$$ \hat{x}\_{t-1, i} = \text{MultiPlaneDenoise}(x\_{t, i}, \epsilon\_\theta, \text{planes} \in \{XY, YZ, ZX\}) $$
+$$ x_{t-1} = \mathcal{G}\left( \bigcup_{p \in \{XY, YZ, ZX\}} \epsilon_\theta(\text{Slice}_p(x_t), \sigma_t) \right) $$
 
-- 该过程反复精炼 3D 体积 $x$，使每个平面的去噪估计值都对最终体素值有贡献。这通常通过扩散逆过程中的加权平均或特定采样步骤来实现。
+- 核心逻辑是多平面去噪，其中步骤 $t$ 的 3D 体积 $x$ 通过汇总（函数 $\mathcal{G}$）来自应用于三个正交方向切片的 2D 去噪网络 $\epsilon_\theta$ 的信息进行更新。为了确保稳定性，在反向扩散过程中会多次（$n_h$ 次协调步）应用再加噪步骤 $p(x'_t | x_{t-1}) = \mathcal{N}(x'_t; \sqrt{1-\beta_t} x_{t-1}, \beta_t I)$。
 
 - **变量**:
-  - $x\_t$: 时间步 $t$ 下带有噪声的 3D 体积 (第 4.1 节)。
-  - $\epsilon\_\theta$: 预训练的 2D 去噪神经网络 (U-Net) (第 4.2 节)。
-  - $t$: 从完全噪声到数据生成的扩散时间步 (第 4.1 节)。
+  - $x_t$: 扩散时间步 $t$ 的 3D 微观结构体素（第 4.1 节）。
+  - $\epsilon_\theta$: 在所有平面共享的预训练 2D 去噪生成模型 (U-Net)（第 4.2 节）。
+  - $n_h$: 用于弥合正交去噪平面之间差距的协调（重采样）步数（图 16）。
 
 
-#### 4.4 比较：其他技术 vs 本文
-相比于常规的逐切片生成方式，Micro3Diff 展示了更优越的 3D 连通性和形态准确性。传统的 2D 方法在平面外 (out-of-plane) 的一致性较差，而 Micro3Diff 证明了它在所有方向上的二点相关函数 ($S\_2$) 和线性路径函数 ($L\_2$) 在统计上都是等效的 (第 3 节 / 图 4)。
-调和采样过程相比于简单的多平面方法，在捕获多晶晶界等复杂特征时大幅降低了错误率 (图 5)。不过，由于针对三个平面进行去噪循环，生成每个 3D 体积的计算时间会有所增加，这是论文提到的折中 (trade-off) (第 3.1 节)。
+#### 4.4 比较：其他技术 vs 本论文
+相比于标准的逐切片生成，Micro3Diff 展示了优异的 3D 连通性和形态学准确性。传统的 2D 方法缺乏面外（out-of-plane）一致性，而 Micro3Diff 确保了二点相关函数 ($S\_2$) 和线性路径函数 ($L\_2$) 在所有方向上统计等效（第 3 节 / 图 4）。与朴素的多平面方法相比，协调采样过程显著降低了捕捉复杂特征（如多晶晶界）的误差率（图 5）。一个明显的权衡是，由于采用了三平面去噪循环，每个 3D 体积的计算时间有所增加（第 3.1 节）。
 
 #### 4.5 定性结果
 ![Qualitative Results](figures/fig02_qualitative.png)
-定性结果显示，包括球形夹杂物、多晶颗粒 (case II) 以及 NMC 正极材料在内的各种复杂多孔结构都得到了成功重建。对于“case II”（多晶）的情况，生成的 3D 样本展示了逼真的颗粒连通性和三节点 (triple-junction) 几何结构，这与原始 2D 训练数据的视觉特征一致 (图 7)。在碳酸盐数据集等多孔介质的情况下，Micro3Diff 很好地捕捉了对电池性能分析至关重要的复杂网络形态和扭曲度 (tortuosity) (图 11)。
+定性结果（图 2）展示了协调步数 ($n_h$) 如何直接影响重构球形夹杂物的物理真实性。当 $n_h=0$ 时，结构出现明显的伪影且切片间连通性较差；而 $n_h=10$ 则产生了平滑的球形边界，与训练分布完美匹配。该框架还成功重构了复杂的多相系统，如多晶颗粒（图 7）和 NMC 电池正极（图 9），在从未见过真实 3D 训练样本的情况下，保持了真实的节点几何形状和扭曲度。
 
 ### 5. 影响
-Micro3Diff 为材料信息学 (Materials Informatics) 领域提供了强大的工具，使研究人员能够利用易于获取的 2D 数据生成高保真 3D 微观结构。这降低了大尺度模拟和集成计算材料工程 (ICME) 的进入门槛，有效地填补了易获取 2D 数据与必要的 3D 性能分析之间的鸿沟。
+Micro3Diff 为材料信息学（Materials Informatics）提供了强大的工具，使研究人员能够从易于获取的 2D 数据中生成高保真 3D 微观结构。这显著降低了进行高通量模拟和集成计算材料工程（ICME）的门槛，有效弥补了简易 2D 获取与必要 3D 表征之间的差距。
 
-### 6. 后续研究
-Not provided (offline; unverified links omitted).
+### 6. 延伸阅读
+- [MicroLad: 2D-to-3D Microstructure Reconstruction and Generation via Latent Diffusion and Score Distillation](https://arxiv.org/abs/2502.10052): 一个直接的后续研究，将过程移至潜在空间，以实现更快、更受控的 3D 生成。
+- [Exascale granular microstructure reconstruction in 3D volumes of arbitrary geometries with generative learning](https://doi.org/10.1016/j.cma.2025.117764): 探索将这些生成方法扩展到大规模体积和复杂边界条件。
+- [GrainPaint: A multi-scale diffusion-based generative model for microstructure reconstruction of large-scale objects](https://doi.org/10.1016/j.actamat.2025.120815): 专注于基于修复（inpainting）的扩散，以重构大规模多晶材料。
