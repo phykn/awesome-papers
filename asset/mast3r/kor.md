@@ -36,7 +36,7 @@ $$ \mathcal{L}_{\text{match}} = - \sum_{(i,j) \in \hat{\mathcal{M}}} \left( \log
 
 - **변수 설명**:
   - $(i,j) \in \hat{\mathcal{M}}$: 이미지 1과 2 사이에 실제로 대응하는 픽셀 쌍(정답).
-  - $s_{\tau}(i,j) = \exp \left[ -\tau D_i^{1\top} D_j^2 \right]$ (식 11): 국소 특징 $D_i^1$과 $D_j^2$ 사이의 유사도 점수.
+  - $s_{\tau}(i,j) = \exp(-\tau (D_i^1)^\top D_j^2)$ (식 11): 국소 특징 $D_i^1$과 $D_j^2$ 사이의 유사도 점수.
   - $\tau$: 매칭 분포의 '선명도'를 조절하는 온도 하이퍼파라미터.
   - $\mathcal{P}^1, \mathcal{P}^2$: 이미지 1과 2 각각에서 고려되는 전체 픽셀 집합.
 
