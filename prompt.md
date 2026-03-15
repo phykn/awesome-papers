@@ -178,8 +178,9 @@ Anchor claims in what the figure actually shows. Describe the qualitative compar
 ## Constraints
 - **Evidence-first**: Never invent details. If a claim is missing but essential, write `Not specified in the paper.`
 - **Writing hygiene**: Define each key term once, reuse the same notation, and avoid redundancy. **Do not append English translations in parentheses for common or simple terms (e.g., just write "배경" instead of "배경 (Background)"). Use English in parentheses ONLY when introducing a highly specific technical term for the first time.**
-- **Markdown robust formatting**:
-  - When applying bold to a term with an English translation followed by a CJK postposition (조사), place the English translation OUTSIDE the bold tags (e.g., `**매칭 헤드**(Matching Head)가`). Due to CommonMark rules, placing punctuation right before a closing bold tag followed by a letter (e.g., `**매칭 헤드(Matching Head)**가`) breaks the bold rendering.
-  - For inline math wrapped in parentheses, always ensure there is a space before the opening parenthesis and after the closing parenthesis if surrounded by CJK characters (e.g., `상관 함수 ($S_2$) 오차율` instead of `상관 함수($S_2$)오차율`), otherwise the `$` delimiter might not parse correctly.
-  - For complex math expressions (especially those with nested subscripts, superscripts, or `\exp`), prefer simplifying the syntax and using explicit grouping with parentheses or curly braces to avoid rendering conflicts with the Markdown parser (e.g., use `$\exp(-\tau (D_i^1)^\top D_j^2)$` instead of complex `\left[ \right]` structures if they fail to render).
+- **마크다운 렌더링 안정화 규칙**:
+  - 영어 번역어와 한국어 조사가 결합된 단어에 볼드체(bold)를 적용할 때는 영어 번역어를 볼드 태그 바깥에 두십시오 (예: `**매칭 헤드**(Matching Head)가`). 굴절어 특성상 닫는 볼드 태그 바로 뒤에 글자가 붙으면 마크다운 파서가 볼드체를 제대로 인식하지 못할 수 있습니다.
+  - 괄호로 감싸인 인라인 수식은 한글 문맥에서 사용될 때 여는 괄호 앞과 닫는 괄호 뒤에 공백을 하나씩 두어 마크다운 구분자(`$`)가 정상적으로 파싱되도록 하십시오 (예: `상관 함수 ($S_2$) 오차율`).
+  - 복잡한 수식(중첩된 첨자, `\exp` 등)은 마크다운 파서와의 충돌을 피하기 위해 중괄호(`{}`)를 사용한 명시적 그룹화를 선호하십시오 (예: `$\exp(-\tau (D_i^1)^\top D_j^2)$`).
+  - **수식 기호 내 위첨자(`^`)나 아래첨자(`_`) 사용 시 반드시 인자를 명시하십시오.** 인자 없이 `^`나 `_`만 두는 경우(예: `M^`) 수식 렌더링이 완전히 깨질 수 있습니다. 논문의 별표($^*$)와 같은 표기는 반드시 `$M^*$`와 같이 정확히 기입하십시오.
 - **Figures**: Prefer fewer, sharper images. If a requested figure is unavailable, name a substitute; if none exists, use a "Pseudo-Figure" bullet flow.
