@@ -29,11 +29,13 @@ The decisive insight of MicroLad is combining **latent diffusion-based 2D-to-3D 
 #### 4.3 Core Equation
 - **Equation**: $\mathcal{L}_{\text{SDS}} = \kappa(t) \|\epsilon - \epsilon_\theta(z_{\text{slice},t}, t)\|^2$, where $\kappa(t) = \frac{1 - \bar{\alpha}_t}{\bar{\alpha}_t}$
 - The SDS loss measures how well the current latent slice matches the distribution learned by the frozen diffusion model. Combined with descriptor matching loss $\mathcal{L}_M = \|M(\hat{x}_{\text{slice}}) - M^*\|^2$ and property loss $\mathcal{L}_P = \|H(\hat{x}_{\text{slice}}) - P^*\|^2$, the total gradient steers the latent representation toward realistic microstructures with desired target properties.
+
 - **Variables**:
-  - $\epsilon_\theta$ = The frozen pretrained denoising network (U-Net) that provides the diffusion prior (Sec 3.4 / Eq 39).
-  - $z_{\text{slice}}$ = Latent representation of a 2D slice encoded by the VAE encoder $E$ (Sec 3.4 / Eq 37).
-  - $M^*$, $P^*$ = User-specified target microstructural descriptors and effective material properties (Sec 3.4 / Eq 42–43).
-  - $H$ = Differentiable physics solver (FEM) for computing effective diffusivity (Sec 3.4 / Eq 43).
+  - $\epsilon_\theta$: The frozen pretrained denoising network (U-Net) that provides the diffusion prior (Sec 3.4 / Eq 39).
+  - $z_{\text{slice}}$: Latent representation of a 2D slice encoded by the VAE encoder $E$ (Sec 3.4 / Eq 37).
+  - $M^*, P^*$: User-specified target microstructural descriptors and effective material properties (Sec 3.4 / Eq 42–43).
+  - $H$: Differentiable physics solver (FEM) for computing effective diffusivity (Sec 3.4 / Eq 43).
+
 
 #### 4.4 Comparison: Others vs This Paper
 MicroLad significantly extends the capabilities of prior diffusion-based microstructure reconstruction methods. While MPDD (Micro3Diff) could reconstruct 3D volumes statistically equivalent to 2D training data, it could not generate microstructures with controlled target properties. SliceGAN, a GAN-based approach, suffers from mode collapse and lacks property-guided generation. MicroLad operates in latent space (4×16×16 vs full-resolution pixel space), reducing computational cost while maintaining fidelity. The two-point correlation function ($S_2$) error rates for reconstructed binary and three-phase microstructures are consistently below 5% (Sec 4.1 / Fig 3–4). Crucially, MicroLad demonstrates successful inverse-controlled generation for volume fraction, surface area, and relative diffusivity targets (Sec 4.2 / Fig 5–7). The trade-off is the requirement for a differentiable physics solver for property-guided generation, which limits applicability to properties that can be efficiently differentiated (Sec 3.4).
