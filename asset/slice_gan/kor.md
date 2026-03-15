@@ -1,4 +1,4 @@
-# 2D 슬라이스를 이용한 GAN 기반의 3차원 구조 생성 및 차원 확장
+# Generating 3D Structures from a 2D Slice with GAN-Based Dimensionality Expansion
 
 - **Authors**: Steve Kench, Samuel J. Cooper
 - **Venue/Date**: Preprint - February 16, 2021 (arXiv:2102.07708)

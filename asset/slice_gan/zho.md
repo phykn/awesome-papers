@@ -1,4 +1,4 @@
-# 基于 GAN 维度扩展的 2D 切片生成 3D 结构
+# Generating 3D Structures from a 2D Slice with GAN-Based Dimensionality Expansion
 
 - **作者**: Steve Kench, Samuel J. Cooper
 - **发表单位 / 日期**: Preprint - 2021年2月16日 (arXiv:2102.07708)

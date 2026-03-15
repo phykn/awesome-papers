@@ -6,7 +6,7 @@ url: https://arxiv.org/abs/2308.04079
 github: https://github.com/graphdeco-inria/gaussian-splatting
 ---
 
-# 실시간 래디언스 필드 렌더링을 위한 3D 가우시안 스플래팅 (3D Gaussian Splatting)
+# 3D Gaussian Splatting for Real-Time Radiance Field Rendering
 
 - **저자**: Bernhard Kerbl, Georgios Kopanas, Thomas Leimkühler, George Drettakis
 - **발표 학회/날짜**: SIGGRAPH 2023 / 2023년 8월

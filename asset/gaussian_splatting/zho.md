@@ -6,7 +6,7 @@ url: https://arxiv.org/abs/2308.04079
 github: https://github.com/graphdeco-inria/gaussian-splatting
 ---
 
-# 用于实时辐射场渲染的 3D 高斯泼溅 (3D Gaussian Splatting)
+# 3D Gaussian Splatting for Real-Time Radiance Field Rendering
 
 - **作者**: Bernhard Kerbl, Georgios Kopanas, Thomas Leimkühler, George Drettakis
 - **会议/日期**: SIGGRAPH 2023 / 2023年8月

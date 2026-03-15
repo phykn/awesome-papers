@@ -1,4 +1,4 @@
-# MASt3R: 基于3D基础的图像匹配新范式
+# MASt3R: Grounding Image Matching in 3D with MASt3R
 - **作者**: Vincent Leroy, Yohann Cabon, Jerome Revaud
 - **会议/日期**: ECCV 2024 / 2024年6月14日
 - **论文链接**: [https://arxiv.org/abs/2406.09756](https://arxiv.org/abs/2406.09756)

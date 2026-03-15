@@ -1,4 +1,4 @@
-# NeRF: 視点合成のためのニューラル放射輝度場としてのシーン表現 (Representing Scenes as Neural Radiance Fields for View Synthesis)
+# NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis
 
 - **著者**: Ben Mildenhall, Pratul P. Srinivasan, Matthew Tancik, Jonathan T. Barron, Ravi Ramamoorthi, Ren Ng
 - **学会/日付**: ECCV 2020

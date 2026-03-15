@@ -1,4 +1,4 @@
-# NeRF: 将场景表示为用于视图合成的神经辐射场 (Representing Scenes as Neural Radiance Fields for View Synthesis)
+# NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis
 
 - **作者**: Ben Mildenhall, Pratul P. Srinivasan, Matthew Tancik, Jonathan T. Barron, Ravi Ramamoorthi, Ren Ng
 - **会议/日期**: ECCV 2020

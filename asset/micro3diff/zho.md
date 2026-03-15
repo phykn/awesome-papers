@@ -1,4 +1,4 @@
-# 基于多平面去噪扩散的微观结构 2D 到 3D 重建中的维度扩展与调和采样 (Multi-plane denoising diffusion-based dimensionality expansion for 2D-to-3D reconstruction of microstructures with harmonized sampling)
+# Multi-plane denoising diffusion-based dimensionality expansion for 2D-to-3D reconstruction of microstructures with harmonized sampling
 
 - **作者**: Kang-Hyun Lee, Gun Jin Yun
 - **会议/日期**: npj Computational Materials (2024)

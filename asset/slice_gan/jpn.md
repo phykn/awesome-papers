@@ -1,4 +1,4 @@
-# 2Dスライスを用いたGANベースの次元拡張による3D構造生成
+# Generating 3D Structures from a 2D Slice with GAN-Based Dimensionality Expansion
 
 - **著者**: Steve Kench, Samuel J. Cooper
 - **発表場所 / 日付**: Preprint - 2021年2月16日 (arXiv:2102.07708)

@@ -1,4 +1,4 @@
-# MASt3R: 3D로 정렬하는 이미지 매칭의 새로운 기준
+# MASt3R: Grounding Image Matching in 3D with MASt3R
 - **Authors**: Vincent Leroy, Yohann Cabon, Jerome Revaud
 - **Venue/Date**: ECCV 2024 / June 14, 2024
 - **URL**: [https://arxiv.org/abs/2406.09756](https://arxiv.org/abs/2406.09756)

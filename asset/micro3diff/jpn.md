@@ -1,4 +1,4 @@
-# 調和サンプリングを用いた微細構造の2D-to-3D再構成のための多平面ノイズ除去拡散に基づく次元拡張 (Multi-plane denoising diffusion-based dimensionality expansion for 2D-to-3D reconstruction of microstructures with harmonized sampling)
+# Multi-plane denoising diffusion-based dimensionality expansion for 2D-to-3D reconstruction of microstructures with harmonized sampling
 
 - **著者**: Kang-Hyun Lee, Gun Jin Yun
 - **学会/日付**: npj Computational Materials (2024)

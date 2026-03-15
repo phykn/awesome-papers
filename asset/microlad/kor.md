@@ -1,4 +1,4 @@
-# MicroLad: Latent Diffusion 기반 2D-to-3D 미세구조 재구성 및 역설계
+# MicroLad: Latent Diffusion-Based 2D-to-3D Microstructure Reconstruction with Inverse Design
 
 - **저자**: Kang-Hyun Lee, Gun Jin Yun
 - **학회/날짜**: Preprint (2025)
