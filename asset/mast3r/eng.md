@@ -52,5 +52,5 @@ MASt3R bridges the gap between general 3D reconstruction and high-precision imag
 
 ### 6. Further Reading (After This Paper)
 - **[MUSt3R: Multi-view Network for Stereo 3D Reconstruction](https://arxiv.org/abs/2503.01661)**: Extends the framework to handle more than two views simultaneously with a multi-layer memory mechanism.
-- **[MASt3R-SfM: a Fully-Integrated Solution for Unconstrained Structure-from-Motion](https://arxiv.org/abs/2409.18844)**: A complete SfM pipeline that leverages MASt3R features for large-scale, unconstrained reconstruction.
+- **[MASt3R-SfM: a Fully-Integrated Solution for Unconstrained Structure-from-Motion](https://arxiv.org/abs/2409.19152)**: A complete SfM pipeline that leverages MASt3R features for large-scale, unconstrained reconstruction.
 - **[TRELLIS: Structured 3D Latents for Scalable and Versatile 3D Generation](https://arxiv.org/abs/2412.01506)**: Explores how similar foundation-model-driven features can be used for high-quality 3D asset generation.
