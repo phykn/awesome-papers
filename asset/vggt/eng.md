@@ -39,14 +39,13 @@ The core "Aha!" moment in VGGT is the **Alternating-Attention (AA)** transformer
 
 The model is trained using a multi-task loss that combines camera, depth, and point map supervision with aleatoric uncertainty ($\Sigma$). The depth loss, for instance, incorporates both direct value discrepancy and a gradient-based term for edge sharpness:
 
-$$
-\mathcal{L}_{\text{depth}} = \sum_{i=1}^N \left( \| \Sigma_i^D \odot (\hat{D}_i - D_i) \| + \| \Sigma_i^D \odot (\nabla \hat{D}_i - \nabla D_i) \| - \alpha \log \Sigma_i^D \right)
-$$
+$$ \mathcal{L}\_{\text{depth}} = \sum_{i=1}^N \left( \Vert \Sigma\_i^D \odot (\hat{D}\_i - D\_i) \Vert + \Vert \Sigma\_i^D \odot (\nabla \hat{D}\_i - \nabla D\_i) \Vert - \alpha \log \Sigma\_i^D \right) $$
 
-- $D_i$ = Ground-truth depth for frame $i$ (Sec 3.4).
-- $\hat{D}_i$ = Predicted depth map output by the DPT head (Sec 3.3).
-- $\Sigma_i^D$ = Predicted uncertainty map, which weights the loss based on confidence (Sec 3.4).
-- $\nabla$ = The gradient operator, ensuring the predicted depth preserves sharp object boundaries (Sec 3.4).
+- $D\_i$: Ground-truth depth for frame $i$ (Sec 3.4).
+- $\hat{D}\_i$: Predicted depth map output by the DPT head (Sec 3.3).
+- $\Sigma\_i^D$: Predicted uncertainty map, which weights the loss based on confidence (Sec 3.4).
+- $\nabla$: The gradient operator, ensuring the predicted depth preserves sharp object boundaries (Sec 3.4).
+
 
 #### 4.4 Comparison: Others vs This Paper (Evidence-Based)
 

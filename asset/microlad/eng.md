@@ -27,14 +27,18 @@ The decisive insight of MicroLad is combining **latent diffusion-based 2D-to-3D 
 - (1) This figure contrasts the conventional computational materials engineering workflow (forward SP linkage only) with the MicroLad approach that enables both forward and inverse SP linkages. (2) The key architectural innovation is closing the loop: rather than only predicting properties from structure, MicroLad can generate structures that target specific properties via SDS-guided optimization in latent space.
 
 #### 4.3 Core Equation
-- **Equation**: $\mathcal{L}_{\text{SDS}} = \kappa(t) \|\epsilon - \epsilon_\theta(z_{\text{slice},t}, t)\|^2$, where $\kappa(t) = \frac{1 - \bar{\alpha}_t}{\bar{\alpha}_t}$
-- The SDS loss measures how well the current latent slice matches the distribution learned by the frozen diffusion model. Combined with descriptor matching loss $\mathcal{L}\_M = \Vert M(\hat{x}\_{\text{slice}}) - M^{\ast} \Vert^2$ and property loss $\mathcal{L}\_P = \Vert H(\hat{x}\_{\text{slice}}) - P^{\ast} \Vert^2$, the total gradient steers the latent representation toward realistic microstructures with desired target properties.
+- **Equation**:
+
+$$ \mathcal{L}\_{\text{SDS}} = \kappa(t) \Vert \epsilon - \epsilon\_{\theta}(z\_{\text{slice},t}, t) \Vert^2, \text{ where } \kappa(t) = \frac{1 - \bar{\alpha}\_t}{\bar{\alpha}\_t} $$
+
+- The SDS loss measures how well the current latent slice matches the distribution learned by the frozen diffusion model. Combined with descriptor matching loss $\mathcal{L}\_{\text{M}} = \Vert M(\hat{x}\_{\text{slice}}) - M^{\ast} \Vert^2$ and property loss $\mathcal{L}\_{\text{P}} = \Vert H(\hat{x}\_{\text{slice}}) - P^{\ast} \Vert^2$, the total gradient steers the latent representation toward realistic microstructures with desired target properties.
 
 - **Variables**:
-  - $\epsilon\_\theta$: The frozen pretrained denoising network (U-Net) that provides the diffusion prior (Sec 3.4 / Eq 39).
+  - $\epsilon\_{\theta}$: The frozen pretrained denoising network (U-Net) that provides the diffusion prior (Sec 3.4 / Eq 39).
   - $z\_{\text{slice}}$: Latent representation of a 2D slice encoded by the VAE encoder $E$ (Sec 3.4 / Eq 37).
   - $M^{\ast}, P^{\ast}$: User-specified target microstructural descriptors and effective material properties (Sec 3.4 / Eq 42–43).
   - $H$: Differentiable physics solver (FEM) for computing effective diffusivity (Sec 3.4 / Eq 43).
+
 
 
 

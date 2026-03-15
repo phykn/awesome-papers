@@ -37,16 +37,16 @@ VGGT의 핵심적인 통찰은 바로 **교차 어텐션**(Alternating-Attention
 
 #### 4.3 핵심 공식
 
-모델은 카메라, 깊이, 포인트 맵 감독과 함께 **에일리어토릭 불확실성**(aleatoric uncertainty) ($\Sigma$)을 결합한 다중 작업 손실 함수로 학습됩니다. 예를 들어, 깊이 손실 함수는 값의 차이뿐만 아니라 경계의 선명도를 위한 그래디언트 항을 포함합니다.
+모델은 카메라, 깊이, 포인트 맵 감독과 함께 **에일리어토릭 불확실성**(aleatoric uncertainty) $\Sigma$를 결합한 다중 작업 손실 함수로 학습됩니다. 예를 들어, 깊이 손실 함수는 값의 차이뿐만 아니라 경계의 선명도를 위한 그래디언트 항을 포함합니다.
 
-$$
-\mathcal{L}_{\text{depth}} = \sum_{i=1}^N \left( \| \Sigma_i^D \odot (\hat{D}_i - D_i) \| + \| \Sigma_i^D \odot (\nabla \hat{D}_i - \nabla D_i) \| - \alpha \log \Sigma_i^D \right)
-$$
 
-- $D_i$ = $i$ 번째 프레임의 정답 깊이 값 (Sec 3.4).
-- $\hat{D}_i$ = DPT 헤드를 통해 예측된 깊이 맵 (Sec 3.3).
-- $\Sigma_i^D$ = 예측된 불확실성 지도로, 모델의 확신도에 따라 손실의 가중치를 조절함 (Sec 3.4).
-- $\nabla$ = 그래디언트 연산자로, 예측된 깊이가 물체의 날카로운 경계선을 유지하도록 유도함 (Sec 3.4).
+$$ \mathcal{L}\_{\text{depth}} = \sum_{i=1}^N \left( \Vert \Sigma\_i^D \odot (\hat{D}\_i - D\_i) \Vert + \Vert \Sigma\_i^D \odot (\nabla \hat{D}\_i - \nabla D\_i) \Vert - \alpha \log \Sigma\_i^D \right) $$
+
+- $D\_i$: $i$ 번째 프레임의 정답 깊이 값 (Sec 3.4).
+- $\hat{D}\_i$: DPT 헤드를 통해 예측된 깊이 맵 (Sec 3.3).
+- $\Sigma\_i^D$: 예측된 불확실성 지도로, 모델의 확신도에 따라 손실의 가중치를 조절함 (Sec 3.4).
+- $\nabla$: 그래디언트 연산자로, 예측된 깊이가 물체의 날카로운 경계선을 유지하도록 유도함 (Sec 3.4).
+
 
 #### 4.4 비교: 기존 방식 vs 본 논문 (증거 기반)
 

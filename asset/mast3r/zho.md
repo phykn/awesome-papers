@@ -24,7 +24,7 @@ MASt3R 的核心创新是在 DUSt3R 架构中增加了一个专门的**匹配头
 
 #### 4.2 架构 / 核心设计
 ![Architecture Figure](figures/fig03_fast_matching.png)
-- 该架构引入了一种**快速互惠匹配 (Fast Reciprocal Matching)** 方案，以解决稠密匹配中常见的二次复杂度 ($O(N^2)$) 问题。
+- 该架构引入了一种**快速互惠匹配 (Fast Reciprocal Matching)** 方案，以解决稠密匹配中常见的二次复杂度 $O(N^2)$ 问题。
 - (1) 该方案通过迭代抽样候选匹配点并收敛到稳定的互惠对，(2) 在保持高分辨率图像精度的同时，将处理速度提高了几个数量级。
 
 #### 4.3 核心方程
@@ -32,11 +32,13 @@ MASt3R 的核心创新是在 DUSt3R 架构中增加了一个专门的**匹配头
 
 - **方程**:
 
-$$ \mathcal{L}_{\text{match}} = - \sum_{(i,j) \in \hat{\mathcal{M}}} \left( \log \frac{s_{\tau}(i,j)}{\sum_{k \in \mathcal{P}^1} s_{\tau}(k,j)} + \log \frac{s_{\tau}(i,j)}{\sum_{k \in \mathcal{P}^2} s_{\tau}(i,k)} \right) $$
+$$
+\mathcal{L}\_{\text{match}} = - \sum_{(i,j) \in \hat{\mathcal{M}}} \left( \log \frac{s\_{\tau}(i,j)}{\sum_{k \in \mathcal{P}^1} s\_{\tau}(k,j)} + \log \frac{s\_{\tau}(i,j)}{\sum_{k \in \mathcal{P}^2} s\_{\tau}(i,k)} \right)
+$$
 
 - **变量解释**:
   - $(i,j) \in \hat{\mathcal{M}}$: 图像1和图像2之间真实对应的像素对（Ground-truth）。
-  - $s_{\tau}(i,j) = \exp(-\tau (D_i^1)^\top D_j^2)$ (式 11): 局部描述符 $D_i^1$ 与 $D_j^2$ 之间的相似度得分。
+  - $s\_{\tau}(i,j) = \exp(-\tau (D\_i^1)^\top D\_j^2)$: 局部描述符 $D\_i^1$ 与 $D\_j^2$ 之间的相似度得分 (式 11)。
   - $\tau$: 温度超参数，控制匹配分布的“尖锐度”。
   - $\mathcal{P}^1, \mathcal{P}^2$: 图像1和图像2中分别考虑的所有像素集合。
 

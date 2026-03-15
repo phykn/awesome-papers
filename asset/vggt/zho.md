@@ -39,14 +39,13 @@ VGGT 的核心洞察在于 **交替注意力**(Alternating-Attention) Transforme
 
 该模型使用结合了相机、深度和点图监督以及**等方差不确定性**(aleatoric uncertainty) ($\Sigma$) 的多任务损失进行训练。例如，深度损失结合了直接值差异和用于保持边缘锐度的梯度项：
 
-$$
-\mathcal{L}_{\text{depth}} = \sum_{i=1}^N \left( \| \Sigma_i^D \odot (\hat{D}_i - D_i) \| + \| \Sigma_i^D \odot (\nabla \hat{D}_i - \nabla D_i) \| - \alpha \log \Sigma_i^D \right)
-$$
+$$ \mathcal{L}\_{\text{depth}} = \sum_{i=1}^N \left( \Vert \Sigma\_i^D \odot (\hat{D}\_i - D\_i) \Vert + \Vert \Sigma\_i^D \odot (\nabla \hat{D}\_i - \nabla D\_i) \Vert - \alpha \log \Sigma\_i^D \right) $$
 
-- $D_i$ = 第 $i$ 帧的地面真值深度 (Sec 3.4)。
-- $\hat{D}_i$ = DPT 头输出的预测深度图 (Sec 3.3)。
-- $\Sigma_i^D$ = 预测的不确定性图，根据置信度对损失进行加权 (Sec 3.4)。
-- $\nabla$ = 梯度算子，确保预测的深度图保留锐利的物体边界 (Sec 3.4)。
+- $D\_i$: 第 $i$ 帧的地面真值深度 (Sec 3.4)。
+- $\hat{D}\_i$: DPT 头输出的预测深度图 (Sec 3.3)。
+- $\Sigma\_i^D$: 预测的不确定性图，根据置信度对损失进行加权 (Sec 3.4)。
+- $\nabla$: 梯度算子，确保预测的深度图保留锐利的物体边界 (Sec 3.4)。
+
 
 #### 4.4 比较：其他方法 vs 本论文（基于证据）
 

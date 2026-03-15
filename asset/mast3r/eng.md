@@ -24,19 +24,17 @@ The key "Aha!" moment in MASt3R is the addition of a dedicated **matching head**
 
 #### 4.2 Architecture / Core Design
 ![Architecture Figure](figures/fig03_fast_matching.png)
-- The architecture introduces a **Fast Reciprocal Matching** scheme to solve the quadratic complexity problem ($O(N^2)$) of dense matching.
+- The architecture introduces a **Fast Reciprocal Matching** scheme to solve the quadratic complexity problem $O(N^2)$ of dense matching.
 - (1) It iteratively sub-samples candidate matches and converges to stable reciprocal pairs, (2) accelerating the process by orders of magnitude while preserving accuracy on high-resolution images.
 
 #### 4.3 Core Equation
 To train the new matching head, MASt3R uses an **InfoNCE matching loss**, which forces the descriptors of corresponding points to be as similar as possible.
 
-- **Equation**:
-
-$$ \mathcal{L}_{\text{match}} = - \sum_{(i,j) \in \hat{\mathcal{M}}} \left( \log \frac{s_{\tau}(i,j)}{\sum_{k \in \mathcal{P}^1} s_{\tau}(k,j)} + \log \frac{s_{\tau}(i,j)}{\sum_{k \in \mathcal{P}^2} s_{\tau}(i,k)} \right) $$
+$$ \mathcal{L}\_{\text{match}} = - \sum_{(i,j) \in \hat{\mathcal{M}}} \left( \log \frac{s\_{\tau}(i,j)}{\sum_{k \in \mathcal{P}^1} s\_{\tau}(k,j)} + \log \frac{s\_{\tau}(i,j)}{\sum_{k \in \mathcal{P}^2} s\_{\tau}(i,k)} \right) $$
 
 - **Variables**:
   - $(i,j) \in \hat{\mathcal{M}}$: A ground-truth corresponding pair of pixels between images 1 and 2.
-  - $s_{\tau}(i,j) = \exp(-\tau (D_i^1)^\top D_j^2)$ (Eq 11): The similarity score between local descriptors $D_i^1$ and $D_j^2$.
+  - $s\_{\tau}(i,j) = \exp(-\tau (D\_i^1)^\top D\_j^2)$: The similarity score between local descriptors $D\_i^1$ and $D\_j^2$ (Eq 11).
   - $\tau$: A temperature hyper-parameter that controls the "sharpness" of the matching distribution.
   - $\mathcal{P}^1, \mathcal{P}^2$: The sets of all considered pixels in image 1 and image 2, respectively.
 

@@ -32,13 +32,13 @@ The core breakthrough of SliceGAN is the decoupling of the generator's dimension
 - **Selection criteria**: The optimization objective using the Wasserstein GAN loss with Gradient Penalty (WGAN-GP) to ensure stable training and high-quality synthesis.
 - **Equation**:
 
-$$L_D = \mathbb{E}[D(G(z)_s)] - \mathbb{E}[D(r)] + \lambda \mathbb{E}[(\|\nabla_{\hat{x}} D(\hat{x})\|_2 - 1)^2]$$
+$$ L\_D = \mathbb{E}[D(G(z)\_s)] - \mathbb{E}[D(r)] + \lambda \mathbb{E}[(\Vert \nabla\_{\hat{x}} D(\hat{x}) \Vert\_2 - 1)^2] $$
 
 - This formula measures the "distance" between the distribution of fake slices and real images.
 - **Variables**: 
-    - $G(z)_s$ = 2D slice of the generated 3D volume (Page 3).
-    - $r$ = Real 2D training image (Page 3).
-    - $\lambda$ = Gradient penalty coefficient (used to stabilize training).
+    - $G(z)\_s$: 2D slice of the generated 3D volume (Page 3).
+    - $r$: Real 2D training image (Page 3).
+    - $\lambda$: Gradient penalty coefficient (used to stabilize training).
 
 #### 4.4 Comparison: Others vs This Paper
 SliceGAN significantly outperforms traditional stochastic and correlation-based reconstruction methods in capturing long-range connectivity and complex phases. Unlike standard 3D GANs that require volumetric training data, this approach works with widely available 2D micrographs. The paper demonstrates that once trained, SliceGAN can generate $10^8$ voxel volumes in seconds, representing a $10^5$ acceleration compared to conventional physical simulations. The method is shown to be robust across varied materials including polycrystalline grains, ceramic fibers, and battery electrodes (Sec 5.2 / Fig 3).

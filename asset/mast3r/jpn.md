@@ -24,7 +24,7 @@ MASt3Rの重要な革新は、DUSt3Rアーキテクチャに専用の**マッチ
 
 #### 4.2 アーキテクチャ / 核心設計
 ![Architecture Figure](figures/fig03_fast_matching.png)
-- このアーキテクチャは、密なマッチングにおける二次的な計算複雑性 ($O(N^2)$) の問題を解決するために、**高速相互マッチング (Fast Reciprocal Matching)** スキームを導入しています。
+- このアーキテクチャは、密なマッチングにおける二次的な計算複雑性 $O(N^2)$ の問題を解決するために、**高速相互マッチング (Fast Reciprocal Matching)** スキームを導入しています。
 - (1) 候補となるマッチングを反復的にサブサンプリングして安定した相互ペアに収束させ、(2) 高解像度画像での精度を維持しながら、処理プロセスを数オーダー加速させます。
 
 #### 4.3 核心方程式
@@ -32,16 +32,16 @@ MASt3Rの重要な革新は、DUSt3Rアーキテクチャに専用の**マッチ
 
 - **方程式**:
 
-$$ \mathcal{L}_{\text{match}} = - \sum_{(i,j) \in \hat{\mathcal{M}}} \left( \log \frac{s_{\tau}(i,j)}{\sum_{k \in \mathcal{P}^1} s_{\tau}(k,j)} + \log \frac{s_{\tau}(i,j)}{\sum_{k \in \mathcal{P}^2} s_{\tau}(i,k)} \right) $$
+$$ \mathcal{L}\_{\text{match}} = - \sum_{(i,j) \in \hat{\mathcal{M}}} \left( \log \frac{s\_{\tau}(i,j)}{\sum_{k \in \mathcal{P}^1} s\_{\tau}(k,j)} + \log \frac{s\_{\tau}(i,j)}{\sum_{k \in \mathcal{P}^2} s\_{\tau}(i,k)} \right) $$
 
 - **変数**:
-  - $(i,j) \in \hat{\mathcal{M}}$: 画像1と画像2の間の正解のピクセル対応ペア。
-  - $s_{\tau}(i,j) = \exp(-\tau (D_i^1)^\top D_j^2)$ (式 11): 局所記述子 $D_i^1$ と $D_j^2$ の間の類似度スコア。
-  - $\tau$: マッチング分布の「鋭さ」を制御する温度ハイパーパラメータ。
-  - $\mathcal{P}^1, \mathcal{P}^2$: それぞれ画像1と画像2で考慮される全ピクセルの集合。
+  - **$(i,j) \in \hat{\mathcal{M}}$**: 画像1と画像2の間の正解のピクセル対応ペア。
+  - **$s\_{\tau}(i,j) = \exp(-\tau (D\_i^1)^\top D\_j^2)$**: 局所記述子 $D\_i^1$ と $D\_j^2$ の間の類似度スコア (式 11)。
+  - **$\tau$**: マッチング分布の「鋭さ」を制御する温度ハイパーパラメータ。
+  - **$\mathcal{P}^1, \mathcal{P}^2$**: それぞれ画像1と画像2で考慮される全ピクセルの集合。
 
 #### 4.4 比較：従来手法 vs 本論文
-MASt3Rは、3D回帰と特徴マッチングを統合することで、DUSt3RやLoFTRのような2Dのみのマッチャーに対して大きな飛躍を遂げました。DUSt3Rは堅牢ですが精度が低く、LoFTRは精度が高いものの極端な視点変化に苦労しますが、MASt3Rはその両方で優れています。非常に困難な Map-free localization データセットにおいて、発表されている最良の手法に対して 30% の絶対的な改善 (VCRE AUC) を達成しました (Sec 4.2 / Table 2)。その差別化要因は、3D幾何学に裏打ちされた明示的なマッチングヘッドにあります。トレードオフとしては、ViTのメモリ制限により、高解像度画像では依然として Coarse-to-fine（粗から密へ）またはウィンドウ分割戦略が必要になる点です (Sec 3.4)。
+MASt3Rは、3D回帰と特徴マッチングを統合することで、DUSt3RやLoFTRのような2Dのみのマッチャーに対して大きな飛躍を遂げました。DUSt3Rは堅牢ですが精度が低く、LoFTRは精度が高いものの極端な視点変化に苦労しますが、MASt3Rはその両方で優れています。非常に困難な **マップフリーローカリゼーション (Map-free localization)** データセットにおいて、発表されている最良の手法に対して 30% の絶対的な改善 (VCRE AUC) を達成しました (Sec 4.2 / Table 2)。その差別化要因は、3D幾何学に裏打ちされた明示的なマッチングヘッドにあります。トレードオフとしては、ViTのメモリ制限により、高解像度画像では依然として **Coarse-to-fine（粗から密へ）** または **ウィンドウ分割戦略 (windowing strategy)** が必要になる点です (Sec 3.4)。
 
 #### 4.5 定性的な結果
 ![Qualitative Results](figures/fig04_qualitative.png)

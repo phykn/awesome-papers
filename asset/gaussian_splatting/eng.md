@@ -30,12 +30,15 @@ The "Aha!" insight is substituting the expensive volumetric ray-marching of NeRF
 
 #### 4.3 Core Equation
 - **Selection criteria**: This equation describes how the 3D covariance matrix (the shape of the Gaussian) is parameterized so it can be safely optimized using gradient descent while remaining physically valid (positive semi-definite).
-- **Equation**: $\Sigma = R S S^T R^T$
+- **Equation**: 
+
+$$ \Sigma = R S S^T R^T $$
+
 - This formula decomposes the shape of a Gaussian ellipsoid into two independent components: the stretching (Scaling $S$) and the orientation (Rotation $R$).
 - **Variables**:
-  - $\Sigma$ = 3D Covariance matrix representing the Gaussian's shape and size.
-  - $R$ = Rotation matrix derived from an optimized unit quaternion $q$.
-  - $S$ = Scaling matrix derived from an optimized 3D vector $s$.
+  - $\Sigma$: 3D Covariance matrix representing the Gaussian's shape and size.
+  - $R$: Rotation matrix derived from an optimized unit quaternion $q$.
+  - $S$: Scaling matrix derived from an optimized 3D vector $s$.
 
 #### 4.4 Comparison: Others vs This Paper
 3D Gaussian Splatting represents a paradigm shift from implicit neural volumes to explicit point-based splatting. The strongest baseline, Mip-NeRF360, provides excellent image quality but requires several minutes to render a single frame. In contrast, this paper achieves equal or better quality (Sec 7.1) while rendering in real-time. By moving away from MVS-based geometry and opting for anisotropic Gaussians, the method avoids the artifacts common in point-based rendering (Fig 11) and the training overhead of dense grids. The main trade-off is the memory requirement for storing millions of Gaussians, which can reach several gigabytes for complex scenes (Sec 7.5).

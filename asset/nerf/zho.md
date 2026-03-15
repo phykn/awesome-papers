@@ -27,13 +27,13 @@
 - (1) 该图描绘了 MLP 结构，其中三维位置和二维观察方向被分开处理。(2) 密度 $\sigma$ 仅使用位置信息进行预测，以确保在不同视角下的几何一致性，而颜色 $\mathbf{c}$ 则被设计为随视角变化。
 
 #### 4.3 核心公式
-- **公式**: $C(\mathbf{r}) = \int_{t_n}^{t_f} T(t) \sigma(\mathbf{r}(t)) \mathbf{c}(\mathbf{r}(t), \mathbf{d}) dt$, 其中 $T(t) = \exp\left(-\int_{t_n}^t \sigma(\mathbf{r}(s)) ds\right)$
+- **公式**: $C(\mathbf{r}) = \int_{t\_n}^{t\_f} T(t) \sigma(\mathbf{r}(t)) \mathbf{c}(\mathbf{r}(t), \mathbf{d}) dt$, 其中 $T(t) = \exp\left(-\int_{t\_n}^t \sigma(\mathbf{r}(s)) ds\right)$
 - 该公式通过对从近平面 (near plane) 到远平面 (far plane) 沿光线的所有点的密度和颜色进行积分，来计算摄像机光线的预期颜色。$T(t)$ 是“透射率 (Transmittance)”系数，表示光线在不碰到其他粒子的情况下到达该点的概率。
 - **变量**:
-  - $C(\mathbf{r})$ = 对光线 $\mathbf{r}$ 预测的最终 RGB 颜色 (公式 2 / 第 4 节)。
-  - $\sigma(\mathbf{x})$ = 点 $\mathbf{x}$ 处的体密度，表示光线击中粒子的微分概率 (公式 1 / 第 3 节)。
-  - $\mathbf{c}(\mathbf{x}, \mathbf{d})$ = 从方向 $\mathbf{d}$ 观察点 $\mathbf{x}$ 时与视角相关的 RGB 颜色 (公式 1 / 第 3 节)。
-  - $T(t)$ = 从 $t_n$ 到 $t$ 沿光线积累的透射率 (公式 3 / 第 4 节)。
+  - $C(\mathbf{r})$: 对光线 $\mathbf{r}$ 预测的最终 RGB 颜色 (公式 2 / 第 4 节)。
+  - $\sigma(\mathbf{x})$: 点 $\mathbf{x}$ 处的体密度，表示光线击中粒子的微分概率 (公式 1 / 第 3 节)。
+  - $\mathbf{c}(\mathbf{x}, \mathbf{d})$: 从方向 $\mathbf{d}$ 观察点 $\mathbf{x}$ 时与视角相关的 RGB 颜色 (公式 1 / 第 3 节)。
+  - $T(t)$: 从 $t\_n$ 到 $t$ 沿光线积累的透射率 (公式 3 / 第 4 节)。
 
 #### 4.4 比较：其他技术 vs 本文
 在捕获精细、高频纹理和复杂的镜面反射 (Specular reflection) 方面，NeRF 显著优于 SRN 或 NV 等先前的方法。SRN 无法保持清晰度，而 NV 受到体素分辨率的限制，相比之下，NeRF 利用位置编码 (Positional Encoding) 和层次化采样 (Hierarchical Sampling) 实现了最先进的性能 (第 6 节 / 表 1)。基于连续 MLP 的表示方法消除了多平面图像中常见的离散伪影。然而，NeRF 对于每个新场景都需要大量的优化时间，在单个 GPU 上通常需要 1-2 天 (第 6 节)。该方法的核心区别在于基于坐标的神经表示与经典体绘制的结合。

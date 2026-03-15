@@ -24,7 +24,7 @@ MASt3R의 결정적인 혁신은 DUSt3R 구조에 전용 **매칭 헤드**(Match
 
 #### 4.2 아키텍처 / 핵심 설계
 ![Architecture Figure](figures/fig03_fast_matching.png)
-- 이 아키텍처는 조밀 매칭 시 발생하는 이차 복잡도 ($O(N^2)$) 문제를 해결하기 위해 **빠른 상호 매칭(Fast Reciprocal Matching)** 기법을 도입했습니다.
+- 이 아키텍처는 조밀 매칭 시 발생하는 이차 복잡도 $O(N^2)$ 문제를 해결하기 위해 **빠른 상호 매칭(Fast Reciprocal Matching)** 기법을 도입했습니다.
 - (1) 후보 매칭점을 반복적으로 서브샘플링하여 안정적인 대응 쌍으로 수렴시키며, (2) 이를 통해 고해상도 이미지에서도 정확도를 유지하면서 처리 속도를 수십 배 이상 향상시켰습니다.
 
 #### 4.3 핵심 방정식
@@ -32,11 +32,11 @@ MASt3R의 결정적인 혁신은 DUSt3R 구조에 전용 **매칭 헤드**(Match
 
 - **방정식**:
 
-$$ \mathcal{L}_{\text{match}} = - \sum_{(i,j) \in \hat{\mathcal{M}}} \left( \log \frac{s_{\tau}(i,j)}{\sum_{k \in \mathcal{P}^1} s_{\tau}(k,j)} + \log \frac{s_{\tau}(i,j)}{\sum_{k \in \mathcal{P}^2} s_{\tau}(i,k)} \right) $$
+$$ \mathcal{L}\_{\text{match}} = - \sum_{(i,j) \in \hat{\mathcal{M}}} \left( \log \frac{s\_{\tau}(i,j)}{\sum_{k \in \mathcal{P}^1} s\_{\tau}(k,j)} + \log \frac{s\_{\tau}(i,j)}{\sum_{k \in \mathcal{P}^2} s\_{\tau}(i,k)} \right) $$
 
 - **변수 설명**:
   - $(i,j) \in \hat{\mathcal{M}}$: 이미지 1과 2 사이에 실제로 대응하는 픽셀 쌍(정답).
-  - ($s_{\tau}(i,j) = \exp(-\tau (D_i^1)^\top D_j^2)$ (식 11): 국소 특징 $D_i^1$)과 $D_j^2$ 사이의 유사도 점수.
+  - $s\_{\tau}(i,j) = \exp(-\tau D\_i^1{}^\top D\_j^2)$: 국소 특징 $D\_i^1$와 $D\_j^2$ 사이의 유사도 점수 (식 11).
   - $\tau$: 매칭 분포의 '선명도'를 조절하는 온도 하이퍼파라미터.
   - $\mathcal{P}^1, \mathcal{P}^2$: 이미지 1과 2 각각에서 고려되는 전체 픽셀 집합.
 

@@ -39,14 +39,12 @@ VGGT の核心となる洞察は、**交互アテンション**(Alternating-Atte
 
 モデルは、カメラ、深度、ポイントマップの教師信号に、**エイレアトリック不確実性**(aleatoric uncertainty) ($\Sigma$) を組み合わせたマルチタスク損失を用いて学習されます。例えば、深度損失には、直接的な値の乖離だけでなく、境界の鮮明さを保つための勾配ベースの項が含まれています。
 
-$$
-\mathcal{L}_{\text{depth}} = \sum_{i=1}^N \left( \| \Sigma_i^D \odot (\hat{D}_i - D_i) \| + \| \Sigma_i^D \odot (\nabla \hat{D}_i - \nabla D_i) \| - \alpha \log \Sigma_i^D \right)
-$$
+$$ \mathcal{L}\_{\text{depth}} = \sum_{i=1}^N \left( \Vert \Sigma\_i^D \odot (\hat{D}\_i - D\_i) \Vert + \Vert \Sigma\_i^D \odot (\nabla \hat{D}\_i - \nabla D\_i) \Vert - \alpha \log \Sigma\_i^D \right) $$
 
-- $D_i$ = フレーム $i$ のグラウンドトゥルース深度 (Sec 3.4)。
-- $\hat{D}_i$ = DPT ヘッドによって出力された予測深度マップ (Sec 3.3)。
-- $\Sigma_i^D$ = 予測された不確実性マップ。信頼度に基づいて損失の重みを調整します (Sec 3.4)。
-- $\nabla$ = 勾配演算子。予測された深度が物体の鋭い境界を保持するように誘導します (Sec 3.4)。
+- $D\_i$: フレーム $i$ のグラウンドトゥルース深度 (Sec 3.4)。
+- $\hat{D}\_i$: DPT ヘッドによって出力された予測深度マップ (Sec 3.3)。
+- $\Sigma\_i^D$: 予測された不確実性マップ。信頼度に基づいて損失の重みを調整します (Sec 3.4)。
+- $\nabla$: 勾配演算子。予測された深度が物体の鋭い境界を保持するように誘導します (Sec 3.4)。
 
 #### 4.4 比較: 他の手法 vs 本論文 (証拠に基づく)
 

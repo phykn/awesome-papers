@@ -37,16 +37,16 @@ The definitive insight of FVO is the formulation of visual odometry as a direct 
 
 #### 4.3 Core Equation
 
-The network is trained using a **Confidence-Aware Loss** function that integrates learnable uncertainty parameters ($c_R, c_t$) for both rotation and translation. This allows the model to "self-calibrate" by down-weighting residuals it identifies as noisy or unreliable.
+The network is trained using a **Confidence-Aware Loss** function that integrates learnable uncertainty parameters $c\_R, c\_t$ for both rotation and translation. This allows the model to "self-calibrate" by down-weighting residuals it identifies as noisy or unreliable.
 
-$$
-\mathcal{L} = \mathcal{L}_{rot} \exp(-c_R) + c_R + \mathcal{L}_{trans} \exp(-c_t) + c_t
-$$
 
-- $\mathcal{L}_{rot}$ = Geodesic loss between predicted and ground-truth rotation matrices (Eq 9).
-- $\mathcal{L}_{trans}$ = $L1$ loss between predicted and ground-truth relative translations (Eq 10).
-- $c_R, c_t$ = Learned log-variance parameters representing uncertainty for rotation and translation, respectively (Sec 3.3).
-- $\exp(-c)$ = The precision term that automatically weights the importance of the error based on predicted confidence (Sec 3.3).
+$$ \mathcal{L} = \mathcal{L}\_{\text{rot}} \exp(-c\_R) + c\_R + \mathcal{L}\_{\text{trans}} \exp(-c\_t) + c\_t $$
+
+- $\mathcal{L}\_{\text{rot}}$: Geodesic loss between predicted and ground-truth rotation matrices (Eq 9).
+- $\mathcal{L}\_{\text{trans}}$: $L1$ loss between predicted and ground-truth relative translations (Eq 10).
+- $c\_R, c\_t$: Learned log-variance parameters representing uncertainty for rotation and translation, respectively (Sec 3.3).
+- $\exp(-c)$: The precision term that automatically weights the importance of the error based on predicted confidence (Sec 3.3).
+
 
 #### 4.4 Comparison: Others vs This Paper (Evidence-Based)
 
