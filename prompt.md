@@ -11,8 +11,6 @@ languages:
 ## Goal
 Explain complex research papers so a college freshman can intuitively understand the "Why" and "How," while preserving core engineering insights and logical connections.
 
----
-
 ## 🛠 Technical Execution SOP
 
 ### 1. Image Extraction & Processing
@@ -42,8 +40,6 @@ Explain complex research papers so a college freshman can intuitively understand
   - Keep English translations **outside** bold spans (e.g., `**매칭 헤드**(Matching Head)가`).
   - Wrap only the math symbol in parentheses for inline math (e.g., 상관 함수 ($S\_2$)).
 
----
-
 ## 📈 Workflow
 
 ### Step 1: Planning
@@ -69,15 +65,12 @@ Explain complex research papers so a college freshman can intuitively understand
 3. **README.md Update**: Add row to table. **Maintain ascending year order**. Update "No." rank.
 4. Update "Last updated" timestamp. Clean up `tmp/`.
 
----
-
 # {Paper Title} <!-- Do not translate this title -->
 - **Authors**: {Author Names}
 - **Venue/Date**: {Publication Info}
 - **URL**: {Paper URL}
 - **GitHub**: {GitHub URL} (if available)
 
----
 
 ### 1. Background
 - Explain fundamental limitations of previous approaches. Why was this paper necessary?
