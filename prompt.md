@@ -65,7 +65,7 @@ Explain complex research papers so a college freshman can intuitively understand
 - [ ] **Correction**: If a link is dead, points to an unrelated paper, or the paper predates the target paper, it must be removed or replaced with a verified one. Do not include any paper without explicit session-based verification.
 
 ### Step 3: Synthesis (Write the Exportable Markdown)
-**Note: Use the metadata from Step 1. For each entry in `languages`, write a `{code}.md` file in the corresponding language. Ensure all section headers are translated purely into the target language without appending the original English in parentheses (e.g., use `1. 배경` instead of `1. 배경 (Background)`), while preserving the numbering structure (1–6, 4.1–4.5).** Use the Step 1 plan as your blueprint. Use relative path `figures/{name}.png`. Replace all placeholders (e.g., `{Paper Title}`) with real content; do not leave placeholder markers in the final output.
+**Note: Use the metadata from Step 1. For each entry in `languages`, write a `{code}.md` file in the corresponding language. Ensure all section headers are translated purely into the target language without appending the original English in parentheses (e.g., use `1. 배경` instead of `1. 배경 (Background)`), while preserving the numbering structure (1–6, 4.1–4.5).** Use the Step 1 plan as your blueprint. Use relative path `figures/{name}.png`. Replace all placeholders (e.g., `{Paper Title}`) with real content; do not leave placeholder markers in the final output. **CRITICAL rule: NEVER translate the paper title. The paper title must ALWAYS remain in its original language (e.g., English) across all language outputs.**
 
 **Figure embedding rule (Required)**:
 - `4.1` must embed the pipeline/overview image.
@@ -94,7 +94,7 @@ Explain complex research papers so a college freshman can intuitively understand
 
 ---
 
-# {Paper Title}
+# {Paper Title} <!-- Do not translate this title under any circumstances -->
 - **Authors**: {Author Names}
 - **Venue/Date**: {Publication Info}
 - **URL**: {Paper URL}
