@@ -27,8 +27,10 @@
 - (1) 该图展示了管理跨维度噪声水平的“调和采样 (Harmonized Sampling)”算法。(2) 它解决了从 2D 潜在空间移动到 3D 结构时可能发生的映射错误，确保逆扩散过程维持稳定的轨迹。
 
 #### 4.3 核心公式 (Core Equation)
-- **公式**: 
-  $$\hat{x}_{t-1, i} = \text{MultiPlaneDenoise}(x_{t, i}, \epsilon_\theta, \text{planes} \in \{XY, YZ, ZX\})$$
+- **公式**:
+
+$$\hat{x}_{t-1, i} = \text{MultiPlaneDenoise}(x_{t, i}, \epsilon_\theta, \text{planes} \in \{XY, YZ, ZX\})$$
+
 - 该过程反复精炼 3D 体积 $x$，使每个平面的去噪估计值都对最终体素值有贡献。这通常通过扩散逆过程中的加权平均或特定采样步骤来实现。
 - **变量**:
   - $x_t$ = 时间步 $t$ 下带有噪声的 3D 体积 (第 4.1 节)。

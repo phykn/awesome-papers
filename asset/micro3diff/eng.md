@@ -27,8 +27,10 @@ The "Aha!" insight of Micro3Diff is performing **dimensionality expansion during
 - (1) This diagram shows the "Harmonized Sampling" algorithm which manages the noise levels across dimensions. (2) It addresses the potential mapping errors when moving from 2D latent spaces to 3D structures, ensuring the reverse diffusion stays on a stable trajectory.
 
 #### 4.3 Core Equation
-- **Equation**: 
-  $$\hat{x}_{t-1, i} = \text{MultiPlaneDenoise}(x_{t, i}, \epsilon_\theta, \text{planes} \in \{XY, YZ, ZX\})$$
+- **Equation**:
+
+$$\hat{x}_{t-1, i} = \text{MultiPlaneDenoise}(x_{t, i}, \epsilon_\theta, \text{planes} \in \{XY, YZ, ZX\})$$
+
 - The process iteratively refines the 3D volume $x$ by ensuring that the denoised estimate from each plane contributes to the final voxel value. This is typically implemented as a weighted average or a specific sampling step in the diffusion reverse process.
 - **Variables**:
   - $x_t$ = The 3D noisy volume at time step $t$ (Sec 4.1).
