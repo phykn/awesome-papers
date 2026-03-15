@@ -28,13 +28,14 @@ The decisive insight of MicroLad is combining **latent diffusion-based 2D-to-3D 
 
 #### 4.3 Core Equation
 - **Equation**: $\mathcal{L}_{\text{SDS}} = \kappa(t) \|\epsilon - \epsilon_\theta(z_{\text{slice},t}, t)\|^2$, where $\kappa(t) = \frac{1 - \bar{\alpha}_t}{\bar{\alpha}_t}$
-- The SDS loss measures how well the current latent slice matches the distribution learned by the frozen diffusion model. Combined with descriptor matching loss $\mathcal{L}_M = \|M(\hat{x}_{\text{slice}}) - M^*\|^2$ and property loss $\mathcal{L}_P = \|H(\hat{x}_{\text{slice}}) - P^*\|^2$, the total gradient steers the latent representation toward realistic microstructures with desired target properties.
+- The SDS loss measures how well the current latent slice matches the distribution learned by the frozen diffusion model. Combined with descriptor matching loss $\mathcal{L}_M = \Vert M(\hat{x}_{\text{slice}}) - M^{\ast} \Vert^2$ and property loss $\mathcal{L}_P = \Vert H(\hat{x}_{\text{slice}}) - P^{\ast} \Vert^2$, the total gradient steers the latent representation toward realistic microstructures with desired target properties.
 
 - **Variables**:
   - $\epsilon_\theta$: The frozen pretrained denoising network (U-Net) that provides the diffusion prior (Sec 3.4 / Eq 39).
   - $z_{\text{slice}}$: Latent representation of a 2D slice encoded by the VAE encoder $E$ (Sec 3.4 / Eq 37).
-  - $M^*, P^*$: User-specified target microstructural descriptors and effective material properties (Sec 3.4 / Eq 42–43).
+  - $M^{\ast}, P^{\ast}$: User-specified target microstructural descriptors and effective material properties (Sec 3.4 / Eq 42–43).
   - $H$: Differentiable physics solver (FEM) for computing effective diffusivity (Sec 3.4 / Eq 43).
+
 
 
 #### 4.4 Comparison: Others vs This Paper
