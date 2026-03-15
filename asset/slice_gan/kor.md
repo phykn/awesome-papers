@@ -30,8 +30,10 @@ SliceGAN의 핵심 돌파구는 생성기(Generator)와 판별기(Discriminator)
 
 #### 4.3 핵심 방정식 (Core Equation)
 - **선택 기준**: 안정적인 학습과 고품질 합성을 보장하기 위해 사용된 Gradient Penalty가 포함된 Wasserstein GAN 손실 함수(WGAN-GP)를 선택했습니다.
-- **방정식**: 
+- **방정식**:
+
 $$L_D = \mathbb{E}[D(G(z)_s)] - \mathbb{E}[D(r)] + \lambda \mathbb{E}[(\|\nabla_{\hat{x}} D(\hat{x})\|_2 - 1)^2]$$
+
 - 이 식은 가짜 슬라이스와 실제 이미지 분포 사이의 "거리"를 측정합니다.
 - **변수 설명**: 
     - $G(z)_s$: 생성된 3차원 부피에서 추출된 2차원 슬라이스 (3페이지).

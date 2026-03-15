@@ -10,6 +10,7 @@ This project is dedicated to reviewing the latest research papers and providing 
 |   3   | **Micro3Diff**: Multi-plane denoising diffusion         | Material / Diffusion | 2024  |     [View](./asset/micro3diff/kor.md)     |     [View](./asset/micro3diff/eng.md)     |     [View](./asset/micro3diff/jpn.md)     |     [View](./asset/micro3diff/zho.md)     |
 |   4   | **MicroLad**: Latent Diffusion-Based 2D-to-3D           | Material / Diffusion | 2025  |      [View](./asset/microlad/kor.md)      |      [View](./asset/microlad/eng.md)      |      [View](./asset/microlad/jpn.md)      |      [View](./asset/microlad/zho.md)      |
 |   5   | **SliceGAN**: Generating 3D Structures from a 2D Slice  | Material / GAN       | 2021  |     [View](./asset/slice_gan/kor.md)      |     [View](./asset/slice_gan/eng.md)      |     [View](./asset/slice_gan/jpn.md)      |     [View](./asset/slice_gan/zho.md)      |
+|   6   | **MASt3R**: Grounding Image Matching in 3D              | Image / 3D           | 2024  |       [View](./asset/mast3r/kor.md)       |       [View](./asset/mast3r/eng.md)       |       [View](./asset/mast3r/jpn.md)       |       [View](./asset/mast3r/zho.md)       |
 
 ---
 

@@ -20,6 +20,7 @@ Explain complex research papers so a college freshman can intuitively understand
 - **Structural Integrity**: Connect the "Problem," "Intuition," and "Method" so the reader understands why certain engineering choices were inevitable.
 - **Narrative Depth**: Do not sacrifice accuracy for brevity. Use analogies to build a bridge, then explain the technical implementation over that bridge.
 - **Math-to-Reality**: Map every mathematical symbol to a physical or computational meaning (e.g., $z$ = latent representation, $\sigma$ = density).
+- **GitHub Compatibility Rule**: To ensure correct rendering on GitHub, always insert an empty line before and after a block math equation ($$). Do not indent the equation block; keep it at the top level.
 - **Figure Reading Rule**: Always explain diagrams from left to right or input to output.
 
 ---
@@ -124,9 +125,13 @@ Explain complex research papers so a college freshman can intuitively understand
 
 #### 4.3 Core Equation
 - **Selection criteria**: Choose the equation that most directly connects the paper's key insight (Section 3) to its implementation. When the paper contains many equations, prefer the one a reader must understand to grasp the method's novelty.
-- **Equation**: {Core Equation in LaTeX}
+- **Equation**:
+  
+  $${Equation in LaTeX}$$
+  
 - Explain the formula as a logical flow of events (physical or computational).
 - **Variables**: Detailed bullet points: `Symbol` = meaning, plus *where it appears* (equation number / section / figure) on first introduction.
+- **Rendering Tip**: Avoid using multiple underscores (`_`) within a single math line if possible, or wrap them carefully to prevent Markdown parsers from interpreting them as italics. For GitHub, the blank lines before/after `$$` are mandatory.
 
 #### 4.4 Comparison: Others vs This Paper (Evidence-Based)
 Write the “paper brag” explicitly, but keep it fair and grounded in the paper’s evidence.

@@ -30,8 +30,10 @@ The core breakthrough of SliceGAN is the decoupling of the generator's dimension
 
 #### 4.3 Core Equation
 - **Selection criteria**: The optimization objective using the Wasserstein GAN loss with Gradient Penalty (WGAN-GP) to ensure stable training and high-quality synthesis.
-- **Equation**: 
+- **Equation**:
+
 $$L_D = \mathbb{E}[D(G(z)_s)] - \mathbb{E}[D(r)] + \lambda \mathbb{E}[(\|\nabla_{\hat{x}} D(\hat{x})\|_2 - 1)^2]$$
+
 - This formula measures the "distance" between the distribution of fake slices and real images.
 - **Variables**: 
     - $G(z)_s$ = 2D slice of the generated 3D volume (Page 3).
