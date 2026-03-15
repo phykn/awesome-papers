@@ -33,12 +33,12 @@ $$\hat{x}_{t-1, i} = \text{MultiPlaneDenoise}(x_{t, i}, \epsilon_\theta, \text{p
 
 - The process iteratively refines the 3D volume $x$ by ensuring that the denoised estimate from each plane contributes to the final voxel value. This is typically implemented as a weighted average or a specific sampling step in the diffusion reverse process.
 - **Variables**:
-  - $x\_t$ = The 3D noisy volume at time step $t$ (Sec 4.1).
-  - $\epsilon\_\theta$ = The pre-trained 2D denoising neural network (U-Net) (Sec 4.2).
+  - $x_t$ = The 3D noisy volume at time step $t$ (Sec 4.1).
+  - $\epsilon_\theta$ = The pre-trained 2D denoising neural network (U-Net) (Sec 4.2).
   - $t$ = Diffusion time step, ranging from noise to pure data (Sec 4.1).
 
 #### 4.4 Comparison: Others vs This Paper
-Micro3Diff demonstrates superior 3D connectivity and morphological accuracy compared to standard slice-by-slice generation. While conventional 2D methods lack out-of-plane consistency, Micro3Diff ensures that two-point correlation functions ($S\_2$) and lineal path functions ($L\_2$) are statistically equivalent across all directions (Sec 3 / Fig 4). The harmonized sampling process significantly reduces the error rates in capturing complex features like polycrystalline grain boundaries compared to naive multi-plane approaches (Fig 5). A notable trade-off is the increased computational time per 3D volume due to the triple-plane denoising loop (Sec 3.1).
+Micro3Diff demonstrates superior 3D connectivity and morphological accuracy compared to standard slice-by-slice generation. While conventional 2D methods lack out-of-plane consistency, Micro3Diff ensures that two-point correlation functions ($S_2$) and lineal path functions ($L_2$) are statistically equivalent across all directions (Sec 3 / Fig 4). The harmonized sampling process significantly reduces the error rates in capturing complex features like polycrystalline grain boundaries compared to naive multi-plane approaches (Fig 5). A notable trade-off is the increased computational time per 3D volume due to the triple-plane denoising loop (Sec 3.1).
 
 #### 4.5 Qualitative Results
 ![Qualitative Results](figures/fig02_qualitative.png)

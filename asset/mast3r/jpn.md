@@ -36,7 +36,7 @@ $$ \mathcal{L}_{\text{match}} = - \sum_{(i,j) \in \hat{\mathcal{M}}} \left( \log
 
 - **変数**:
   - $(i,j) \in \hat{\mathcal{M}}$: 画像1と画像2の間の正解のピクセル対応ペア。
-  - $s\_{\tau}(i,j) = \exp \left[ -\tau D\_i^{1\top} D\_j^2 \right]$ (式 11): 局所記述子 $D\_i^1$ と $D\_j^2$ の間の類似度スコア。
+  - $s_{\tau}(i,j) = \exp \left[ -\tau D_i^{1\top} D_j^2 \right]$ (式 11): 局所記述子 $D_i^1$ と $D_j^2$ の間の類似度スコア。
   - $\tau$: マッチング分布の「鋭さ」を制御する温度ハイパーパラメータ。
   - $\mathcal{P}^1, \mathcal{P}^2$: それぞれ画像1と画像2で考慮される全ピクセルの集合。
 
