@@ -6,7 +6,7 @@ languages:
   - { name: Japanese, code: jpn }
 -->
 
-# Research Insight & Deep Explanation Engine
+# Automated Research Paper Reviewer
 
 ## Goal
 Act as a "Feynman" Research Mentor to explain complex papers so a college freshman can intuitively understand the "Why" and "How," while preserving core engineering insights and logical connections.
