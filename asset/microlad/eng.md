@@ -1,8 +1,8 @@
-# MicroLad: Latent Diffusion-Based 2D-to-3D Microstructure Reconstruction with Inverse Design
+# MicroLad: 2D-to-3D Microstructure Reconstruction and Generation via Latent Diffusion and Score Distillation
 
-- **Authors**: Kang-Hyun Lee, Gun Jin Yun
-- **Venue/Date**: Preprint (2025)
-- **URL**: Not specified in the paper.
+- **Authors**: Kang-Hyun Lee, Faez Ahmed
+- **Venue/Date**: Computer Methods in Applied Mechanics and Engineering (2026)
+- **URL**: [https://arxiv.org/abs/2508.20138](https://arxiv.org/abs/2508.20138)
 - **GitHub**: [https://github.com/KangHyunL/microlad](https://github.com/KangHyunL/microlad)
 
 ---
@@ -58,7 +58,7 @@ MicroLad represents a significant step toward closing the loop between microstru
 
 ### 6. Further Reading
 [1] [Multi-plane denoising diffusion-based dimensionality expansion (Micro3Diff)](https://doi.org/10.1038/s41524-024-01280-z)<br>
-The predecessor framework by the same authors, establishing multi-plane denoising diffusion for 2D-to-3D reconstruction.<br>
+The first author's predecessor framework, establishing multi-plane denoising diffusion for 2D-to-3D reconstruction.<br>
 [2] [Score Distillation Sampling (DreamFusion) (2022)](https://arxiv.org/abs/2209.14988)<br>
 The foundational technique for distilling knowledge from 2D diffusion models into 3D representations.<br>
 [3] [SliceGAN: Generating 3D Structures from a 2D Slice with GAN-based Dimensionality Expansion (2021)](https://arxiv.org/abs/2102.07708)<br>
