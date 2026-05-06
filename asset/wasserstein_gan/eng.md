@@ -38,7 +38,7 @@ $$
 - Variables:
   - $f\_w$: critic neural network with weights $w$ constrained to a compact set $\mathcal{W} = [-c, c]^l$ (Eq 3, Algo 1).
   - $g\_\theta$: generator mapping latent $z$ to data space (Sec 1).
-  - $p\_r$, $p\_g = g\_{\theta\#}p(z)$: real and generated distributions (Sec 2).
+  - $p\_r$: real distribution; $p\_g$: distribution induced by $g\_\theta(z)$ (Sec 2).
   - $c$: weight-clipping threshold, fixed at $0.01$ (Algo 1 default).
   - $n\_{\text{critic}}$: critic updates per generator step, fixed at $5$ (Algo 1 default).
 
