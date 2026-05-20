@@ -30,13 +30,7 @@ The breakthrough is to generalize DDPM's forward diffusion into a family of non-
 - The DDIM sampling update exposes the paper's central control knob:
 
 $$
-x_{t-1} =
-\sqrt{\alpha_{t-1}}
-\left(
-\frac{x_t-\sqrt{1-\alpha_t}\epsilon_\theta^{(t)}(x_t)}{\sqrt{\alpha_t}}
-\right)
-+ \sqrt{1-\alpha_{t-1}-\sigma_t^2}\epsilon_\theta^{(t)}(x_t)
-+ \sigma_t\epsilon_t
+x_{t-1} = \sqrt{\alpha_{t-1}}\left(\frac{x_t-\sqrt{1-\alpha_t}\epsilon_\theta^{(t)}(x_t)}{\sqrt{\alpha_t}}\right) + \sqrt{1-\alpha_{t-1}-\sigma_t^2}\epsilon_\theta^{(t)}(x_t) + \sigma_t\epsilon_t
 $$
 
 - Variables:
