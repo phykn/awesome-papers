@@ -2,8 +2,6 @@
 languages:
   - { name: English,  code: eng, default: true  }
   - { name: Korean,   code: kor, default: true  }
-  - { name: Chinese,  code: zho, default: false, optional: true }
-  - { name: Japanese, code: jpn, default: false, optional: true }
 -->
 
 # Deep Insight Paper Review Generator
@@ -34,13 +32,13 @@ Act as a "Feynman" Research Mentor to explain complex papers so a college freshm
 - **Spacing**: Ensure structural separation (spaces or parentheses) between math and text (e.g., `- $x$: explanation`).
 - **Reserved Characters**: `#` inside math mode is the LaTeX macro-parameter character and KaTeX rejects it even when escaped as `\#`, especially inside subscripts. Avoid pushforward notation like `g_{\theta\#}p(z)` — rewrite in prose (e.g., "$p\_g$: distribution induced by $g\_\theta(z)$") or substitute `\sharp` if the symbol is essential. Same caution for `%` and `&` inside inline math.
 
-### 4. Localization & Multi-language Synthesis
-- **Language Scope**: Default targets are English (`eng`) and Korean (`kor`). Chinese (`zho`) and Japanese (`jpn`) are **opt-in** — generate them only when the user explicitly requests them; otherwise skip.
+### 4. Localization
+- **Language Scope**: Generate English (`eng`) and Korean (`kor`) by default. Generate any additional language only when the user explicitly requests it.
 - **Batch Generation**: Output the selected languages in one session, saved to `tmp/papers/{paper_slug}/{code}.md`.
 - **Title Preservation**: NEVER translate the paper title. It must remain in its original language.
-- **Translation Hygiene**: Use pure target language headers (e.g., `1. 배경`). Do not append English in parentheses unless it is a highly specific first-time technical term.
+- **Translation Hygiene**: Use pure target language headers (e.g., `1. 배경`). Localized headers override the English header labels shown in the template. Do not append English in parentheses unless it is a highly specific first-time technical term.
 - **Full-Content Localization**: ALL prose in the output file — including bullet descriptions (§4.1–4.5), equation introductions (§4.3), and Chapter 6 paper descriptions — MUST be written in the target language. Only paper titles and technical symbols remain in English.
-- **Korean-Specific Formatting** (applies only to `kor.md`; Chinese and Japanese have no equivalent carve-out):
+- **Korean-Specific Formatting** (applies only to `kor.md`):
   - Keep English translations **outside** bold spans (e.g., `**매칭 헤드**(Matching Head)가`).
   - Wrap only the math symbol in parentheses for inline math (e.g., 상관 함수 ($S\_2$)).
 
@@ -49,7 +47,7 @@ Act as a "Feynman" Research Mentor to explain complex papers so a college freshm
 ### Step 1: Planning
 - **Directory**: Set up `tmp/` subfolders. Download PDF from URL if needed.
 - **Paper Slug**: Use `lower_snake_case` (e.g., `nerf_view_synthesis`).
-- **Strategic Mapping**: Identify Pipeline (mandatory, §4.1), Architecture (mandatory, §4.2), and Qualitative (if applicable, §4.5) figures. Assign stable filenames (e.g., `fig02_pipeline.png`).
+- **Strategic Mapping**: Identify Pipeline (mandatory, §4.1), Architecture (if available; otherwise use pseudo-figure bullet flow in §4.2), and Qualitative (if applicable, §4.5) figures. Assign stable filenames (e.g., `fig02_pipeline.png`).
 - **Logic Map**: Connect intuition to variables and architecture layers.
 
 ### Step 2: Extraction & Verification
@@ -58,7 +56,7 @@ Act as a "Feynman" Research Mentor to explain complex papers so a college freshm
 
 ### Step 3: Synthesis
 - Batch-generate markdown files using the **Template** and **Markdown SOP**.
-- **Figure Embedding**: `4.1` must have the Pipeline figure; `4.2` must have the Architecture figure; `4.5` (if applicable) must have the Qualitative figure.
+- **Figure Embedding**: `4.1` must have the Pipeline figure; `4.2` should use the Architecture figure if available, otherwise use pseudo-figure bullet flow; `4.5` (if applicable) must have the Qualitative figure.
 - **Chapter 6 Link Format**: (Strict)
   - Line 1: `[N] [Paper Title (YYYY)](URL)<br>`
   - Line 2: `1-sentence description.<br>`
@@ -97,7 +95,7 @@ Act as a "Feynman" Research Mentor to explain complex papers so a college freshm
 - Max 2 bullets: (1) what it shows, (2) key variable/module.
 
 ### 4.2 Architecture / Core Design
-![Architecture Figure](figures/{architecture_image}.png)
+![Architecture Figure](figures/{architecture_image}.png) <!-- Omit if no architecture figure exists. -->
 - Internal structure and design rationale. Use "pseudo-figure" bullet flow if no figure exists.
 - Max 2 bullets: (1) what it shows, (2) key design choice.
 
@@ -111,6 +109,7 @@ Act as a "Feynman" Research Mentor to explain complex papers so a college freshm
 - Order: Claim -> Baseline limitation -> Differentiator -> Mechanism -> Evidence pointers `(Sec X / Fig Y)` -> Trade-off.
 
 ### 4.5 Qualitative Results (When Applicable)
+<!-- Omit this entire section when no qualitative results figure exists. -->
 ![Qualitative Results](figures/{qualitative_image}.png)
 - 4–8 sentences across 1–2 paragraphs. Description based on visual evidence.
 
