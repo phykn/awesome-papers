@@ -40,6 +40,9 @@ Act as a "Feynman" Research Mentor to explain complex papers so a college freshm
 - **Translation Hygiene**: Use pure target language headers (e.g., `1. 배경`). Localized headers override the English header labels shown in the template. Do not append English in parentheses unless it is a highly specific first-time technical term.
 - **Full-Content Localization**: ALL prose in the output file — including bullet descriptions (§4.1–4.5), equation introductions (§4.3), and Chapter 6 paper descriptions — MUST be written in the target language. Only paper titles and technical symbols remain in English.
 - **Korean-Specific Formatting** (applies only to `kor.md`):
+  - Prefer Korean prose for ordinary explanatory phrases. Do not leave English noun phrases in Korean sentences when a natural Korean phrase exists (e.g., use "조건부 예측", "무조건부 예측", "추가 분류기", "품질-다양성 조절" instead of "conditional prediction", "unconditional prediction", "extra classifier", "fidelity-diversity control").
+  - Keep English only for paper titles, model names, metric names, dataset names, established method names, code/API identifiers, and math symbols. When an English technical term is retained, it should carry meaning that would be lost or made awkward by translation.
+  - Before finalizing `kor.md`, scan each paragraph and replace avoidable English fragments with Korean. The Korean version should read like Korean explanatory writing, not an English outline with Korean particles.
   - Keep English translations **outside** bold spans (e.g., `**매칭 헤드**(Matching Head)가`).
   - Wrap only the math symbol in parentheses for inline math (e.g., 상관 함수 ($S\_2$)).
 
