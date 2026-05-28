@@ -22,10 +22,11 @@ Powered by an autonomous AI agent, this project delivers structured research pap
 |  16   | **VGGT**: Visual Geometry Grounded Transformer          | Image / 3D           | 2025  |           [View](./asset/vggt/kor.md)           |           [View](./asset/vggt/eng.md)           |           [View](./asset/vggt/jpn.md)           |           [View](./asset/vggt/zho.md)           |
 |  17   | **MicroLad**: 2D-to-3D Reconstruction and Generation    | Material / Diffusion | 2026  |         [View](./asset/microlad/kor.md)         |         [View](./asset/microlad/eng.md)         |         [View](./asset/microlad/jpn.md)         |         [View](./asset/microlad/zho.md)         |
 |  18   | **FVO**: Fast Visual Odometry with Transformers         | Image / SLAM         | 2026  | [View](./asset/fvo_fast_visual_odometry/kor.md) | [View](./asset/fvo_fast_visual_odometry/eng.md) | [View](./asset/fvo_fast_visual_odometry/jpn.md) | [View](./asset/fvo_fast_visual_odometry/zho.md) |
+|  19   | **PAVAS**: Physics-Aware Video-to-Audio Synthesis       | Audio / Generation   | 2026  |          [View](./asset/pavas/kor.md)           |          [View](./asset/pavas/eng.md)           |                        —                        |                        —                        |
 
 ---
 > **Disclaimer**: All reviews are AI-generated for educational purposes. Content may contain minor inaccuracies; use with discretion.
-> *Last updated: 2026-05-20*
+> *Last updated: 2026-05-28*
 
 
 ### ⚡ Agentic Workflow
